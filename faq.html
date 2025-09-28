@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - CalcTools Pro</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #1abc9c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 30px auto 0;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 7px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            background-color: var(--light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-category {
+            margin-bottom: 50px;
+        }
+        
+        .faq-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--primary);
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #555;
+        }
+        
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            font-size: 20px;
+            color: var(--secondary);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background-color: var(--light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .contact-cta p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="index.html" class="logo">Calc<span>Tools</span> Pro</a>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#tools">Tools</a></li>
+                        <li><a href="index.html#calculator">Calculator</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about CalcTools Pro and our calculator tools</p>
+            
+            <div class="search-box">
+                <input type="text" id="faqSearch" placeholder="Search for answers...">
+                <button type="button">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Common Questions</h2>
+                <p>Browse through our frequently asked questions to find the information you need</p>
+            </div>
+            
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="general">General</button>
+                <button class="category-btn" data-category="usage">Usage</button>
+                <button class="category-btn" data-category="privacy">Privacy & Security</button>
+                <button class="category-btn" data-category="technical">Technical</button>
+            </div>
+            
+            <div class="faq-container">
+                <!-- General Questions -->
+                <div class="faq-category" id="general">
+                    <h3>General Questions</h3>
+                    
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <span>What is CalcTools Pro?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CalcTools Pro is a collection of free online calculator tools designed to help with various calculations including BMI, percentages, loans, and tips. Our tools are easy to use, mobile-friendly, and completely free.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <span>Are the calculators really free to use?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all our calculator tools are completely free to use. There are no hidden fees, subscriptions, or registration requirements. We support the site through advertising, but the calculators themselves remain free for everyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <span>Do I need to create an account to use the calculators?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, you don't need to create an account or provide any personal information to use our calculators. They work immediately upon visiting our website.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <span>Can I use CalcTools Pro on my mobile device?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our website is fully responsive and works perfectly on all devices including smartphones, tablets, and desktop computers. The calculators are optimized for touch screens and mobile browsing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Usage Questions -->
+                <div class="faq-category" id="usage">
+                    <h3>Usage & Features</h3>
+                    
+                    <div class="faq-item" data-category="usage">
+                        <div class="faq-question">
+                            <span>How accurate are the calculator results?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our calculators use standard, well-established formulas to provide accurate results. However, please note that:</p>
+                            <ul>
+                                <li>Results are estimates based on the inputs provided</li>
+                                <li>They should not replace professional financial or medical advice</li>
+                                <li>Real-world factors may affect actual outcomes</li>
+                            </ul>
+                            <p>We always recommend consulting with qualified professionals for important decisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-ccategory="usage">
+                        <div class="faq-question">
+                            <span>Can I save my calculations?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, our calculators don't have a built-in save function since all calculations happen locally in your browser. However, you can:</p>
+                            <ul>
+                                <li>Bookmark the page with your inputs (values remain in form fields)</li>
+                                <li>Take a screenshot of your results</li>
+                                <li>Copy and paste the results into a document</li>
+                            </ul>
+                            <p>We're considering adding save features in future updates.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="usage">
+                        <div class="faq-question">
+                            <span>Do you plan to add more calculator tools?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we're continuously working to expand our collection of calculator tools. We welcome suggestions from our users - if there's a specific calculator you'd like to see, please contact us with your idea!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="usage">
+                        <div class="faq-question">
+                            <span>Can I use these calculators for business purposes?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can use our calculators for both personal and business purposes. However, please review our Terms of Service for specific usage guidelines. Remember that results are estimates and should be verified for critical business decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Privacy & Security Questions -->
+                <div class="faq-category" id="privacy">
+                    <h3>Privacy & Security</h3>
+                    
+                    <div class="faq-item" data-category="privacy">
+                        <div class="faq-question">
+                            <span>Is my data safe when using your calculators?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, your data is completely safe. Here's why:</p>
+                            <ul>
+                                <li>All calculations happen locally in your browser - no data is sent to our servers</li>
+                                <li>We don't store any of the numbers or information you enter</li>
+                                <li>We use secure HTTPS encryption for all page loads</li>
+                                <li>We don't require registration or personal information</li>
+                            </ul>
+                            <p>Your privacy is our priority. For more details, please see our Privacy Policy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="privacy">
+                        <div class="faq-question">
+                            <span>Do you use cookies on your website?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We use a minimal number of cookies for essential functions and analytics. These help us:</p>
+                            <ul>
+                                <li>Remember your preferences (like dark mode if implemented)</li>
+                                <li>Understand how visitors use our site to improve it</li>
+                                <li>Display relevant advertisements through Google AdSense</li>
+                            </ul>
+                            <p>Calculator functions themselves don't use cookies. You can manage your cookie preferences through our Cookie Policy page.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="privacy">
+                        <div class="faq-question">
+                            <span>Do you sell my data to third parties?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, we do not and will never sell your personal data to third parties. Since we don't collect personal information through our calculators, there's nothing to sell. We're committed to protecting your privacy.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Questions -->
+                <div class="faq-category" id="technical">
+                    <h3>Technical Issues</h3>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <span>The calculator isn't working properly. What should I do?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you're experiencing issues with a calculator, try these troubleshooting steps:</p>
+                            <ol>
+                                <li>Refresh the page and try again</li>
+                                <li>Check that you've entered valid numbers in all required fields</li>
+                                <li>Try using a different web browser</li>
+                                <li>Clear your browser cache and cookies</li>
+                                <li>Ensure JavaScript is enabled in your browser</li>
+                            </ol>
+                            <p>If the problem persists, please contact us with details about the issue.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <span>Why do I see advertisements on the site?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CalcTools Pro is free to use, and advertising helps us cover the costs of hosting, development, and maintenance. The ads allow us to keep the calculators free for everyone without requiring subscriptions or fees.</p>
+                            <p>We strive to keep advertisements unobtrusive and relevant. If you have concerns about specific ads, please let us know.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <span>Can I embed your calculators on my website?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, we don't offer an embedding feature. Our calculators are designed to be used directly on our website. If you're interested in partnership or licensing options, please contact us to discuss possibilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <span>Do you have an API for developers?</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We don't currently offer a public API for our calculators. However, we're exploring this possibility for future development. If you're a developer interested in collaboration, please reach out to us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>If you couldn't find the answer you were looking for, our support team is here to help.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>CalcTools Pro</h3>
+                    <p>Professional calculators for all your financial and health needs.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="index.html#bmi-calculator">BMI Calculator</a></li>
+                        <li><a href="index.html#percentage-calculator">Percentage Calculator</a></li>
+                        <li><a href="index.html#loan-calculator">Loan Calculator</a></li>
+                        <li><a href="index.html#tip-calculator">Tip Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 CalcTools Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // FAQ Category Filtering
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide FAQ items based on category
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide category headings
+                document.querySelectorAll('.faq-category').forEach(cat => {
+                    if (category === 'all' || cat.id === category) {
+                        cat.style.display = 'block';
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // FAQ Search Functionality
+        document.getElementById('faqSearch').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                // Show all items if search term is too short
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.style.display = 'block';
+                });
+                document.querySelectorAll('.faq-category').forEach(cat => {
+                    cat.style.display = 'block';
+                });
+                return;
+            }
+            
+            // Search through questions and answers
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Expand matching items
+                    item.classList.add('active');
+                    item.querySelector('.faq-answer').classList.add('active');
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide category headings based on visible items
+            document.querySelectorAll('.faq-category').forEach(cat => {
+                const hasVisibleItems = Array.from(cat.querySelectorAll('.faq-item')).some(item => {
+                    return item.style.display !== 'none';
+                });
+                
+                if (hasVisibleItems) {
+                    cat.style.display = 'block';
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        });
+
+        // Auto-expand FAQ item if URL contains hash
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement && targetElement.classList.contains('faq-item')) {
+                    targetElement.classList.add('active');
+                    targetElement.querySelector('.faq-answer').classList.add('active');
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
