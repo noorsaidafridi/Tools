@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcHub - 120+ Free Online Calculators | Health, Finance, Math & More</title>
+    <meta name="description" content="Free online calculators for health, finance, math, conversions, and everyday calculations. 120+ accurate calculators with no registration required. BMI, mortgage, loan, percentage calculators and more.">
+    <meta name="keywords" content="calculator, BMI calculator, mortgage calculator, loan calculator, percentage calculator, health calculator, finance calculator, math calculator, conversion calculator">
+    <meta name="author" content="CalcHub">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="CalcHub - 120+ Free Online Calculators">
+    <meta property="og:description" content="Free online calculators for health, finance, math, conversions, and everyday calculations.">
+    <meta property="og:type" content="website">
+    
+    <!-- AdSense Script (Replace with your own publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --gray: #7f8c8d;
+            --dark: #2c3e50;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .search-bar {
+            display: flex;
+            background: var(--light);
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        
+        .search-bar input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            outline: none;
+            padding: 0 10px;
+        }
+        
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+        
+        /* AdSense Banner */
+        .ad-banner {
+            background: white;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            max-width: 728px;
+        }
+        
+        .ad-label {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+        
+        /* Category Sections */
+        .category-section {
+            margin: 60px 0;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .category-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .category-header h2 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .calculator-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .calculator-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calculator-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 18px;
+        }
+        
+        .calculator-card p {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .calculator-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* In-content Ad */
+        .in-content-ad {
+            margin: 40px auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 28px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* Quick Stats */
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-card {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+            }
+            
+            .calculators-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ad-banner, .in-content-ad {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">C</div>
+                    <div class="logo-text">Calc<span>Hub</span></div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#health">Health</a></li>
+                        <li><a href="#finance">Finance</a></li>
+                        <li><a href="#math">Math</a></li>
+                        <li><a href="#conversion">Conversion</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button>🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>120+ Free Online Calculators</h1>
+            <p>Access our comprehensive collection of calculators for health, finance, math, science, and everyday life. Fast, accurate, and completely free.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Browse All Calculators</button>
+                <button class="btn btn-secondary">Most Popular</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <div class="container">
+        <div class="ad-banner">
+            <div class="ad-label">Advertisement</div>
+            <!-- AdSense Code -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Calculators</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free to Use</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Home</a> > <span>All Calculators</span>
+        </div>
+    </div>
+
+    <!-- Health & Fitness Category -->
+    <section id="health" class="category-section">
+        <div class="category-header">
+            <div class="category-icon">❤️</div>
+            <h2>Health & Fitness Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>BMI Calculator</h3>
+                    <p>Calculate your Body Mass Index to determine if you're at a healthy weight.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Calorie Calculator</h3>
+                    <p>Determine your daily calorie needs based on your activity level.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Body Fat Percentage</h3>
+                    <p>Estimate your body fat percentage using various measurement methods.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Ideal Weight Calculator</h3>
+                    <p>Find your healthy weight range based on your height and body frame.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Heart Rate Calculator</h3>
+                    <p>Calculate your target heart rate zones for effective exercise training.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Running Pace Calculator</h3>
+                    <p>Determine your running pace for various distances and time goals.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Water Intake Calculator</h3>
+                    <p>Calculate how much water you should drink daily for optimal hydration.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Pregnancy Calculator</h3>
+                    <p>Estimate your due date and track pregnancy milestones.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Macronutrient Calculator</h3>
+                    <p>Calculate your ideal macronutrient ratios for your fitness goals.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>TDEE Calculator</h3>
+                    <p>Calculate your Total Daily Energy Expenditure for weight management.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Blood Alcohol Content</h3>
+                    <p>Estimate your blood alcohol concentration based on drinks consumed.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Sleep Calculator</h3>
+                    <p>Determine optimal sleep times based on sleep cycles.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-content Ad -->
+    <div class="container">
+        <div class="in-content-ad">
+            <div class="ad-label">Advertisement</div>
+            <!-- AdSense Code -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Financial Calculators -->
+    <section id="finance" class="category-section">
+        <div class="category-header">
+            <div class="category-icon">💰</div>
+            <h2>Financial Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Mortgage Calculator</h3>
+                    <p>Estimate your monthly mortgage payments based on loan amount and interest.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Loan Calculator</h3>
+                    <p>Calculate monthly payments and total interest for personal loans.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Investment Calculator</h3>
+                    <p>Project the future value of your investments with compound interest.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Retirement Calculator</h3>
+                    <p>Determine how much you need to save for a comfortable retirement.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Tax Calculator</h3>
+                    <p>Estimate your income tax liability based on your earnings.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Credit Card Payoff</h3>
+                    <p>Calculate how long it will take to pay off credit card debt.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Savings Goal Calculator</h3>
+                    <p>Determine how much to save regularly to reach your financial goals.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Currency Converter</h3>
+                    <p>Convert between different world currencies with exchange rates.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Compound Interest Calculator</h3>
+                    <p>Calculate how your investments can grow with compound interest.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Debt-to-Income Ratio</h3>
+                    <p>Calculate your debt-to-income ratio for loan qualification.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Net Worth Calculator</h3>
+                    <p>Calculate your personal net worth by assessing assets and liabilities.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Budget Calculator</h3>
+                    <p>Create a personalized budget based on your income and expenses.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Math & Science Calculators -->
+    <section id="math" class="category-section">
+        <div class="category-header">
+            <div class="category-icon">🧮</div>
+            <h2>Math & Science Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Percentage Calculator</h3>
+                    <p>Calculate percentages, percentage changes, and differences easily.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Area Calculator</h3>
+                    <p>Calculate the area of various geometric shapes.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Volume Calculator</h3>
+                    <p>Calculate the volume of 3D shapes like cubes, cylinders, and spheres.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Algebra Calculator</h3>
+                    <p>Solve algebraic equations and simplify expressions.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Statistics Calculator</h3>
+                    <p>Calculate mean, median, mode, standard deviation, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Unit Converter</h3>
+                    <p>Convert between different units of length, weight, temperature.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Chemical Calculator</h3>
+                    <p>Calculate molar mass, balance chemical equations.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Physics Calculator</h3>
+                    <p>Solve physics problems related to motion, force, energy.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Fraction Calculator</h3>
+                    <p>Add, subtract, multiply, and divide fractions with step-by-step solutions.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Matrix Calculator</h3>
+                    <p>Perform matrix operations including addition, multiplication, and inversion.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Geometry Calculator</h3>
+                    <p>Calculate properties of geometric shapes and solve geometry problems.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Probability Calculator</h3>
+                    <p>Calculate probabilities for various distributions and events.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conversion Calculators -->
+    <section id="conversion" class="category-section">
+        <div class="category-header">
+            <div class="category-icon">🔄</div>
+            <h2>Conversion Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Length Converter</h3>
+                    <p>Convert between meters, feet, inches, centimeters, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Weight Converter</h3>
+                    <p>Convert between kilograms, pounds, ounces, grams, and stones.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Temperature Converter</h3>
+                    <p>Convert between Celsius, Fahrenheit, and Kelvin temperature scales.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Area Converter</h3>
+                    <p>Convert between square meters, square feet, acres, hectares, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Volume Converter</h3>
+                    <p>Convert between liters, gallons, cubic meters, cubic feet, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Speed Converter</h3>
+                    <p>Convert between mph, kph, meters per second, knots, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Time Converter</h3>
+                    <p>Convert between seconds, minutes, hours, days, weeks, and years.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Digital Storage Converter</h3>
+                    <p>Convert between bytes, kilobytes, megabytes, gigabytes, and terabytes.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Energy Converter</h3>
+                    <p>Convert between joules, calories, kilowatt-hours, and BTU.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Pressure Converter</h3>
+                    <p>Convert between pascals, bars, psi, atmospheres, and torr.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Power Converter</h3>
+                    <p>Convert between watts, horsepower, kilowatts, and BTU/hour.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Data Transfer Rate Converter</h3>
+                    <p>Convert between bits per second, bytes per second, and more.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Categories (Truncated for brevity) -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon">🏠</div>
+            <h2>Home & Garden Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Paint Calculator</h3>
+                    <p>Calculate how much paint you need for a room based on dimensions.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Flooring Calculator</h3>
+                    <p>Calculate how much flooring material you need for a room.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Mortgage Affordability</h3>
+                    <p>Determine how much house you can afford based on your income.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Landscaping Calculator</h3>
+                    <p>Calculate materials needed for landscaping projects.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Tile Calculator</h3>
+                    <p>Calculate how many tiles you need for floors or walls.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Energy Cost Calculator</h3>
+                    <p>Calculate the energy cost of running appliances in your home.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Concrete Calculator</h3>
+                    <p>Calculate the amount of concrete needed for your project.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Fence Calculator</h3>
+                    <p>Calculate materials needed for building a fence.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Roofing Calculator</h3>
+                    <p>Calculate materials needed for roofing projects.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Decking Calculator</h3>
+                    <p>Calculate materials needed for building a deck.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Calculators -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon">📊</div>
+            <h2>Business Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Profit Margin Calculator</h3>
+                    <p>Calculate profit margin, markup, and gross profit for products.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>ROI Calculator</h3>
+                    <p>Calculate return on investment for business projects and initiatives.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Break-Even Calculator</h3>
+                    <p>Calculate the break-even point for your business or product.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Salary Calculator</h3>
+                    <p>Convert between hourly wage and annual salary with taxes.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Depreciation Calculator</h3>
+                    <p>Calculate depreciation of assets using different methods.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Business Loan Calculator</h3>
+                    <p>Calculate payments and interest for business loans.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Payroll Calculator</h3>
+                    <p>Calculate employee payroll with taxes and deductions.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Inventory Calculator</h3>
+                    <p>Calculate inventory turnover and carrying costs.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Marketing ROI Calculator</h3>
+                    <p>Calculate return on investment for marketing campaigns.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Customer Lifetime Value</h3>
+                    <p>Calculate the lifetime value of your customers.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automotive Calculators -->
+    <section class="category-section">
+        <div class="category-header">
+            <div class="category-icon">🚗</div>
+            <h2>Automotive Calculators</h2>
+        </div>
+        <div class="container">
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <h3>Fuel Cost Calculator</h3>
+                    <p>Calculate the cost of fuel for your trip based on distance and MPG.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Car Loan Calculator</h3>
+                    <p>Calculate monthly payments and total cost for auto loans.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Lease vs Buy Calculator</h3>
+                    <p>Compare the costs of leasing versus buying a vehicle.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Gas Mileage Calculator</h3>
+                    <p>Calculate your vehicle's fuel efficiency in MPG.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Car Depreciation Calculator</h3>
+                    <p>Estimate how much your vehicle will depreciate over time.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Tire Size Calculator</h3>
+                    <p>Compare different tire sizes and their impact on speedometer readings.</p>
+                    <a href="#" class="calculator-link">Use Calculator →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Calculators?</h2>
+                <p>We provide the best calculator tools with these key features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Accurate</h3>
+                    <p>Get instant results with precise calculations every time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Use our calculators on any device - desktop, tablet, or phone.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>No Registration</h3>
+                    <p>Use all calculators without signing up or providing personal data.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Regular Updates</h3>
+                    <p>We continuously improve and add new calculators based on user needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CalcHub</h3>
+                    <p>Your one-stop destination for all calculation needs with 120+ free online calculators.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#health">Health & Fitness</a></li>
+                        <li><a href="#finance">Financial</a></li>
+                        <li><a href="#math">Math & Science</a></li>
+                        <li><a href="#conversion">Conversion Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular Calculators</h3>
+                    <ul>
+                        <li><a href="#">BMI Calculator</a></li>
+                        <li><a href="#">Mortgage Calculator</a></li>
+                        <li><a href="#">Percentage Calculator</a></li>
+                        <li><a href="#">Calorie Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 CalcHub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-bar button').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}`);
+                // In a real implementation, this would filter the calculator list
+            }
+        });
+        
+        // Make category headers clickable to expand/collapse
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const grid = this.nextElementSibling.querySelector('.calculators-grid');
+                grid.style.display = grid.style.display === 'none' ? 'grid' : 'none';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Structured Data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "CalcHub",
+            "url": "https://www.calchub.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.calchub.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            },
+            "description": "Free online calculators for health, finance, math, conversions, and everyday calculations."
+        };
+
+        // Add structured data to the page
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
