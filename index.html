@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive collection of 60+ free online tools for text, conversion, development, security, and more. All tools are mobile-friendly and easy to use.">
+    <title>All-in-One Toolbox | 60+ Free Online Tools</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #7209b7;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --text: #333333;
+            --text-light: #6c757d;
+            --border: #dee2e6;
+            --card-bg: #ffffff;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --radius: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--light);
+            padding-bottom: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 8px;
+            font-size: 1.8rem;
+        }
+
+        .search-container {
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 0 15px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(67, 97, 238, 0.9), rgba(58, 12, 163, 0.9));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .tools-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .tool-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 3px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            min-height: 80px;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            color: var(--secondary);
+            line-height: 1.3;
+        }
+
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            line-height: 1.3;
+            flex-grow: 1;
+        }
+
+        .tool-number {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.7rem;
+            margin-right: 6px;
+        }
+
+        .ads-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .ad-unit {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            margin: 8px auto;
+            max-width: 728px;
+            border-radius: var(--radius);
+        }
+
+        .mobile-ad {
+            display: none;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 0.8rem;
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-section ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.2rem;
+            border-top: 1px solid #495057;
+            margin-top: 1.2rem;
+            color: #adb5bd;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .tools-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .tools-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 60px);
+                background-color: var(--secondary);
+                transition: left 0.3s;
+                z-index: 99;
+                box-shadow: var(--shadow);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            nav ul li {
+                margin: 0 0 1rem 0;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+            }
+
+            .search-container {
+                order: 3;
+                margin: 10px 0 0;
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .desktop-ad {
+                display: none;
+            }
+
+            .mobile-ad {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            
+            .tool-card {
+                padding: 8px;
+                min-height: 70px;
+            }
+            
+            .tool-card h3 {
+                font-size: 0.8rem;
+            }
+            
+            .tool-card p {
+                font-size: 0.7rem;
+            }
+            
+            .tool-number {
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 0.65rem;
+            }
+
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🛠️</span>
+                    <span>Toolbox</span>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Search for tools...">
+                </div>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#text-tools">Text Tools</a></li>
+                        <li><a href="#conversion-tools">Conversion</a></li>
+                        <li><a href="#developer-tools">Developer</a></li>
+                        <li><a href="#security-tools">Security</a></li>
+                        <li><a href="#misc-tools">Misc</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>60+ Essential Online Tools</h1>
+            <p>Free, fast, and easy-to-use tools for text manipulation, conversion, development, security, and more.</p>
+            <a href="#text-tools" class="btn">Explore Tools</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ads-container">
+            <div class="ad-unit desktop-ad">
+                <!-- AdSense Leaderboard Ad -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="1234567890"></ins>
+            </div>
+            <div class="ad-unit mobile-ad">
+                <!-- AdSense Mobile Banner -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:320px;height:50px"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="0987654321"></ins>
+            </div>
+        </div>
+
+        <section id="text-tools" class="tools-section">
+            <h2 class="section-title"><span class="section-icon">📝</span> Text & Writing Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><span class="tool-number">1</span> Word Counter</h3>
+                    <p>Count words, characters, sentences, and paragraphs.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">2</span> Character Counter</h3>
+                    <p>Count characters with and without spaces.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">3</span> Case Converter</h3>
+                    <p>Convert text between uppercase, lowercase, title case.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">4</span> Remove Extra Spaces</h3>
+                    <p>Clean up text by removing unnecessary spaces.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">5</span> Sentence Capitalizer</h3>
+                    <p>Capitalize the first letter of each sentence.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">6</span> Lorem Ipsum Generator</h3>
+                    <p>Generate placeholder text for designs.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">7</span> Word Frequency Counter</h3>
+                    <p>Find the most frequently used words.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">8</span> Text Reverser</h3>
+                    <p>Reverse the order of characters in text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">9</span> Sort Lines Alphabetically</h3>
+                    <p>Sort lines of text in alphabetical order.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">10</span> Remove Duplicate Lines</h3>
+                    <p>Remove duplicate lines from text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">11</span> Text Case Randomizer</h3>
+                    <p>Randomize the case of letters in text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">12</span> Find & Replace Tool</h3>
+                    <p>Find and replace text within content.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">13</span> Reading Time Estimator</h3>
+                    <p>Estimate reading time for text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">14</span> Count Vowels & Consonants</h3>
+                    <p>Count vowels and consonants in text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">15</span> Line & Paragraph Counter</h3>
+                    <p>Count lines and paragraphs in text.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ads-container">
+            <div class="ad-unit">
+                <!-- AdSense In-Article Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="5678901234"></ins>
+            </div>
+        </div>
+
+        <section id="conversion-tools" class="tools-section">
+            <h2 class="section-title"><span class="section-icon">💡</span> Conversion Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><span class="tool-number">16</span> Base64 Encoder / Decoder</h3>
+                    <p>Encode and decode Base64 strings.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">17</span> HEX ⇄ RGB Converter</h3>
+                    <p>Convert between HEX and RGB color values.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">18</span> Binary ↔ ASCII Converter</h3>
+                    <p>Convert between binary and ASCII text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">19</span> Base Converter</h3>
+                    <p>Convert numbers between different bases.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">20</span> URL Encoder / Decoder</h3>
+                    <p>Encode and decode URL strings.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">21</span> JSON → CSV Converter</h3>
+                    <p>Convert JSON data to CSV format.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">22</span> CSV → JSON Converter</h3>
+                    <p>Convert CSV data to JSON format.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">23</span> HTML Escape / Unescape</h3>
+                    <p>Escape and unescape HTML entities.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">24</span> Markdown → HTML Converter</h3>
+                    <p>Convert Markdown text to HTML.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">25</span> Text → HTML Formatter</h3>
+                    <p>Format plain text into HTML.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">26</span> HTML → Text Extractor</h3>
+                    <p>Extract plain text from HTML code.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">27</span> Slugify / Unslugify Tool</h3>
+                    <p>Convert text to URL-friendly slugs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="developer-tools" class="tools-section">
+            <h2 class="section-title"><span class="section-icon">🧠</span> Developer Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><span class="tool-number">28</span> JSON Formatter / Validator</h3>
+                    <p>Format and validate JSON code.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">29</span> Regex Tester</h3>
+                    <p>Test and debug regular expressions.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">30</span> HTML Minifier</h3>
+                    <p>Minify HTML code by removing unnecessary characters.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">31</span> CSS Minifier</h3>
+                    <p>Minify CSS code to reduce file size.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">32</span> JavaScript Minifier</h3>
+                    <p>Minify JavaScript code for production.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">33</span> Text Diff Checker</h3>
+                    <p>Compare two texts and highlight differences.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">34</span> Query String Builder</h3>
+                    <p>Build and parse URL query strings.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">35</span> UUID v4 Generator</h3>
+                    <p>Generate random UUID v4 identifiers.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">36</span> Timestamp Converter</h3>
+                    <p>Convert between timestamps and dates.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">37</span> Local Storage Viewer</h3>
+                    <p>View and edit browser local storage.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">38</span> Color Picker</h3>
+                    <p>Select colors and get their values.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">39</span> Color Palette Generator</h3>
+                    <p>Generate harmonious color palettes.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">40</span> Color Shades Generator</h3>
+                    <p>Generate shades of a base color.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ads-container">
+            <div class="ad-unit">
+                <!-- AdSense In-Feed Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-gw-3+1f-3d+2z"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="4567890123"></ins>
+            </div>
+        </div>
+
+        <section id="security-tools" class="tools-section">
+            <h2 class="section-title"><span class="section-icon">🔐</span> Security & Utility Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><span class="tool-number">41</span> Random Password Generator</h3>
+                    <p>Generate secure random passwords.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">42</span> Password Strength Tester</h3>
+                    <p>Test the strength of passwords.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">43</span> Text Encryption / Decryption</h3>
+                    <p>Encrypt and decrypt text using ciphers.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">44</span> Random Username Generator</h3>
+                    <p>Generate random usernames.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">45</span> Random Number Generator</h3>
+                    <p>Generate random numbers in a range.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">46</span> Clipboard Text Utility</h3>
+                    <p>Manage clipboard content.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">47</span> Password Reveal / Copy Helper</h3>
+                    <p>Reveal hidden passwords.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">48</span> Text to Hash (MD5 / SHA1)</h3>
+                    <p>Generate hash values from text.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">49</span> File to Base64 Converter</h3>
+                    <p>Convert files to Base64 encoding.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">50</span> Text Splitter & Merger</h3>
+                    <p>Split text or merge multiple texts.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="misc-tools" class="tools-section">
+            <h2 class="section-title"><span class="section-icon">🎨</span> Miscellaneous Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3><span class="tool-number">51</span> QR Code Generator</h3>
+                    <p>Generate QR codes from text or URLs.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">52</span> Barcode Generator</h3>
+                    <p>Generate barcodes from numeric data.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">53</span> Roman ↔ Decimal Converter</h3>
+                    <p>Convert between Roman and decimal numbers.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">54</span> Ordinal Suffix Generator</h3>
+                    <p>Add ordinal suffixes to numbers.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">55</span> Palindrome Checker</h3>
+                    <p>Check if text is a palindrome.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">56</span> Anagram Checker</h3>
+                    <p>Check if words are anagrams.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">57</span> Reading Level Analyzer</h3>
+                    <p>Determine text reading difficulty.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">58</span> Character Set Detector</h3>
+                    <p>Detect text character encoding.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">59</span> Text Duplicator</h3>
+                    <p>Duplicate text multiple times.</p>
+                </div>
+                <div class="tool-card">
+                    <h3><span class="tool-number">60</span> Random Choice Picker</h3>
+                    <p>Pick random item from a list.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ads-container">
+            <div class="ad-unit">
+                <!-- AdSense Display Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="9876543210"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>All-in-One Toolbox</h3>
+                    <p>Your comprehensive collection of free online tools for text manipulation, conversion, development, and more.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#text-tools">Text Tools</a></li>
+                        <li><a href="#conversion-tools">Conversion Tools</a></li>
+                        <li><a href="#developer-tools">Developer Tools</a></li>
+                        <li><a href="#security-tools">Security Tools</a></li>
+                        <li><a href="#misc-tools">Miscellaneous Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul>
+                        <li><a href="#">Word Counter</a></li>
+                        <li><a href="#">JSON Formatter</a></li>
+                        <li><a href="#">Password Generator</a></li>
+                        <li><a href="#">Base64 Encoder</a></li>
+                        <li><a href="#">QR Code Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 All-in-One Toolbox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-box').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                const toolName = card.querySelector('h3').textContent.toLowerCase();
+                if (toolName.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize AdSense (placeholder)
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
