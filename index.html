@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Tool Kit - Professional Online Tools</title>
+  <meta name="description" content="Explore 60 free, in-browser tools for text, conversion, development, security, and more at Mega Tool Kit. Professional, fast, and user-friendly.">
+  <meta property="og:title" content="Mega Tool Kit - Professional Online Tools">
+  <meta property="og:description" content="Access 60 powerful in-browser tools for all your professional needs.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://megatoolkit.com/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7c3aed;
+      --accent: #06b6d4;
+      --dark: #1e293b;
+      --dark-light: #334155;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #cbd5e1;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+      --radius: 12px;
+      --radius-sm: 6px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .logo-text {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .tagline {
+      font-size: 1.125rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.9;
+    }
+
+    .search-container {
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      color: white;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .search-input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--dark-light);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--dark);
+      cursor: pointer;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 2rem 0;
+    }
+
+    .welcome-section {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .welcome-section h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .welcome-section p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+
+    .category-grid {
+      margin-bottom: 3rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .category-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .category-header h2 i {
+      color: var(--primary);
+    }
+
+    .tool-count {
+      background: var(--primary);
+      color: white;
+      border-radius: 100px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(37, 99, 235, 0.1);
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+      transform: scaleY(0);
+      transition: var(--transition);
+    }
+
+    .tool-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .tool-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .tool-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .tool-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tool-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--secondary);
+      border-radius: 100px;
+    }
+
+    .ad-slot {
+      background: #f1f5f9;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    #in-content-ad {
+      height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .copyright {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+    }
+
+    .footer-bottom-links a:hover {
+      color: white;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 1000;
+      padding: 2rem;
+      transform: translateX(-100%);
+      transition: var(--transition);
+      overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--dark);
+      cursor: pointer;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+    }
+
+    .mobile-nav-links li {
+      margin-bottom: 1rem;
+    }
+
+    .mobile-nav-links a {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--dark);
+      display: block;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        justify-content: center;
+      }
+      
+      .logo-text {
+        font-size: 1.75rem;
+      }
+      
+      .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">Mega Tool Kit</div>
+        </div>
+        <p class="tagline">60+ professional tools for text processing, conversions, development, and more</p>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search for tools...">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/about">About</a></li>
+          <li><a href="#/contact">Contact</a></li>
+          <li><a href="#/privacy-policy">Privacy Policy</a></li>
+          <li><a href="#/terms-of-use">Terms of Use</a></li>
+          <li><a href="#/cookie-policy">Cookie Policy</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <div class="logo">
+        <div class="logo-icon">M</div>
+        <div class="logo-text">Mega Tool Kit</div>
+      </div>
+      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/contact">Contact</a></li>
+      <li><a href="#/privacy-policy">Privacy Policy</a></li>
+      <li><a href="#/terms-of-use">Terms of Use</a></li>
+      <li><a href="#/cookie-policy">Cookie Policy</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <main class="main-content" id="content">
+      <!-- Welcome section -->
+      <section class="welcome-section fade-in">
+        <h1>Welcome to Mega Tool Kit</h1>
+        <p>Access 60+ professional, in-browser tools designed for text processing, conversions, development, security, and more. Fast, reliable, and built for your workflow.</p>
+        
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">Professional Tools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free to Use</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Data Uploaded</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- In-content ad -->
+      <div class="ad-slot" id="in-content-ad">
+        In-Content Ad Placeholder
+      </div>
+
+      <!-- Text & Writing Tools -->
+      <section class="category-grid">
+        <div class="category-header">
+          <h2><i>📝</i> Text & Writing Tools <span class="tool-count">15 Tools</span></h2>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <h3>Word Counter</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Words</span>
+              <span class="tool-tag">Count</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔤</div>
+            <h3>Character Counter</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Characters</span>
+              <span class="tool-tag">Count</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔄</div>
+            <h3>Case Converter</h3>
+            <div class="tool-label">Text Formatting</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Case</span>
+              <span class="tool-tag">Format</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🧹</div>
+            <h3>Remove Extra Spaces</h3>
+            <div class="tool-label">Text Cleaning</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Spaces</span>
+              <span class="tool-tag">Clean</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔠</div>
+            <h3>Sentence Capitalizer</h3>
+            <div class="tool-label">Text Formatting</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Capitalize</span>
+              <span class="tool-tag">Sentences</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📄</div>
+            <h3>Lorem Ipsum Generator</h3>
+            <div class="tool-label">Content Generation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Placeholder</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📈</div>
+            <h3>Word Frequency Counter</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Frequency</span>
+              <span class="tool-tag">Analysis</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">↩️</div>
+            <h3>Text Reverser</h3>
+            <div class="tool-label">Text Manipulation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Reverse</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔠</div>
+            <h3>Sort Lines Alphabetically</h3>
+            <div class="tool-label">Text Organization</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Sort</span>
+              <span class="tool-tag">Alphabetical</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">❌</div>
+            <h3>Remove Duplicate Lines</h3>
+            <div class="tool-label">Text Cleaning</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Duplicate</span>
+              <span class="tool-tag">Clean</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎲</div>
+            <h3>Text Case Randomizer</h3>
+            <div class="tool-label">Text Formatting</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Random</span>
+              <span class="tool-tag">Case</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔍</div>
+            <h3>Find & Replace Tool</h3>
+            <div class="tool-label">Text Editing</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Find</span>
+              <span class="tool-tag">Replace</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">⏱️</div>
+            <h3>Reading Time Estimator</h3>
+            <div class="tool-label">Content Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Reading</span>
+              <span class="tool-tag">Time</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔊</div>
+            <h3>Count Vowels & Consonants</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Vowels</span>
+              <span class="tool-tag">Consonants</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📏</div>
+            <h3>Line & Paragraph Counter</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Lines</span>
+              <span class="tool-tag">Paragraphs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conversion Tools -->
+      <section class="category-grid">
+        <div class="category-header">
+          <h2><i>🔄</i> Conversion Tools <span class="tool-count">12 Tools</span></h2>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">🔒</div>
+            <h3>Base64 Encoder / Decoder</h3>
+            <div class="tool-label">Data Encoding</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Base64</span>
+              <span class="tool-tag">Encode</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎨</div>
+            <h3>HEX ⇄ RGB Converter</h3>
+            <div class="tool-label">Color Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">HEX</span>
+              <span class="tool-tag">RGB</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">💻</div>
+            <h3>Binary ↔ ASCII Converter</h3>
+            <div class="tool-label">Data Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Binary</span>
+              <span class="tool-tag">ASCII</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔢</div>
+            <h3>Base Converter</h3>
+            <div class="tool-label">Number Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Base</span>
+              <span class="tool-tag">Numbers</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🌐</div>
+            <h3>URL Encoder / Decoder</h3>
+            <div class="tool-label">Web Encoding</div>
+            <div class="tool-tags">
+              <span class="tool-tag">URL</span>
+              <span class="tool-tag">Encode</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <h3>JSON → CSV Converter</h3>
+            <div class="tool-label">Data Format</div>
+            <div class="tool-tags">
+              <span class="tool-tag">JSON</span>
+              <span class="tool-tag">CSV</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📋</div>
+            <h3>CSV → JSON Converter</h3>
+            <div class="tool-label">Data Format</div>
+            <div class="tool-tags">
+              <span class="tool-tag">CSV</span>
+              <span class="tool-tag">JSON</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔍</div>
+            <h3>HTML Escape / Unescape</h3>
+            <div class="tool-label">Web Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">HTML</span>
+              <span class="tool-tag">Escape</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📝</div>
+            <h3>Markdown → HTML Converter</h3>
+            <div class="tool-label">Content Format</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Markdown</span>
+              <span class="tool-tag">HTML</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📄</div>
+            <h3>Text → HTML Formatter</h3>
+            <div class="tool-label">Web Format</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Text</span>
+              <span class="tool-tag">HTML</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📃</div>
+            <h3>HTML → Text Extractor</h3>
+            <div class="tool-label">Content Extraction</div>
+            <div class="tool-tags">
+              <span class="tool-tag">HTML</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔗</div>
+            <h3>Slugify / Unslugify Tool</h3>
+            <div class="tool-label">URL Format</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Slug</span>
+              <span class="tool-tag">URL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Developer Tools -->
+      <section class="category-grid">
+        <div class="category-header">
+          <h2><i>⚙️</i> Developer Tools <span class="tool-count">13 Tools</span></h2>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">📋</div>
+            <h3>JSON Formatter / Validator</h3>
+            <div class="tool-label">Data Validation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">JSON</span>
+              <span class="tool-tag">Format</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔍</div>
+            <h3>Regex Tester</h3>
+            <div class="tool-label">Pattern Testing</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Regex</span>
+              <span class="tool-tag">Test</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📄</div>
+            <h3>HTML Minifier</h3>
+            <div class="tool-label">Code Optimization</div>
+            <div class="tool-tags">
+              <span class="tool-tag">HTML</span>
+              <span class="tool-tag">Minify</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎨</div>
+            <h3>CSS Minifier</h3>
+            <div class="tool-label">Code Optimization</div>
+            <div class="tool-tags">
+              <span class="tool-tag">CSS</span>
+              <span class="tool-tag">Minify</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📜</div>
+            <h3>JavaScript Minifier</h3>
+            <div class="tool-label">Code Optimization</div>
+            <div class="tool-tags">
+              <span class="tool-tag">JavaScript</span>
+              <span class="tool-tag">Minify</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <h3>Text Diff Checker</h3>
+            <div class="tool-label">Text Comparison</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Diff</span>
+              <span class="tool-tag">Compare</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔗</div>
+            <h3>Query String Builder / Parser</h3>
+            <div class="tool-label">URL Manipulation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Query</span>
+              <span class="tool-tag">URL</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🆔</div>
+            <h3>UUID v4 Generator</h3>
+            <div class="tool-label">ID Generation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">UUID</span>
+              <span class="tool-tag">Generate</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">⏰</div>
+            <h3>Timestamp Converter</h3>
+            <div class="tool-label">Time Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Time</span>
+              <span class="tool-tag">Convert</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">💾</div>
+            <h3>Local Storage Viewer / Editor</h3>
+            <div class="tool-label">Browser Development</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Storage</span>
+              <span class="tool-tag">Browser</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎨</div>
+            <h3>Color Picker</h3>
+            <div class="tool-label">Design Tool</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Color</span>
+              <span class="tool-tag">Picker</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🌈</div>
+            <h3>Color Palette Generator</h3>
+            <div class="tool-label">Design Tool</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Color</span>
+              <span class="tool-tag">Palette</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎨</div>
+            <h3>Color Shades Generator</h3>
+            <div class="tool-label">Design Tool</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Color</span>
+              <span class="tool-tag">Shades</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security & Utility Tools -->
+      <section class="category-grid">
+        <div class="category-header">
+          <h2><i>🔒</i> Security & Utility Tools <span class="tool-count">10 Tools</span></h2>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">🔑</div>
+            <h3>Random Password Generator</h3>
+            <div class="tool-label">Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Password</span>
+              <span class="tool-tag">Generate</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🛡️</div>
+            <h3>Password Strength Tester</h3>
+            <div class="tool-label">Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Password</span>
+              <span class="tool-tag">Strength</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔐</div>
+            <h3>Text Encryption / Decryption</h3>
+            <div class="tool-label">Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Encryption</span>
+              <span class="tool-tag">Security</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">👤</div>
+            <h3>Random Username Generator</h3>
+            <div class="tool-label">Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Username</span>
+              <span class="tool-tag">Generate</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎲</div>
+            <h3>Random Number Generator</h3>
+            <div class="tool-label">Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Number</span>
+              <span class="tool-tag">Random</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📋</div>
+            <h3>Clipboard Text Utility</h3>
+            <div class="tool-label">Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Clipboard</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">👁️</div>
+            <h3>Password Reveal / Copy Helper</h3>
+            <div class="tool-label">Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Password</span>
+              <span class="tool-tag">Reveal</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔏</div>
+            <h3>Text to Hash</h3>
+            <div class="tool-label">Security</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Hash</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📁</div>
+            <h3>File to Base64 Converter</h3>
+            <div class="tool-label">File Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">File</span>
+              <span class="tool-tag">Base64</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">✂️</div>
+            <h3>Text Splitter & Merger</h3>
+            <div class="tool-label">Text Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Split</span>
+              <span class="tool-tag">Merge</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Miscellaneous Tools -->
+      <section class="category-grid">
+        <div class="category-header">
+          <h2><i>🔧</i> Miscellaneous Tools <span class="tool-count">10 Tools</span></h2>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">📱</div>
+            <h3>QR Code Generator</h3>
+            <div class="tool-label">Code Generation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">QR Code</span>
+              <span class="tool-tag">Generate</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <h3>Barcode Generator</h3>
+            <div class="tool-label">Code Generation</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Barcode</span>
+              <span class="tool-tag">Generate</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔢</div>
+            <h3>Roman ↔ Decimal Converter</h3>
+            <div class="tool-label">Number Conversion</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Roman</span>
+              <span class="tool-tag">Decimal</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">1️⃣</div>
+            <h3>Ordinal Suffix Generator</h3>
+            <div class="tool-label">Text Formatting</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Ordinal</span>
+              <span class="tool-tag">Suffix</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔄</div>
+            <h3>Palindrome Checker</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Palindrome</span>
+              <span class="tool-tag">Check</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔀</div>
+            <h3>Anagram Checker</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Anagram</span>
+              <span class="tool-tag">Check</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📚</div>
+            <h3>Reading Level Analyzer</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Reading</span>
+              <span class="tool-tag">Level</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🔠</div>
+            <h3>Character Set Detector</h3>
+            <div class="tool-label">Text Analysis</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Character</span>
+              <span class="tool-tag">Set</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📝</div>
+            <h3>Text Duplicator</h3>
+            <div class="tool-label">Text Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Duplicate</span>
+              <span class="tool-tag">Text</span>
+            </div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🎯</div>
+            <h3>Random Choice Picker</h3>
+            <div class="tool-label">Utility</div>
+            <div class="tool-tags">
+              <span class="tool-tag">Random</span>
+              <span class="tool-tag">Choice</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Mega Tool Kit</h3>
+          <ul class="footer-links">
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/contact">Contact</a></li>
+            <li><a href="#/tools">All Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="#text-tools">Text & Writing</a></li>
+            <li><a href="#conversion-tools">Conversion Tools</a></li>
+            <li><a href="#developer-tools">Developer Tools</a></li>
+            <li><a href="#security-tools">Security & Utility</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="#/help">Help Center</a></li>
+            <li><a href="#/faq">FAQ</a></li>
+            <li><a href="#/feedback">Feedback</a></li>
+            <li><a href="#/suggest-tool">Suggest a Tool</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#/privacy-policy">Privacy Policy</a></li>
+            <li><a href="#/terms-of-use">Terms of Use</a></li>
+            <li><a href="#/cookie-policy">Cookie Policy</a></li>
+            <li><a href="#/disclaimer">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">© 2025 Mega Tool Kit. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#/privacy-policy">Privacy</a>
+          <a href="#/terms-of-use">Terms</a>
+          <a href="#/cookie-policy">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu functionality
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const toolCards = document.querySelectorAll('.tool-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      toolCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const label = card.querySelector('.tool-label').textContent.toLowerCase();
+        const tags = Array.from(card.querySelectorAll('.tool-tag')).map(tag => tag.textContent.toLowerCase());
+        
+        const matches = title.includes(searchTerm) || 
+                       label.includes(searchTerm) || 
+                       tags.some(tag => tag.includes(searchTerm));
+        
+        card.style.display = matches ? 'block' : 'none';
+      });
+    });
+
+    // Tool navigation
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.tool-card')) {
+        const toolCard = e.target.closest('.tool-card');
+        const toolTitle = toolCard.querySelector('h3').textContent;
+        alert(`Loading tool: ${toolTitle}\n\nIn a complete implementation, this would navigate to the specific tool interface.`);
+        
+        // In a real implementation, this would navigate to the tool
+        // window.location.hash = `#/${toolId}`;
+      }
+    });
+  </script>
+</body>
+</html>
