@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Remove Duplicate Lines tool - Clean text by removing duplicate lines instantly. Perfect for data cleaning, code optimization, and content organization.">
+    <meta name="keywords" content="remove duplicate lines, duplicate line remover, text cleaner, data deduplication, unique lines, text processing tools">
+    <title>Remove Duplicate Lines Tool | Clean Text Instantly | Mega Tool Kit</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4bb543;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .breadcrumb {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Page Layout */
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin: 2rem 0;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Tool Container */
+        .tool-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .tool-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .tool-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        /* Text Areas */
+        .text-areas-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .text-input-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .text-input-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .text-area {
+            width: 100%;
+            min-height: 250px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+            font-family: monospace;
+        }
+        
+        .text-area:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        /* Deduplication Options */
+        .deduplication-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .deduplication-option {
+            background: var(--light);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .deduplication-option:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .deduplication-option.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Additional Options */
+        .additional-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .option-group input {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        /* Article Info Section */
+        .article-info {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Blog Content */
+        .blog-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .blog-content h2 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--secondary);
+        }
+        
+        .blog-content h3 {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--primary);
+        }
+        
+        .blog-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .call-to-action {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Example Box */
+        .example-box {
+            background: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 1rem 0;
+        }
+        
+        .example-original {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .example-cleaned {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        /* Sidebar Ads */
+        .sidebar-ad {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: var(--gray);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 1.5rem 0;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-logo .logo {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-text {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 1rem;
+        }
+        
+        .legal-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+            }
+            
+            .text-areas-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .deduplication-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tool-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .deduplication-options, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .tool-container, .article-info, .blog-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">M</div>
+                    <div class="logo-text">Mega Tool Kit</div>
+                </div>
+                <h1>Remove Duplicate Lines Tool</h1>
+                <p>Clean your text by removing duplicate lines instantly with advanced options</p>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="text-writing-tools.html">Text & Writing Tools</a> &gt; Remove Duplicate Lines
+        </div>
+        
+        <div class="page-layout">
+            <div class="main-content">
+                <!-- Tool Section -->
+                <div class="tool-container">
+                    <h1 class="tool-title">Remove Duplicate Lines</h1>
+                    <p class="tool-description">Clean your text by removing duplicate lines. Perfect for data processing, code optimization, and content organization.</p>
+                    
+                    <div class="text-areas-container">
+                        <div class="text-input-container">
+                            <label for="textInput">Original Text:</label>
+                            <textarea id="textInput" class="text-area" placeholder="Paste your text with duplicate lines here..."></textarea>
+                        </div>
+                        
+                        <div class="text-input-container">
+                            <label for="textOutput">Cleaned Text:</label>
+                            <textarea id="textOutput" class="text-area" readonly></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="deduplication-options">
+                        <div class="deduplication-option" data-option="keepFirst">
+                            <i class="fas fa-sort-amount-down"></i>
+                            Keep First Occurrence
+                        </div>
+                        <div class="deduplication-option" data-option="keepLast">
+                            <i class="fas fa-sort-amount-up"></i>
+                            Keep Last Occurrence
+                        </div>
+                        <div class="deduplication-option" data-option="countDuplicates">
+                            <i class="fas fa-list-ol"></i>
+                            Count Duplicates
+                        </div>
+                        <div class="deduplication-option" data-option="highlightDuplicates">
+                            <i class="fas fa-highlighter"></i>
+                            Highlight Duplicates
+                        </div>
+                    </div>
+                    
+                    <div class="additional-options">
+                        <div class="option-group">
+                            <input type="checkbox" id="ignoreCase" checked>
+                            <label for="ignoreCase">Ignore Case</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="trimLines">
+                            <label for="trimLines">Trim Lines</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="ignoreEmpty">
+                            <label for="ignoreEmpty">Ignore Empty Lines</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="preserveOrder">
+                            <label for="preserveOrder">Preserve Order</label>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="originalLines">0</div>
+                            <div class="stat-label">Original Lines</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="uniqueLines">0</div>
+                            <div class="stat-label">Unique Lines</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="duplicatesFound">0</div>
+                            <div class="stat-label">Duplicates Found</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="reductionPercent">0%</div>
+                            <div class="stat-label">Reduction</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="removeDuplicatesBtn">
+                            <i class="fas fa-filter"></i> Remove Duplicates
+                        </button>
+                        <button class="btn btn-secondary" id="copyBtn">
+                            <i class="fas fa-copy"></i> Copy Cleaned Text
+                        </button>
+                        <button class="btn btn-secondary" id="clearBtn">
+                            <i class="fas fa-eraser"></i> Clear Text
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Article Info Section -->
+                <div class="article-info">
+                    <h2 class="article-title">Clean Your Data with Our Free Remove Duplicate Lines Tool</h2>
+                    <div class="blog-meta">
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>Published: October 18, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>Reading Time: 8 minutes</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-folder"></i>
+                            <span>Category: Data Tools</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-eye"></i>
+                            <span>Views: 15,328</span>
+                        </div>
+                    </div>
+                    <p>Duplicate lines in text files, data sets, or code can cause inefficiencies, errors, and confusion. Our free <strong>Remove Duplicate Lines tool</strong> helps you clean your text quickly and efficiently, saving time and improving data quality.</p>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- AdSense Banner Ad Placeholder -->
+                    AdSense Banner Ad (728x90)
+                </div>
+                
+                <!-- Blog Content -->
+                <div class="blog-container">
+                    <div class="blog-content">
+                        <h2>Why Removing Duplicate Lines is Essential</h2>
+                        <p>Duplicate lines can cause various problems across different domains. Here's why deduplication matters:</p>
+                        
+                        <ul>
+                            <li><strong>Data Accuracy:</strong> Duplicates can skew analysis results and lead to incorrect conclusions</li>
+                            <li><strong>Storage Efficiency:</strong> Removing duplicates reduces file sizes and saves storage space</li>
+                            <li><strong>Processing Speed:</strong> Clean data processes faster without redundant operations</li>
+                            <li><strong>Code Quality:</strong> Duplicate code increases maintenance complexity and bug potential</li>
+                            <li><strong>Content Quality:</strong> Duplicate content hurts SEO and user experience</li>
+                        </ul>
+                        
+                        <h2>How Our Remove Duplicate Lines Tool Works</h2>
+                        
+                        <h3>Multiple Deduplication Methods</h3>
+                        <p>Our <strong>Remove Duplicate Lines tool</strong> offers four different approaches to handle duplicates:</p>
+                        
+                        <ul>
+                            <li><strong>Keep First Occurrence:</strong> Preserves the first instance of each line and removes subsequent duplicates</li>
+                            <li><strong>Keep Last Occurrence:</strong> Removes earlier duplicates and keeps the last instance of each line</li>
+                            <li><strong>Count Duplicates:</strong> Shows how many times each line appears in the text</li>
+                            <li><strong>Highlight Duplicates:</strong> Marks duplicate lines for easy identification</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <h4>Example: Removing Duplicates from a List</h4>
+                            <p><span class="example-original">Original:</span><br>
+                            Apple<br>
+                            Banana<br>
+                            Apple<br>
+                            Cherry<br>
+                            Banana<br>
+                            Date</p>
+                            
+                            <p><span class="example-cleaned">After Removing Duplicates:</span><br>
+                            Apple<br>
+                            Banana<br>
+                            Cherry<br>
+                            Date</p>
+                        </div>
+                        
+                        <h3>Advanced Processing Options</h3>
+                        <p>Customize how the tool processes your text with these options:</p>
+                        
+                        <ul>
+                            <li><strong>Ignore Case:</strong> Treat "APPLE" and "apple" as the same line</li>
+                            <li><strong>Trim Lines:</strong> Remove extra spaces from the beginning and end of each line</li>
+                            <li><strong>Ignore Empty Lines:</strong> Skip blank lines during processing</li>
+                            <li><strong>Preserve Order:</strong> Maintain the original order of unique lines</li>
+                        </ul>
+                        
+                        <div class="call-to-action">
+                            <h3>Ready to Clean Your Text?</h3>
+                            <p>Our <strong>Remove Duplicate Lines tool</strong> is completely free and requires no registration. Clean your data, code, or content with just a few clicks.</p>
+                        </div>
+                        
+                        <h2>Practical Applications of Line Deduplication</h2>
+                        
+                        <h3>For Data Analysts and Scientists</h3>
+                        <p>Data professionals frequently need to clean datasets:</p>
+                        <ol>
+                            <li>Remove duplicate records from CSV or TSV files</li>
+                            <li>Clean log files by removing repeated entries</li>
+                            <li>Prepare data for analysis by eliminating redundancies</li>
+                            <li>Process survey responses with duplicate answers</li>
+                        </ol>
+                        
+                        <h3>For Developers and Programmers</h3>
+                        <p>Code quality benefits from deduplication:</p>
+                        <ol>
+                            <li>Remove duplicate import statements in code files</li>
+                            <li>Clean configuration files with repeated settings</li>
+                            <li>Process lists of dependencies or requirements</li>
+                            <li>Optimize code by eliminating redundant lines</li>
+                        </ol>
+                        
+                        <h2>Understanding Duplicate Detection Methods</h2>
+                        
+                        <h3>Exact Match Detection</h3>
+                        <p>The most common approach looks for identical lines:</p>
+                        <ul>
+                            <li>Compares entire lines character by character</li>
+                            <li>Can be made case-sensitive or case-insensitive</li>
+                            <li>Optionally ignores leading/trailing whitespace</li>
+                            <li>Fast and efficient for most use cases</li>
+                        </ul>
+                        
+                        <h3>Advanced Deduplication Techniques</h3>
+                        <p>For more complex needs, consider these approaches:</p>
+                        <ul>
+                            <li><strong>Fuzzy Matching:</strong> Finds similar but not identical lines</li>
+                            <li><strong>Pattern-based:</strong> Identifies duplicates based on specific patterns</li>
+                            <li><strong>Context-aware:</strong> Considers surrounding lines when detecting duplicates</li>
+                            <li><strong>Semantic Analysis:</strong> Understands meaning to identify conceptual duplicates</li>
+                        </ul>
+                        
+                        <h2>Best Practices for Effective Deduplication</h2>
+                        
+                        <h3>Preparing Your Data</h3>
+                        <p>Follow these steps for optimal results:</p>
+                        <ul>
+                            <li>Normalize your data format before deduplication</li>
+                            <li>Use the trim option to handle inconsistent spacing</li>
+                            <li>Consider case sensitivity based on your data type</li>
+                            <li>Test with a small sample before processing large files</li>
+                        </ul>
+                        
+                        <h3>Choosing the Right Strategy</h3>
+                        <p>Select the best approach for your specific needs:</p>
+                        <ul>
+                            <li>Use "Keep First" for maintaining original context</li>
+                            <li>Use "Keep Last" when the most recent data is most relevant</li>
+                            <li>Use "Count Duplicates" to analyze duplication patterns</li>
+                            <li>Use "Highlight" when you need to review before removal</li>
+                        </ul>
+                        
+                        <h2>Common Sources of Duplicate Lines</h2>
+                        
+                        <h3>Data Processing Issues</h3>
+                        <p>Duplicates often arise during data handling:</p>
+                        <ul>
+                            <li>Multiple data imports without proper checks</li>
+                            <li>Merge operations that combine overlapping datasets</li>
+                            <li>API responses with pagination overlaps</li>
+                            <li>Database queries without proper DISTINCT clauses</li>
+                        </ul>
+                        
+                        <h3>Content Creation Problems</h3>
+                        <p>Content-related duplicates come from various sources:</p>
+                        <ul>
+                            <li>Copy-paste errors during content creation</li>
+                            <li>Content management system synchronization issues</li>
+                            <li>Multiple authors working on the same content</li>
+                            <li>Template-based content with repeated sections</li>
+                        </ul>
+                        
+                        <h2>Advanced Tips for Data Cleaning</h2>
+                        
+                        <h3>Handling Large Datasets</h3>
+                        <p>When working with extensive text files:</p>
+                        <ul>
+                            <li>Process files in chunks if memory is limited</li>
+                            <li>Use the ignore empty lines option to reduce noise</li>
+                            <li>Consider splitting very large files before processing</li>
+                            <li>Save intermediate results to avoid data loss</li>
+                        </ul>
+                        
+                        <h3>Quality Assurance</h3>
+                        <p>Ensure your deduplication produces accurate results:</p>
+                        <ul>
+                            <li>Verify a sample of results manually</li>
+                            <li>Compare before and after line counts</li>
+                            <li>Check that important data hasn't been accidentally removed</li>
+                            <li>Use the highlight option to review before final removal</li>
+                        </ul>
+                        
+                        <p>Our <strong>Remove Duplicate Lines tool</strong> makes data cleaning straightforward and efficient. Whether you're working with small lists or large datasets, our tool provides the flexibility and power you need to achieve clean, duplicate-free text.</p>
+                    </div>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- AdSense In-Article Ad Placeholder -->
+                    AdSense In-Article Ad (300x250)
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x600)
+                </div>
+                
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x250)
+                </div>
+                
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x250)
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">M</div>
+                    <span>Mega Tool Kit</span>
+                </div>
+                <div class="footer-text">
+                    <p>© 2025 Mega Tool Kit | All Tools in One Place</p>
+                    <p>Fast, Simple, and Accurate Tools for Everyday Use</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                    <a href="cookies-policy.html">Cookies Policy</a>
+                    <a href="contact-us.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const textInput = document.getElementById('textInput');
+        const textOutput = document.getElementById('textOutput');
+        const deduplicationOptions = document.querySelectorAll('.deduplication-option');
+        const ignoreCase = document.getElementById('ignoreCase');
+        const trimLines = document.getElementById('trimLines');
+        const ignoreEmpty = document.getElementById('ignoreEmpty');
+        const preserveOrder = document.getElementById('preserveOrder');
+        const removeDuplicatesBtn = document.getElementById('removeDuplicatesBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const originalLines = document.getElementById('originalLines');
+        const uniqueLines = document.getElementById('uniqueLines');
+        const duplicatesFound = document.getElementById('duplicatesFound');
+        const reductionPercent = document.getElementById('reductionPercent');
+        
+        let selectedOption = 'keepFirst';
+        
+        // Deduplication functions
+        const deduplicationFunctions = {
+            keepFirst: (lines, caseSensitive, shouldTrim, shouldIgnoreEmpty, shouldPreserveOrder) => {
+                const uniqueLines = [];
+                const seen = new Set();
+                
+                for (const line of lines) {
+                    let processedLine = line;
+                    if (shouldTrim) processedLine = processedLine.trim();
+                    if (shouldIgnoreEmpty && processedLine === '') continue;
+                    
+                    const key = caseSensitive ? processedLine : processedLine.toLowerCase();
+                    
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        uniqueLines.push(shouldPreserveOrder ? line : processedLine);
+                    }
+                }
+                
+                return uniqueLines;
+            },
+            
+            keepLast: (lines, caseSensitive, shouldTrim, shouldIgnoreEmpty, shouldPreserveOrder) => {
+                const lineMap = new Map();
+                
+                lines.forEach((line, index) => {
+                    let processedLine = line;
+                    if (shouldTrim) processedLine = processedLine.trim();
+                    if (shouldIgnoreEmpty && processedLine === '') return;
+                    
+                    const key = caseSensitive ? processedLine : processedLine.toLowerCase();
+                    lineMap.set(key, { original: line, processed: processedLine, index });
+                });
+                
+                // Convert to array and sort by original position if preserving order
+                const result = Array.from(lineMap.values());
+                if (shouldPreserveOrder) {
+                    result.sort((a, b) => a.index - b.index);
+                    return result.map(item => item.original);
+                } else {
+                    return result.map(item => item.processed);
+                }
+            },
+            
+            countDuplicates: (lines, caseSensitive, shouldTrim, shouldIgnoreEmpty) => {
+                const countMap = new Map();
+                
+                lines.forEach(line => {
+                    let processedLine = line;
+                    if (shouldTrim) processedLine = processedLine.trim();
+                    if (shouldIgnoreEmpty && processedLine === '') return;
+                    
+                    const key = caseSensitive ? processedLine : processedLine.toLowerCase();
+                    countMap.set(key, (countMap.get(key) || 0) + 1);
+                });
+                
+                // Create output with counts
+                const result = [];
+                countMap.forEach((count, line) => {
+                    result.push(`${line} [${count} occurrence${count > 1 ? 's' : ''}]`);
+                });
+                
+                return result;
+            },
+            
+            highlightDuplicates: (lines, caseSensitive, shouldTrim, shouldIgnoreEmpty) => {
+                const countMap = new Map();
+                const processedLines = [];
+                
+                // First pass: count occurrences
+                lines.forEach(line => {
+                    let processedLine = line;
+                    if (shouldTrim) processedLine = processedLine.trim();
+                    
+                    const key = caseSensitive ? processedLine : processedLine.toLowerCase();
+                    countMap.set(key, (countMap.get(key) || 0) + 1);
+                    processedLines.push({ original: line, processed: processedLine, key });
+                });
+                
+                // Second pass: highlight duplicates
+                const result = [];
+                processedLines.forEach(item => {
+                    if (shouldIgnoreEmpty && item.processed === '') return;
+                    
+                    const count = countMap.get(item.key);
+                    if (count > 1) {
+                        result.push(`[DUPLICATE] ${item.original}`);
+                    } else {
+                        result.push(item.original);
+                    }
+                });
+                
+                return result;
+            }
+        };
+        
+        // Update statistics
+        function updateStats(originalLinesArray, uniqueLinesArray, duplicatesCount) {
+            const originalCount = originalLinesArray.length;
+            const uniqueCount = uniqueLinesArray.length;
+            const reduction = originalCount > 0 ? ((originalCount - uniqueCount) / originalCount * 100).toFixed(1) : 0;
+            
+            originalLines.textContent = originalCount;
+            uniqueLines.textContent = uniqueCount;
+            duplicatesFound.textContent = duplicatesCount;
+            reductionPercent.textContent = reduction + '%';
+        }
+        
+        // Remove duplicates based on selected options
+        function removeDuplicates() {
+            const lines = textInput.value.split('\n');
+            const originalLineCount = lines.length;
+            
+            // Get options
+            const caseSensitive = !ignoreCase.checked;
+            const shouldTrim = trimLines.checked;
+            const shouldIgnoreEmpty = ignoreEmpty.checked;
+            const shouldPreserveOrder = preserveOrder.checked;
+            
+            // Apply deduplication
+            const uniqueLinesArray = deduplicationFunctions[selectedOption](
+                lines, caseSensitive, shouldTrim, shouldIgnoreEmpty, shouldPreserveOrder
+            );
+            
+            // Update output
+            textOutput.value = uniqueLinesArray.join('\n');
+            
+            // Calculate duplicates count
+            let duplicatesCount = 0;
+            if (selectedOption !== 'countDuplicates' && selectedOption !== 'highlightDuplicates') {
+                duplicatesCount = originalLineCount - uniqueLinesArray.length;
+            } else {
+                // For count and highlight modes, we need to calculate differently
+                const lineSet = new Set();
+                lines.forEach(line => {
+                    let processedLine = line;
+                    if (shouldTrim) processedLine = processedLine.trim();
+                    if (shouldIgnoreEmpty && processedLine === '') return;
+                    
+                    const key = caseSensitive ? processedLine : processedLine.toLowerCase();
+                    if (lineSet.has(key)) {
+                        duplicatesCount++;
+                    } else {
+                        lineSet.add(key);
+                    }
+                });
+            }
+            
+            // Update statistics
+            updateStats(lines, uniqueLinesArray, duplicatesCount);
+        }
+        
+        // Event Listeners
+        deduplicationOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                deduplicationOptions.forEach(opt => opt.classList.remove('active'));
+                // Add active class to clicked option
+                option.classList.add('active');
+                // Set selected option
+                selectedOption = option.getAttribute('data-option');
+                
+                // If there's text, process it immediately
+                if (textInput.value.trim() !== '') {
+                    removeDuplicates();
+                }
+            });
+        });
+        
+        removeDuplicatesBtn.addEventListener('click', removeDuplicates);
+        
+        copyBtn.addEventListener('click', () => {
+            if (textOutput.value.trim() === '') {
+                alert('No cleaned text to copy. Please remove duplicates first.');
+                return;
+            }
+            
+            textOutput.select();
+            navigator.clipboard.writeText(textOutput.value)
+                .then(() => alert('Cleaned text copied to clipboard!'))
+                .catch(() => alert('Failed to copy text.'));
+        });
+        
+        clearBtn.addEventListener('click', () => {
+            textInput.value = '';
+            textOutput.value = '';
+            updateStats([], [], 0);
+        });
+        
+        // Auto-process when text changes (with slight delay for performance)
+        let typingTimer;
+        textInput.addEventListener('input', () => {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(() => {
+                if (textInput.value.trim() !== '') {
+                    removeDuplicates();
+                } else {
+                    textOutput.value = '';
+                    updateStats([], [], 0);
+                }
+            }, 500);
+        });
+        
+        // Auto-process when options change
+        [ignoreCase, trimLines, ignoreEmpty, preserveOrder].forEach(option => {
+            option.addEventListener('change', () => {
+                if (textInput.value.trim() !== '') {
+                    removeDuplicates();
+                }
+            });
+        });
+        
+        // Initialize with sample text
+        window.addEventListener('load', () => {
+            const sampleText = `Apple
+Banana
+apple
+Cherry
+banana
+Date
+Apple
+Fig
+Grape
+  Apple  
+cherry`;
+            
+            textInput.value = sampleText;
+            deduplicationOptions[0].classList.add('active');
+            removeDuplicates();
+        });
+    </script>
+</body>
+</html>
