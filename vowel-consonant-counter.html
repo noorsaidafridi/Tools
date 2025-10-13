@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Vowel & Consonant Counter - Analyze text for vowels, consonants, and other character statistics. Perfect for writers, students, and linguists.">
+    <meta name="keywords" content="vowel counter, consonant counter, text analysis, character count, linguistics">
+    <title>Vowel & Consonant Counter | Text Analysis Tool | Mega Tool Kit</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4bb543;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .breadcrumb {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Page Layout */
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin: 2rem 0;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Tool Container */
+        .tool-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .tool-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .tool-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        /* Text Area */
+        .text-input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+        
+        .text-input-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .text-area {
+            width: 100%;
+            min-height: 250px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        .text-area:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        /* Language Controls */
+        .language-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .language-control {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .language-control label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .language-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .language-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+        }
+        
+        /* Options */
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .option-group input {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Main Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Vowel/Consonant Breakdown */
+        .breakdown-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .breakdown-section {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .breakdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+        }
+        
+        .breakdown-item {
+            background: white;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .breakdown-char {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .breakdown-count {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #3a9a35;
+            transform: translateY(-2px);
+        }
+        
+        /* Highlighting */
+        .highlight-vowel {
+            background-color: #d4edda;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .highlight-consonant {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        /* Article Info Section */
+        .article-info {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Blog Content */
+        .blog-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .blog-content h2 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--secondary);
+        }
+        
+        .blog-content h3 {
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--primary);
+        }
+        
+        .blog-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .call-to-action {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Example Box */
+        .example-box {
+            background: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 1rem 0;
+        }
+        
+        /* Sidebar Ads */
+        .sidebar-ad {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: var(--gray);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 1.5rem 0;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-logo .logo {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-text {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 1rem;
+        }
+        
+        .legal-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+            }
+            
+            .breakdown-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-controls {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .options-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tool-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .options-container, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo-text {
+                font-size: 1.6rem;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .tool-container, .article-info, .blog-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo">M</div>
+                    <div class="logo-text">Mega Tool Kit</div>
+                </div>
+                <h1>Vowel & Consonant Counter</h1>
+                <p>Analyze text for vowels, consonants, and other character statistics</p>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="text-writing-tools.html">Text & Writing Tools</a> &gt; Vowel & Consonant Counter
+        </div>
+        
+        <div class="page-layout">
+            <div class="main-content">
+                <!-- Tool Section -->
+                <div class="tool-container">
+                    <h1 class="tool-title">Vowel & Consonant Counter</h1>
+                    <p class="tool-description">Analyze your text to count vowels, consonants, and other character statistics. Perfect for writers, students, and linguists.</p>
+                    
+                    <div class="text-input-container">
+                        <label for="textInput">Your Text:</label>
+                        <textarea id="textInput" class="text-area" placeholder="Paste or type your text here..."></textarea>
+                    </div>
+                    
+                    <div class="language-controls">
+                        <div class="language-control">
+                            <label for="language">Language:</label>
+                            <select id="language" class="language-select">
+                                <option value="english">English</option>
+                                <option value="spanish">Spanish</option>
+                                <option value="french">French</option>
+                                <option value="german">German</option>
+                                <option value="italian">Italian</option>
+                                <option value="portuguese">Portuguese</option>
+                            </select>
+                        </div>
+                        
+                        <div class="language-control">
+                            <label for="caseSensitive">Case Sensitivity:</label>
+                            <select id="caseSensitive" class="language-select">
+                                <option value="insensitive">Case Insensitive</option>
+                                <option value="sensitive">Case Sensitive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="options-container">
+                        <div class="option-group">
+                            <input type="checkbox" id="includeY" checked>
+                            <label for="includeY">Count 'Y' as vowel when appropriate</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="highlightText" checked>
+                            <label for="highlightText">Highlight vowels & consonants</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="showPercentages">
+                            <label for="showPercentages">Show percentages</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="ignoreSpaces">
+                            <label for="ignoreSpaces">Ignore spaces in counts</label>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="vowelCount">0</div>
+                            <div class="stat-label">Vowels</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="consonantCount">0</div>
+                            <div class="stat-label">Consonants</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="totalLetters">0</div>
+                            <div class="stat-label">Total Letters</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="vowelPercentage">0%</div>
+                            <div class="stat-label">Vowel %</div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown-container">
+                        <div class="breakdown-section">
+                            <h3 class="breakdown-title">Vowels</h3>
+                            <div class="breakdown-grid" id="vowelBreakdown">
+                                <!-- Vowel breakdown will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="breakdown-section">
+                            <h3 class="breakdown-title">Consonants</h3>
+                            <div class="breakdown-grid" id="consonantBreakdown">
+                                <!-- Consonant breakdown will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="analyzeBtn">
+                            <i class="fas fa-chart-bar"></i> Analyze Text
+                        </button>
+                        <button class="btn btn-secondary" id="copyBtn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                        <button class="btn btn-secondary" id="clearBtn">
+                            <i class="fas fa-eraser"></i> Clear Text
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Article Info Section -->
+                <div class="article-info">
+                    <h2 class="article-title">Understanding Vowels and Consonants in Text Analysis</h2>
+                    <div class="blog-meta">
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>Published: December 15, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>Reading Time: 7 minutes</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-folder"></i>
+                            <span>Category: Linguistics Tools</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-eye"></i>
+                            <span>Views: 15,328</span>
+                        </div>
+                    </div>
+                    <p>Vowel and consonant analysis provides valuable insights into text structure, readability, and linguistic patterns. Our free <strong>Vowel & Consonant Counter</strong> offers detailed statistics to help writers, students, and linguists understand the composition of their texts.</p>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- AdSense Banner Ad Placeholder -->
+                    AdSense Banner Ad (728x90)
+                </div>
+                
+                <!-- Blog Content -->
+                <div class="blog-container">
+                    <div class="blog-content">
+                        <h2>Why Analyze Vowels and Consonants?</h2>
+                        <p>Understanding the vowel-consonant ratio in text provides several benefits for different applications:</p>
+                        
+                        <ul>
+                            <li><strong>Writing Style Analysis:</strong> Different writing styles have characteristic vowel-consonant patterns</li>
+                            <li><strong>Readability Assessment:</strong> Texts with balanced vowel-consonant ratios are often more readable</li>
+                            <li><strong>Language Learning:</strong> Helps language learners understand phonetic patterns</li>
+                            <li><strong>Poetry and Rhyme:</strong> Essential for analyzing meter, rhythm, and rhyme schemes</li>
+                            <li><strong>Cryptography:</strong> Useful in code-breaking and linguistic analysis</li>
+                        </ul>
+                        
+                        <h2>How Our Vowel & Consonant Counter Works</h2>
+                        
+                        <h3>Character Classification</h3>
+                        <p>Our <strong>Vowel & Consonant Counter</strong> uses sophisticated algorithms to accurately classify characters:</p>
+                        
+                        <ul>
+                            <li><strong>Vowel Detection:</strong> Identifies standard vowels (A, E, I, O, U) and optionally Y when it functions as a vowel</li>
+                            <li><strong>Consonant Identification:</strong> Recognizes all non-vowel alphabetic characters</li>
+                            <li><strong>Language Support:</strong> Adjusts vowel definitions for different languages</li>
+                            <li><strong>Case Handling:</strong> Option to treat uppercase and lowercase separately or together</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <h4>Example: Vowel-Consonant Analysis</h4>
+                            <p>Text: "The quick brown fox jumps over the lazy dog."</p>
+                            <p><strong>Vowels:</strong> 11 (e, u, i, o, o, u, o, e, e, a, o)</p>
+                            <p><strong>Consonants:</strong> 24 (t, h, q, c, k, b, r, w, n, f, x, j, m, p, s, v, r, t, h, l, z, y, d, g)</p>
+                            <p><strong>Vowel Percentage:</strong> 31.4%</p>
+                        </div>
+                        
+                        <h3>Detailed Breakdown</h3>
+                        <p>The tool provides comprehensive statistics including:</p>
+                        
+                        <ul>
+                            <li>Total vowel and consonant counts</li>
+                            <li>Individual counts for each vowel and consonant</li>
+                            <li>Percentage of vowels in the text</li>
+                            <li>Visual highlighting of vowels and consonants</li>
+                            <li>Comparison with language averages</li>
+                        </ul>
+                        
+                        <div class="call-to-action">
+                            <h3>Enhance Your Text Analysis</h3>
+                            <p>Use our <strong>Vowel & Consonant Counter</strong> to gain deeper insights into your writing style and improve your text's readability and phonetic balance.</p>
+                        </div>
+                        
+                        <h2>Vowel-Consonant Ratios Across Languages</h2>
+                        
+                        <h3>Language-Specific Patterns</h3>
+                        <p>Different languages have characteristic vowel-consonant distributions:</p>
+                        <ol>
+                            <li><strong>Hawaiian:</strong> Very high vowel percentage (often over 45%)</li>
+                            <li><strong>English:</strong> Moderate vowel percentage (typically 35-40%)</li>
+                            <li><strong>German:</strong> Lower vowel percentage (often 30-35%) with more consonant clusters</li>
+                            <li><strong>Russian:</strong> Even lower vowel percentage (often 25-30%) with complex consonant combinations</li>
+                        </ol>
+                        
+                        <h3>Impact on Pronunciation and Rhythm</h3>
+                        <p>The vowel-consonant ratio affects how a language sounds:</p>
+                        <ol>
+                            <li><strong>High Vowel Percentage:</strong> Creates smoother, more flowing speech patterns</li>
+                            <li><strong>High Consonant Percentage:</strong> Results in more percussive, articulated speech</li>
+                            <li><strong>Balanced Ratio:</strong> Typically produces natural, easily understandable speech</li>
+                            <li><strong>Extreme Ratios:</strong> Can make a language sound either very melodic or very harsh</li>
+                        </ol>
+                        
+                        <h2>Practical Applications</h2>
+                        
+                        <h3>For Writers and Editors</h3>
+                        <p>Vowel-consonant analysis helps writers and editors in multiple ways:</p>
+                        <ul>
+                            <li>Identify passages with difficult consonant clusters that might be hard to read</li>
+                            <li>Balance sentence rhythm by adjusting vowel-consonant patterns</li>
+                            <li>Create specific moods through phonetic choices (e.g., more vowels for softer tones)</li>
+                            <li>Improve readability for international audiences</li>
+                        </ul>
+                        
+                        <h3>For Language Learners and Teachers</h3>
+                        <p>Educators can use vowel-consonant analysis to:</p>
+                        <ul>
+                            <li>Highlight phonetic patterns in target languages</li>
+                            <li>Compare native and target language sound systems</li>
+                            <li>Identify potential pronunciation challenges for specific language pairs</li>
+                            <li>Create exercises focused on difficult sound combinations</li>
+                        </ul>
+                        
+                        <h2>Advanced Linguistic Analysis</h2>
+                        
+                        <h3>Phonetic Patterns and Stylistics</h3>
+                        <p>Beyond simple counting, vowel-consonant analysis reveals deeper patterns:</p>
+                        <ul>
+                            <li><strong>Assonance:</strong> Repetition of vowel sounds creates musicality in poetry and prose</li>
+                            <li><strong>Consonance:</strong> Repetition of consonant sounds adds rhythm and texture</li>
+                            <li><strong>Alliteration:</strong> Repetition of initial consonant sounds creates memorable phrases</li>
+                            <li><strong>Phonetic Symbolism:</strong> Certain sounds can unconsciously suggest specific meanings</li>
+                        </ul>
+                        
+                        <h3>Statistical Norms and Deviations</h3>
+                        <p>Understanding typical vowel-consonant distributions helps identify stylistic choices:</p>
+                        <ul>
+                            <li>Technical writing tends to have higher consonant percentages</li>
+                            <li>Poetry often manipulates vowel-consonant ratios for effect</li>
+                            <li>Children's literature typically uses higher vowel percentages for easier pronunciation</li>
+                            <li>Marketing copy may use balanced ratios for optimal readability</li>
+                        </ul>
+                        
+                        <h2>Using the Tool Effectively</h2>
+                        
+                        <h3>Interpreting Results</h3>
+                        <p>Make the most of your vowel-consonant analysis:</p>
+                        <ul>
+                            <li>Compare your text's vowel percentage to language averages</li>
+                            <li>Look for unusual distributions of specific vowels or consonants</li>
+                            <li>Note passages with extreme vowel or consonant clustering</li>
+                            <li>Consider how phonetic patterns contribute to overall tone and readability</li>
+                        </ul>
+                        
+                        <h3>Application in Writing Revision</h3>
+                        <p>Use vowel-consonant insights to improve your writing:</p>
+                        <ul>
+                            <li>Revise difficult-to-pronounce consonant clusters</li>
+                            <li>Add vowel variety to monotonous passages</li>
+                            <li>Create intentional sound patterns for emphasis or mood</li>
+                            <li>Ensure appropriate phonetic balance for your target audience</li>
+                        </ul>
+                        
+                        <p>Our <strong>Vowel & Consonant Counter</strong> provides detailed, actionable insights into the phonetic structure of your text. Whether you're a writer seeking to improve readability, a student studying linguistics, or a language learner understanding pronunciation patterns, this tool offers valuable analysis to enhance your work.</p>
+                    </div>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- AdSense In-Article Ad Placeholder -->
+                    AdSense In-Article Ad (300x250)
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x600)
+                </div>
+                
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x250)
+                </div>
+                
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    AdSense Sidebar Ad (300x250)
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">M</div>
+                    <span>Mega Tool Kit</span>
+                </div>
+                <div class="footer-text">
+                    <p>© 2025 Mega Tool Kit | All Tools in One Place</p>
+                    <p>Fast, Simple, and Accurate Tools for Everyday Use</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                    <a href="cookies-policy.html">Cookies Policy</a>
+                    <a href="contact-us.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const textInput = document.getElementById('textInput');
+        const language = document.getElementById('language');
+        const caseSensitive = document.getElementById('caseSensitive');
+        const includeY = document.getElementById('includeY');
+        const highlightText = document.getElementById('highlightText');
+        const showPercentages = document.getElementById('showPercentages');
+        const ignoreSpaces = document.getElementById('ignoreSpaces');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const vowelCount = document.getElementById('vowelCount');
+        const consonantCount = document.getElementById('consonantCount');
+        const totalLetters = document.getElementById('totalLetters');
+        const vowelPercentage = document.getElementById('vowelPercentage');
+        const vowelBreakdown = document.getElementById('vowelBreakdown');
+        const consonantBreakdown = document.getElementById('consonantBreakdown');
+        
+        // Language-specific vowel sets
+        const vowelSets = {
+            english: ['A', 'E', 'I', 'O', 'U'],
+            spanish: ['A', 'E', 'I', 'O', 'U'],
+            french: ['A', 'E', 'I', 'O', 'U', 'Y'],
+            german: ['A', 'E', 'I', 'O', 'U'],
+            italian: ['A', 'E', 'I', 'O', 'U'],
+            portuguese: ['A', 'E', 'I', 'O', 'U']
+        };
+        
+        // Initialize vowel and consonant breakdowns
+        function initializeBreakdowns() {
+            // Vowels
+            vowelBreakdown.innerHTML = '';
+            const vowels = vowelSets[language.value];
+            vowels.forEach(vowel => {
+                const vowelElement = document.createElement('div');
+                vowelElement.className = 'breakdown-item';
+                vowelElement.innerHTML = `
+                    <div class="breakdown-char">${vowel}</div>
+                    <div class="breakdown-count" id="vowel-${vowel}">0</div>
+                `;
+                vowelBreakdown.appendChild(vowelElement);
+            });
+            
+            // Consonants
+            consonantBreakdown.innerHTML = '';
+            const consonants = 'BCDFGHJKLMNPQRSTVWXYZ'.split('');
+            consonants.forEach(consonant => {
+                // Skip Y if it's being treated as a vowel
+                if (consonant === 'Y' && includeY.checked) return;
+                
+                const consonantElement = document.createElement('div');
+                consonantElement.className = 'breakdown-item';
+                consonantElement.innerHTML = `
+                    <div class="breakdown-char">${consonant}</div>
+                    <div class="breakdown-count" id="consonant-${consonant}">0</div>
+                `;
+                consonantBreakdown.appendChild(consonantElement);
+            });
+        }
+        
+        // Analyze text for vowels and consonants
+        function analyzeText() {
+            const text = textInput.value;
+            const isCaseSensitive = caseSensitive.value === 'sensitive';
+            const vowels = vowelSets[language.value];
+            const treatYAsVowel = includeY.checked;
+            
+            if (!text.trim()) {
+                alert('Please enter some text to analyze.');
+                return;
+            }
+            
+            // Initialize counts
+            let vowelCountValue = 0;
+            let consonantCountValue = 0;
+            const vowelCounts = {};
+            const consonantCounts = {};
+            
+            // Initialize vowel counts
+            vowels.forEach(vowel => {
+                vowelCounts[vowel] = 0;
+            });
+            
+            // Initialize consonant counts
+            'BCDFGHJKLMNPQRSTVWXYZ'.split('').forEach(consonant => {
+                consonantCounts[consonant] = 0;
+            });
+            
+            // Process each character
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                
+                // Skip non-alphabetic characters
+                if (!char.match(/[a-zA-Z]/)) continue;
+                
+                // Skip spaces if option is enabled
+                if (ignoreSpaces.checked && char === ' ') continue;
+                
+                // Convert to uppercase if case insensitive
+                if (!isCaseSensitive) {
+                    char = char.toUpperCase();
+                }
+                
+                // Check if it's a vowel
+                let isVowel = false;
+                if (treatYAsVowel && char.toUpperCase() === 'Y') {
+                    isVowel = true;
+                } else {
+                    isVowel = vowels.includes(char.toUpperCase());
+                }
+                
+                // Count the character
+                if (isVowel) {
+                    vowelCountValue++;
+                    const vowelChar = isCaseSensitive ? char : char.toUpperCase();
+                    if (vowelCounts[vowelChar] !== undefined) {
+                        vowelCounts[vowelChar]++;
+                    }
+                } else {
+                    consonantCountValue++;
+                    const consonantChar = isCaseSensitive ? char : char.toUpperCase();
+                    if (consonantCounts[consonantChar] !== undefined) {
+                        consonantCounts[consonantChar]++;
+                    }
+                }
+            }
+            
+            // Update main statistics
+            const totalLettersValue = vowelCountValue + consonantCountValue;
+            vowelCount.textContent = vowelCountValue.toLocaleString();
+            consonantCount.textContent = consonantCountValue.toLocaleString();
+            totalLetters.textContent = totalLettersValue.toLocaleString();
+            
+            // Calculate and display vowel percentage
+            const vowelPercent = totalLettersValue > 0 ? 
+                Math.round((vowelCountValue / totalLettersValue) * 100) : 0;
+            vowelPercentage.textContent = `${vowelPercent}%`;
+            
+            // Update vowel breakdown
+            vowels.forEach(vowel => {
+                const countElement = document.getElementById(`vowel-${vowel}`);
+                if (countElement) {
+                    countElement.textContent = vowelCounts[vowel] || 0;
+                }
+            });
+            
+            // Update consonant breakdown
+            'BCDFGHJKLMNPQRSTVWXYZ'.split('').forEach(consonant => {
+                // Skip Y if it's being treated as a vowel
+                if (consonant === 'Y' && treatYAsVowel) return;
+                
+                const countElement = document.getElementById(`consonant-${consonant}`);
+                if (countElement) {
+                    countElement.textContent = consonantCounts[consonant] || 0;
+                }
+            });
+            
+            // Highlight text if option is enabled
+            if (highlightText.checked) {
+                highlightVowelsAndConsonants(text, vowels, treatYAsVowel, isCaseSensitive);
+            }
+        }
+        
+        // Highlight vowels and consonants in the text
+        function highlightVowelsAndConsonants(text, vowels, treatYAsVowel, isCaseSensitive) {
+            let highlightedText = '';
+            
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                
+                // Check if it's a letter
+                if (char.match(/[a-zA-Z]/)) {
+                    // Check if it's a vowel
+                    let isVowel = false;
+                    if (treatYAsVowel && char.toUpperCase() === 'Y') {
+                        isVowel = true;
+                    } else {
+                        isVowel = vowels.includes(char.toUpperCase());
+                    }
+                    
+                    if (isVowel) {
+                        highlightedText += `<span class="highlight-vowel">${char}</span>`;
+                    } else {
+                        highlightedText += `<span class="highlight-consonant">${char}</span>`;
+                    }
+                } else {
+                    highlightedText += char;
+                }
+            }
+            
+            // Create a temporary div to show highlighted text
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = `<h3>Highlighted Text:</h3><div style="border: 1px solid #ddd; padding: 10px; border-radius: 5px; margin-top: 10px;">${highlightedText}</div>`;
+            
+            // Insert after the text area
+            const textInputContainer = textInput.parentElement;
+            const existingHighlight = document.getElementById('highlightedText');
+            if (existingHighlight) {
+                existingHighlight.remove();
+            }
+            
+            tempDiv.id = 'highlightedText';
+            textInputContainer.parentNode.insertBefore(tempDiv, textInputContainer.nextSibling);
+        }
+        
+        // Event Listeners
+        analyzeBtn.addEventListener('click', analyzeText);
+        
+        copyBtn.addEventListener('click', () => {
+            if (vowelCount.textContent === '0' && consonantCount.textContent === '0') {
+                alert('Please analyze text first.');
+                return;
+            }
+            
+            const results = `
+Vowel & Consonant Analysis Results:
+- Vowels: ${vowelCount.textContent}
+- Consonants: ${consonantCount.textContent}
+- Total Letters: ${totalLetters.textContent}
+- Vowel Percentage: ${vowelPercentage.textContent}
+            `.trim();
+            
+            navigator.clipboard.writeText(results)
+                .then(() => alert('Results copied to clipboard!'))
+                .catch(() => alert('Failed to copy results.'));
+        });
+        
+        clearBtn.addEventListener('click', () => {
+            textInput.value = '';
+            vowelCount.textContent = '0';
+            consonantCount.textContent = '0';
+            totalLetters.textContent = '0';
+            vowelPercentage.textContent = '0%';
+            
+            // Clear breakdowns
+            initializeBreakdowns();
+            
+            // Remove highlighted text if it exists
+            const existingHighlight = document.getElementById('highlightedText');
+            if (existingHighlight) {
+                existingHighlight.remove();
+            }
+        });
+        
+        // Initialize breakdowns when language changes
+        language.addEventListener('change', initializeBreakdowns);
+        includeY.addEventListener('change', initializeBreakdowns);
+        
+        // Auto-analyze when text changes (with debounce)
+        let debounceTimer;
+        textInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(analyzeText, 1000);
+        });
+        
+        // Initialize with sample text
+        window.addEventListener('load', () => {
+            const sampleText = `Welcome to the Vowel & Consonant Counter tool demonstration.
+
+This tool analyzes text to count vowels, consonants, and other character statistics. You can adjust language settings and options to customize the analysis.
+
+The tool supports multiple languages and provides detailed breakdowns of vowel and consonant distributions.
+
+Try pasting your own text or modifying the options to see how the analysis changes.
+
+Vowel and consonant analysis is valuable for writers, linguists, and anyone interested in the phonetic structure of text.`;
+
+            textInput.value = sampleText;
+            initializeBreakdowns();
+            analyzeText();
+        });
+    </script>
+</body>
+</html>
