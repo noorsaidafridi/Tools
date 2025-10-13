@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Time Estimator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #2575fc;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .input-section {
+            margin-bottom: 30px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #2575fc;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .results {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-item {
+            display: inline-block;
+            margin: 0 20px;
+            text-align: center;
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2575fc;
+            line-height: 1;
+        }
+        
+        .result-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .details {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .result-item {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reading Time Estimator</h1>
+            <p class="subtitle">Calculate how long it will take to read any text</p>
+        </header>
+        
+        <div class="content">
+            <div class="input-section">
+                <textarea id="text-input" placeholder="Paste or type your text here...">Reading time estimation is a useful tool for both readers and content creators. For readers, it helps manage expectations and plan reading sessions. For writers and publishers, it helps optimize content length and structure. The average adult reads at about 200-250 words per minute, but this can vary based on factors like text complexity, reader's familiarity with the topic, and reading conditions. This estimator allows you to customize reading speed and get accurate time estimates for any text.</textarea>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="reading-speed">Reading Speed (words per minute)</label>
+                        <input type="number" id="reading-speed" min="50" max="1000" value="200">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="time-format">Time Format</label>
+                        <select id="time-format">
+                            <option value="minutes">Minutes Only</option>
+                            <option value="hours-minutes">Hours & Minutes</option>
+                            <option value="decimal">Decimal Hours</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results">
+                <div class="result-item">
+                    <div class="result-value" id="word-count">0</div>
+                    <div class="result-label">Words</div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-value" id="reading-time">0</div>
+                    <div class="result-label">Minutes</div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-value" id="reading-speed-display">0</div>
+                    <div class="result-label">Words/Minute</div>
+                </div>
+            </div>
+            
+            <div class="details">
+                <p>This calculator estimates reading time based on <span class="highlight" id="current-speed">200</span> words per minute. The average adult reading speed is 200-250 wpm for general content.</p>
+                <p>Reading speed can vary: technical material might reduce speed to 100 wpm, while light content might allow speeds up to 300 wpm.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textInput = document.getElementById('text-input');
+            const readingSpeed = document.getElementById('reading-speed');
+            const timeFormat = document.getElementById('time-format');
+            const wordCountElement = document.getElementById('word-count');
+            const readingTimeElement = document.getElementById('reading-time');
+            const readingSpeedDisplay = document.getElementById('reading-speed-display');
+            const currentSpeed = document.getElementById('current-speed');
+            
+            function updateReadingTime() {
+                const text = textInput.value.trim();
+                const words = text === '' ? 0 : text.split(/\s+/).length;
+                const speed = parseInt(readingSpeed.value) || 200;
+                
+                // Update word count
+                wordCountElement.textContent = words.toLocaleString();
+                
+                // Calculate reading time in minutes
+                const minutes = words / speed;
+                
+                // Update reading speed display
+                readingSpeedDisplay.textContent = speed;
+                currentSpeed.textContent = speed;
+                
+                // Format the reading time based on selection
+                let displayTime;
+                switch(timeFormat.value) {
+                    case 'hours-minutes':
+                        if (minutes < 60) {
+                            displayTime = Math.ceil(minutes) + ' min';
+                        } else {
+                            const hours = Math.floor(minutes / 60);
+                            const mins = Math.ceil(minutes % 60);
+                            displayTime = hours + ' hr ' + mins + ' min';
+                        }
+                        break;
+                    case 'decimal':
+                        displayTime = (Math.ceil(minutes * 10) / 10).toFixed(1) + ' hours';
+                        break;
+                    case 'minutes':
+                    default:
+                        displayTime = Math.ceil(minutes) + ' min';
+                        break;
+                }
+                
+                readingTimeElement.textContent = displayTime;
+            }
+            
+            // Initialize
+            updateReadingTime();
+            
+            // Add event listeners
+            textInput.addEventListener('input', updateReadingTime);
+            readingSpeed.addEventListener('input', updateReadingTime);
+            timeFormat.addEventListener('change', updateReadingTime);
+        });
+    </script>
+</body>
+</html>
