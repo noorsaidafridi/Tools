@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tool Guru - All Tools</title>
+    <title>Tool Guru - 300+ Essential Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
@@ -19,6 +19,7 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f4f6f8; /* Light background */
             line-height: 1.6;
+            color: #333;
         }
 
         .container {
@@ -31,22 +32,51 @@
         .header-banner {
             background: linear-gradient(135deg, #4f80e0 0%, #7ec0ee 100%);
             color: white;
-            padding: 40px 0;
+            padding: 40px 0 60px 0; /* Extra padding at bottom for curve */
             text-align: center;
             /* Adding a subtle cloud/wave effect */
             border-bottom-left-radius: 50% 20px;
             border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-banner h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-bottom: 5px;
             font-weight: 700;
         }
 
         .header-banner p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             opacity: 0.9;
+        }
+
+        /* Search Bar Area */
+        .search-area {
+            transform: translateY(-50%); /* Pull search bar up into the header curve */
+            margin-bottom: -50px;
+        }
+
+        .search-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            flex-grow: 1;
+            border: none;
+            padding: 5px 15px;
+            font-size: 1.1em;
+            outline: none;
+        }
+
+        .search-box .fa-magnifying-glass {
+            color: #4f80e0;
+            font-size: 1.2em;
         }
 
         /* Main Content Area */
@@ -54,12 +84,22 @@
             padding: 50px 0;
         }
 
+        .tool-category h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
         /* Tool Grid Layout */
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px; /* Spacing between cards */
-            padding-top: 20px;
+            gap: 20px; /* Spacing between cards */
+            padding-bottom: 40px;
         }
 
         /* Tool Card Styling - Matching the clean, elevated look */
@@ -68,7 +108,7 @@
             border-radius: 15px;
             padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for lift */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for lift */
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             display: flex;
@@ -82,14 +122,12 @@
 
         .tool-card:hover {
             transform: translateY(-5px); /* Lift on hover */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
         }
 
         .tool-icon {
             font-size: 2.5em;
             margin-bottom: 10px;
-            /* Use a gradient or a colorful circle background for the icons */
-            background: linear-gradient(45deg, #4f80e0, #2dc49e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -98,15 +136,63 @@
             font-size: 1em;
             font-weight: 500;
             color: #333;
-            /* Ensure name wraps if it's long */
+            line-height: 1.2;
             word-break: break-word; 
         }
 
-        /* Styling for the "300+ More Tools" card */
-        .tool-card.more-tools .tool-icon {
-            color: #999;
-            background: none;
-            -webkit-text-fill-color: #999;
+        /* Specific Color Styles for each Category */
+        .pdf-tool .tool-icon { background: linear-gradient(45deg, #4f80e0, #7ec0ee); } /* Blue */
+        .blogging-tool .tool-icon { background: linear-gradient(45deg, #e09c4f, #f0c388); } /* Orange */
+        .calc-tool .tool-icon { background: linear-gradient(45deg, #e04f4f, #ff7f7f); } /* Red */
+        .health-tool .tool-icon { background: linear-gradient(45deg, #2dc49e, #6ae0c7); } /* Teal */
+        .prod-tool .tool-icon { background: linear-gradient(45deg, #994fe0, #c388f0); } /* Purple */
+        .dev-tool .tool-icon { background: linear-gradient(45deg, #333333, #666666); } /* Dark Gray */
+        .misc-tool .tool-icon { background: linear-gradient(45deg, #4f994f, #7fcc7f); } /* Green */
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 0;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .footer-links a {
+            color: #95a5a6;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            color: #7f8c8d;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .tool-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 15px;
+            }
+            .tool-card {
+                height: 120px;
+                padding: 15px;
+            }
+            .tool-icon {
+                font-size: 2em;
+            }
+            .tool-name {
+                font-size: 0.9em;
+            }
+            .header-banner h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
@@ -114,60 +200,586 @@
     <div class="header-banner">
         <div class="container">
             <h1>Tool Guru</h1>
-            <p>Access our 300+ utilities to supercharge your workflow.</p>
+            <p>Your one-stop shop for 300+ productivity and utility tools.</p>
+        </div>
+    </div>
+
+    <div class="search-area">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search across 300+ tools (e.g., 'PDF to Word' or 'BMI Calculator')... (Non-functional in this demo)">
+            </div>
         </div>
     </div>
     
     <div class="main-content">
         <div class="container">
-            <div class="tool-grid">
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-                    <div class="tool-name">Calculator Suite</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-compress-alt"></i></div>
-                    <div class="tool-name">Image Compressor</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="tool-name">PDF Merger</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
-                    <div class="tool-name">QR Code Generator</div>
-                </a>
-                
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-search-location"></i></div>
-                    <div class="tool-name">IP Lookup Tool</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-signature"></i></div>
-                    <div class="tool-name">Text Scrambler</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-ruler-combined"></i></div>
-                    <div class="tool-name">Unit Converter</div>
-                </a>
-
-                <a href="#" class="tool-card">
-                    <div class="tool-icon"><i class="fas fa-lock"></i></div>
-                    <div class="tool-name">Password Creator</div>
-                </a>
-
-                <a href="#" class="tool-card more-tools">
-                    <div class="tool-icon"><i class="fas fa-ellipsis-h"></i></div>
-                    <div class="tool-name">300+ More Tools</div>
-                </a>
-                
+            
+            <div class="tool-category">
+                <h2>A. PDF Conversion Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-word"></i></div>
+                        <div class="tool-name">1. Word to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="tool-name">2. PDF to Word</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-excel"></i></div>
+                        <div class="tool-name">3. Excel to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-table"></i></div>
+                        <div class="tool-name">4. PDF to Excel</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-powerpoint"></i></div>
+                        <div class="tool-name">5. PPT to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div class="tool-name">6. PDF to PPT</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-image"></i></div>
+                        <div class="tool-name">7. Image to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-image"></i></div>
+                        <div class="tool-name">8. PDF to Image</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-code"></i></div>
+                        <div class="tool-name">9. HTML to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="tool-name">10. Text to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="tool-name">11. EPUB to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-book"></i></div>
+                        <div class="tool-name">12. PDF to EPUB</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-csv"></i></div>
+                        <div class="tool-name">13. CSV to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-columns"></i></div>
+                        <div class="tool-name">14. PDF to CSV</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fab fa-markdown"></i></div>
+                        <div class="tool-name">15. Markdown to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-image"></i></div>
+                        <div class="tool-name">16. PDF to PNG Splitter</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
+                        <div class="tool-name">17. Org Chart Exporter</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-terminal"></i></div>
+                        <div class="tool-name">18. Code Snippet to PDF</div>
+                    </a>
+                </div>
             </div>
+
+            <div class="tool-category">
+                <h2>A. PDF Editing & Management</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-object-group"></i></div>
+                        <div class="tool-name">19. Merge PDF Files</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-cut"></i></div>
+                        <div class="tool-name">20. Split PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-sort-numeric-down"></i></div>
+                        <div class="tool-name">21. Reorder PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-rotate-right"></i></div>
+                        <div class="tool-name">22. Rotate PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-trash-alt"></i></div>
+                        <div class="tool-name">23. Delete PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-clone"></i></div>
+                        <div class="tool-name">24. Extract PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-compress"></i></div>
+                        <div class="tool-name">25. Compress PDF File</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-unlock"></i></div>
+                        <div class="tool-name">26. Unlock PDF Tool</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-lock"></i></div>
+                        <div class="tool-name">27. Lock PDF w/ Password</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-tint"></i></div>
+                        <div class="tool-name">28. Add Watermark</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-brush"></i></div>
+                        <div class="tool-name">29. Remove Watermark</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-list-ol"></i></div>
+                        <div class="tool-name">30. Add Page Numbers</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-heading"></i></div>
+                        <div class="tool-name">31. Add Header & Footer</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                        <div class="tool-name">32. PDF Page Size Resizer</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-crop"></i></div>
+                        <div class="tool-name">33. Crop PDF Pages</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="tool-name">34. PDF Orientation Fixer</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-fill-drip"></i></div>
+                        <div class="tool-name">35. PDF Background Color</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-bookmark"></i></div>
+                        <div class="tool-name">36. PDF Bookmark Creator</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="tool-name">37. PDF Metadata Editor</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-comment-dots"></i></div>
+                        <div class="tool-name">38. PDF Comment Adder</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-highlighter"></i></div>
+                        <div class="tool-name">39. Highlight Text in PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-user-secret"></i></div>
+                        <div class="tool-name">40. PDF Redaction Tool</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2>A. PDF Forms, OCR, Education, Creative & Misc</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-edit"></i></div>
+                        <div class="tool-name">41. PDF Form Filler</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-signature"></i></div>
+                        <div class="tool-name">43. PDF Signature Inserter</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <div class="tool-name">48. Scanned PDF to Text (OCR)</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-search-plus"></i></div>
+                        <div class="tool-name">51. Highlight Search Term</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="tool-name">56. Lecture Notes to PDF</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-receipt"></i></div>
+                        <div class="tool-name">58. Invoice PDF Generator</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="tool-name">61. Resume PDF Builder</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-splotch"></i></div>
+                        <div class="tool-name">69. Brochure PDF Maker</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="tool-name">76. Planner/Journal PDF Gen.</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-file-export"></i></div>
+                        <div class="tool-name">82. PDF Version Downgrade</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-eye"></i></div>
+                        <div class="tool-name">85. PDF Compare Tool</div>
+                    </a>
+                    <a href="#" class="tool-card pdf-tool">
+                        <div class="tool-icon"><i class="fas fa-copy"></i></div>
+                        <div class="tool-name">90. PDF Template Library</div>
+                    </a>
+                </div>
+            </div>
+ <div class="tool-category">
+                <h2>B. Blogging & AI Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-feather-alt"></i></div>
+                        <div class="tool-name">91. AI Blog Post Generator</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-stream"></i></div>
+                        <div class="tool-name">92. AI Blog Outline Generator</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-pen-nib"></i></div>
+                        <div class="tool-name">96. AI Meta Title Generator</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="tool-name">106. Blog Topic Idea Gen.</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-link"></i></div>
+                        <div class="tool-name">108. URL Slug Generator</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="tool-name">111. Readability Score Checker</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-globe"></i></div>
+                        <div class="tool-name">120. AI Social Caption Gen.</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
+                        <div class="tool-name">123. Hashtag Idea Generator</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <div class="tool-name">126. AI Email Subject Line Gen.</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <div class="tool-name">133. AI SEO Assistant Chat</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-scroll"></i></div>
+                        <div class="tool-name">137. AI Content Quality Rater</div>
+                    </a>
+                    <a href="#" class="tool-card blogging-tool">
+                        <div class="tool-icon"><i class="fas fa-comment-alt"></i></div>
+                        <div class="tool-name">138. AI Comment Reply Assistant</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2>C. Calculators</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-person-running"></i></div>
+                        <div class="tool-name">140. BMI Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-fire"></i></div>
+                        <div class="tool-name">141. BMR Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="tool-name">143. Macro Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-baby"></i></div>
+                        <div class="tool-name">144. Pregnancy Due Date Calc.</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-birthday-cake"></i></div>
+                        <div class="tool-name">145. Age Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="tool-name">146. Date Difference Calc.</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                        <div class="tool-name">147. Loan EMI Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-piggy-bank"></i></div>
+                        <div class="tool-name">148. SIP Return Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-tags"></i></div>
+                        <div class="tool-name">149. Discount Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="tool-name">152. Unit Converter</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-road"></i></div>
+                        <div class="tool-name">154. Fuel Cost Calculator</div>
+                    </a>
+                    <a href="#" class="tool-card calc-tool">
+                        <div class="tool-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <div class="tool-name">157. Compound Interest Calc.</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2>D. Health & Wellness Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-water"></i></div>
+                        <div class="tool-name">160. Water Intake Tracker</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-shoe-prints"></i></div>
+                        <div class="tool-name">161. Steps Goal Planner</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-moon"></i></div>
+                        <div class="tool-name">162. Sleep Tracker Log</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-grin-beam"></i></div>
+                        <div class="tool-name">163. Mood Tracker</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-seedling"></i></div>
+                        <div class="tool-name">166. Habit Tracker</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-lungs"></i></div>
+                        <div class="tool-name">167. Breathing Timer</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-spa"></i></div>
+                        <div class="tool-name">175. Sleep Hygiene Checklist</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-tv"></i></div>
+                        <div class="tool-name">176. Screen Time Reduction</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="tool-name">177. Caffeine Tracker</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-heart"></i></div>
+                        <div class="tool-name">182. Self-Care Checklist</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-walking"></i></div>
+                        <div class="tool-name">185. Outdoor Activity Ideas</div>
+                    </a>
+                    <a href="#" class="tool-card health-tool">
+                        <div class="tool-icon"><i class="fas fa-notes-medical"></i></div>
+                        <div class="tool-name">190. Stress Relief Ideas Gen.</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2>E. Daily-Use Productivity & Life Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-list-check"></i></div>
+                        <div class="tool-name">191. To-Do List Manager</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="tool-name">192. Kanban Board Tool</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-clock"></i></div>
+                        <div class="tool-name">197. Time Blocking Scheduler</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-sticky-note"></i></div>
+                        <div class="tool-name">198. Note-Taking Pad</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-text-height"></i></div>
+                        <div class="tool-name">200. Text Case Converter</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="tool-name">210. Bill Tracker Tool</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-wallet"></i></div>
+                        <div class="tool-name">211. Simple Budget Tracker</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-bell"></i></div>
+                        <div class="tool-name">213. Birthday & Reminder List</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-plane-departure"></i></div>
+                        <div class="tool-name">225. Travel Itinerary Planner</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <div class="tool-name">238. Random Decision Maker</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="tool-name">240. Pros & Cons Helper</div>
+                    </a>
+                    <a href="#" class="tool-card prod-tool">
+                        <div class="tool-icon"><i class="fas fa-glasses"></i></div>
+                        <div class="tool-name">219. Focus Timer / Pomodoro</div>
+                    </a>
+                </div>
+                            </div>
+            <div class="tool-category">
+                <h2>F. Coding & Developer Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-code"></i></div>
+                        <div class="tool-name">241. Code Snippet Formatter</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-cubes"></i></div>
+                        <div class="tool-name">242. JSON Formatter & Validator</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                        <div class="tool-name">245. CSS Minifier Tool</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-bug"></i></div>
+                        <div class="tool-name">247. Regex Tester Tool</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-lock-open"></i></div>
+                        <div class="tool-name">248. Base64 Encode/Decode</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-external-link-alt"></i></div>
+                        <div class="tool-name">249. URL Encoder/Decoder</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-passport"></i></div>
+                        <div class="tool-name">250. JWT Decoder (No Secret)</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-eye-slash"></i></div>
+                        <div class="tool-name">251. Diff Checker Tool</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                        <div class="tool-name">254. Cron Expression Helper</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <div class="tool-name">261. AI Code Assistant</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-database"></i></div>
+                        <div class="tool-name">270. AI Database Schema Idea</div>
+                    </a>
+                    <a href="#" class="tool-card dev-tool">
+                        <div class="tool-icon"><i class="fas fa-laptop"></i></div>
+                        <div class="tool-name">274. Tech Interview Prep Planner</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-category">
+                <h2>G. Other Super-Useful Tools</h2>
+                <div class="tool-grid">
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-user-tag"></i></div>
+                        <div class="tool-name">277. Username Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-users"></i></div>
+                        <div class="tool-name">279. Team Name Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-wifi"></i></div>
+                        <div class="tool-name">280. Wi-Fi Name Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-quote-left"></i></div>
+                        <div class="tool-name">281. Random Quote Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-book-reader"></i></div>
+                        <div class="tool-name">282. Writing Prompt Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-baby-carriage"></i></div>
+                        <div class="tool-name">284. Baby Name Idea Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <div class="tool-name">286. Party Game Ideas Tool</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="tool-name">290. Vision Statement Gen.</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-bullhorn"></i></div>
+                        <div class="tool-name">293. Podcast Name Generator</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-gift"></i></div>
+                        <div class="tool-name">295. Goal Reward Planner</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-map-signs"></i></div>
+                        <div class="tool-name">297. New Skill Roadmap Planner</div>
+                    </a>
+                    <a href="#" class="tool-card misc-tool">
+                        <div class="tool-icon"><i class="fas fa-heart-circle-check"></i></div>
+                        <div class="tool-name">300. Relationship Check-in</div>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Disclaimer</a> | 
+                <a href="#">Cookie Policy</a> | 
+                <a href="#">About Us</a> | 
+                <a href="#">Contact Us</a>
+            </div>
+            <p class="copyright">&copy; 2025 Tool Guru. All Rights Reserved.</p>
         </div>
     </div>
 </body>
 </html>
+     
