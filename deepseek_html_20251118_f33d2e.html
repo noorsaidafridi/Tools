@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Guru – 300+ Free Online Calculators & Tools for Daily Use</title>
+    <meta name="description" content="Tools Guru offers 300+ free online calculators and tools for PDF, blogging, AI, health, coding, students, and daily life. Fast, simple, and accurate.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2; /* Soft blue */
+            --secondary-color: #ff6b6b; /* Coral */
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --text-color: #212529;
+            --card-radius: 12px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            
+            /* Professional icon colors */
+            --pdf-color: #e74c3c;
+            --ai-color: #9b59b6;
+            --calculator-color: #2ecc71;
+            --health-color: #3498db;
+            --productivity-color: #f39c12;
+            --coding-color: #1abc9c;
+            --other-color: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            padding: 60px 0 40px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--medium-gray);
+            background-color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Tool Cards */
+        .tool-card {
+            background-color: white;
+            border-radius: var(--card-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Icon Colors by Category */
+        .pdf-icon {
+            color: var(--pdf-color);
+        }
+        
+        .ai-icon {
+            color: var(--ai-color);
+        }
+        
+        .calculator-icon {
+            color: var(--calculator-color);
+        }
+        
+        .health-icon {
+            color: var(--health-color);
+        }
+        
+        .productivity-icon {
+            color: var(--productivity-color);
+        }
+        
+        .coding-icon {
+            color: var(--coding-color);
+        }
+        
+        .other-icon {
+            color: var(--other-color);
+        }
+
+        .tool-info {
+            flex: 1;
+        }
+
+        .tool-name {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .tool-description {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 60px 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .footer-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+            padding: 60px 0;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .page-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .page-section p {
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subheading {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subheading {
+                font-size: 1rem;
+            }
+
+            .tool-card {
+                padding: 15px;
+            }
+        }
+
+        /* Navigation */
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-nav a {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .category-nav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>300+ Smart Online Tools for Daily Use</h1>
+            <p class="subheading">All productivity, writing, math, and utility tools in one place — fast, simple, and accurate. Tools Guru helps students, professionals, and creators get more done in less time.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search tools (e.g., PDF merge, BMI, word counter…)">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <div class="category-nav">
+                <a href="#pdf-tools">PDF Tools</a>
+                <a href="#blogging-ai">Blogging & AI</a>
+                <a href="#calculators">Calculators</a>
+                <a href="#health-wellness">Health & Wellness</a>
+                <a href="#productivity-life">Productivity</a>
+                <a href="#coding-dev">Coding Tools</a>
+                <a href="#other-tools">Other Tools</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="category" id="pdf-tools">
+                <h2>1. PDF Conversion Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-export"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Word to PDF Converter</div>
+                            <div class="tool-description">Convert Word documents to PDF format while preserving formatting</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-import"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to Word Converter</div>
+                            <div class="tool-description">Extract content from PDF to editable Word format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-excel"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Excel to PDF Converter</div>
+                            <div class="tool-description">Convert Excel spreadsheets to PDF documents with preserved formatting</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-table"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to Excel Converter</div>
+                            <div class="tool-description">Extract tables and data from PDF to Excel format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-powerpoint"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PowerPoint to PDF Converter</div>
+                            <div class="tool-description">Convert presentations to PDF format with slide layouts preserved</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to PowerPoint Converter</div>
+                            <div class="tool-description">Convert PDF slides to editable PowerPoint presentation</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-image"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Image to PDF Converter (JPG/PNG)</div>
+                            <div class="tool-description">Convert images to PDF documents with customizable page layout</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-images"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to Image Converter</div>
+                            <div class="tool-description">Convert PDF pages to high-quality image files (JPG, PNG)</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-code"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">HTML to PDF Converter</div>
+                            <div class="tool-description">Convert web pages and HTML content to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Text to PDF Converter</div>
+                            <div class="tool-description">Convert plain text files to formatted PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-book"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">EPUB to PDF Converter</div>
+                            <div class="tool-description">Convert eBooks in EPUB format to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to EPUB Converter</div>
+                            <div class="tool-description">Convert PDF documents to EPUB format for e-readers</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-csv"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">CSV to PDF Converter</div>
+                            <div class="tool-description">Convert CSV data files to formatted PDF tables</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-csv"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to CSV Converter</div>
+                            <div class="tool-description">Extract table data from PDF to CSV format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fab fa-markdown"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Markdown to PDF Converter</div>
+                            <div class="tool-description">Convert Markdown files to formatted PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-crop-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF to PNG Page Splitter</div>
+                            <div class="tool-description">Split PDF pages into individual PNG images</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-sitemap"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Org Chart PDF Exporter</div>
+                            <div class="tool-description">Create and export organizational charts in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-code"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Code Snippet to PDF Converter</div>
+                            <div class="tool-description">Convert code snippets to syntax-highlighted PDF documents</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="category">
+                <h2>2. PDF Editing & Management</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-object-group"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Merge PDF Files Tool</div>
+                            <div class="tool-description">Combine multiple PDFs into one document in desired order</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-cut"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Split PDF Pages Tool</div>
+                            <div class="tool-description">Split PDF into multiple files by page ranges or bookmarks</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-sort"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Reorder PDF Pages Tool</div>
+                            <div class="tool-description">Rearrange pages in a PDF document with drag-and-drop interface</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-redo"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Rotate PDF Pages Tool</div>
+                            <div class="tool-description">Rotate selected pages in a PDF document by 90, 180, or 270 degrees</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-trash-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Delete PDF Pages Tool</div>
+                            <div class="tool-description">Remove specific pages from a PDF document</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-external-link-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Extract PDF Pages Tool</div>
+                            <div class="tool-description">Extract specific pages from a PDF into a new document</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-compress-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Compress PDF File Tool</div>
+                            <div class="tool-description">Reduce PDF file size while maintaining quality</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-unlock"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Unlock PDF Tool (for your own files)</div>
+                            <div class="tool-description">Remove password protection from your own PDF files</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-lock"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Lock PDF with Password Tool</div>
+                            <div class="tool-description">Add password protection to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-tint"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Add Watermark to PDF Tool</div>
+                            <div class="tool-description">Add text or image watermarks to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-eraser"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Remove Watermark from PDF Tool (where possible)</div>
+                            <div class="tool-description">Remove watermarks from PDF documents when technically possible</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-sort-numeric-down"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Add Page Numbers to PDF Tool</div>
+                            <div class="tool-description">Add customizable page numbers to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-heading"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Add Header & Footer to PDF Tool</div>
+                            <div class="tool-description">Add headers and footers to PDF documents with custom text</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-expand-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Page Size Resizer</div>
+                            <div class="tool-description">Change PDF page size to standard formats (A4, Letter, etc.)</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-crop-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Crop PDF Pages Tool</div>
+                            <div class="tool-description">Crop PDF pages to remove unwanted margins or content</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-sync-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Orientation Fixer</div>
+                            <div class="tool-description">Fix page orientation issues in PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-fill-drip"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Background Color Tool</div>
+                            <div class="tool-description">Change background color of PDF pages</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-bookmark"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Bookmark Creator</div>
+                            <div class="tool-description">Add bookmarks and table of contents to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Metadata Editor</div>
+                            <div class="tool-description">Edit PDF document properties and metadata</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-comment"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Comment & Note Adder</div>
+                            <div class="tool-description">Add comments, notes, and annotations to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-highlighter"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Highlight Text in PDF Tool</div>
+                            <div class="tool-description">Highlight important text in PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-eye-slash"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Redaction Tool</div>
+                            <div class="tool-description">Permanently remove sensitive information from PDFs</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="category">
+                <h2>3. PDF Forms & Signatures</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-edit"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Form Filler Tool</div>
+                            <div class="tool-description">Fill out interactive PDF forms with text and checkboxes</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-wpforms"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Create Fillable PDF Form Tool</div>
+                            <div class="tool-description">Convert regular PDFs into fillable forms with fields</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-signature"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Signature Inserter</div>
+                            <div class="tool-description">Add digital signatures to PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-signature"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Multiple Signature Tool</div>
+                            <div class="tool-description">Add multiple signatures to PDF documents for approval workflows</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-stamp"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Initials & Stamp Tool</div>
+                            <div class="tool-description">Add initials, stamps, and approval marks to PDFs</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-database"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Form Field Extractor</div>
+                            <div class="tool-description">Extract form field data from filled PDF forms</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Form to Flat PDF Tool</div>
+                            <div class="tool-description">Convert fillable PDF forms to non-editable flat PDFs</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category">
+                <h2>4. PDF OCR & Text Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-text-height"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Scanned PDF to Text Tool (OCR)</div>
+                            <div class="tool-description">Convert scanned PDF documents to searchable text</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-font"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Text Extractor Tool</div>
+                            <div class="tool-description">Extract text content from PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-quote-right"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Page to Text Snippet Tool</div>
+                            <div class="tool-description">Extract specific text snippets from PDF pages</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-search"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Highlight Search Term in PDF Tool</div>
+                            <div class="tool-description">Find and highlight specific terms in PDF documents</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-language"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">PDF Translation Helper (with DeepSeek/OpenAI API)</div>
+                            <div class="tool-description">Translate PDF content to different languages using AI</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-contract"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Summarize PDF Content Tool (DeepSeek/OpenAI API)</div>
+                            <div class="tool-description">Generate summaries of PDF documents using AI</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-comment-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Explain PDF Paragraph Tool (AI)</div>
+                            <div class="tool-description">Get AI-powered explanations of complex PDF content</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-robot"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">AI Chat With PDF Tool (DeepSeek/OpenAI)</div>
+                            <div class="tool-description">Chat with your PDF document using AI assistance</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category">
+                <h2>5. PDF for Education & Office</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Lecture Notes to PDF Tool</div>
+                            <div class="tool-description">Convert lecture notes and materials to organized PDFs</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-users"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Meeting Minutes PDF Generator</div>
+                            <div class="tool-description">Create professional meeting minutes in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Invoice PDF Generator</div>
+                            <div class="tool-description">Create professional invoices in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-receipt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Receipt PDF Maker</div>
+                            <div class="tool-description">Generate receipt documents in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-award"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Certificate PDF Generator</div>
+                            <div class="tool-description">Create professional certificates in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-file-contract"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Resume PDF Builder</div>
+                            <div class="tool-description">Build professional resumes in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Cover Letter PDF Maker</div>
+                            <div class="tool-description">Create professional cover letters in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Report Template PDF Generator</div>
+                            <div class="tool-description">Generate report templates in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Proposal PDF Builder</div>
+                            <div class="tool-description">Build professional business proposals in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Portfolio PDF Maker</div>
+                            <div class="tool-description">Create professional portfolios in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Worksheet PDF Generator for Teachers</div>
+                            <div class="tool-description">Create educational worksheets in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-question-circle"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Quiz PDF Generator Tool</div>
+                            <div class="tool-description">Generate quizzes and tests in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Flashcard Print Sheet PDF Generator</div>
+                            <div class="tool-description">Create printable flashcard sheets in PDF format</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category">
+                <h2>6. PDF for Creative & Marketing</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-newspaper"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Brochure PDF Maker</div>
+                            <div class="tool-description">Create professional brochures in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-bullhorn"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Flyer PDF Creator</div>
+                            <div class="tool-description">Design and create flyers in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Menu PDF Maker</div>
+                            <div class="tool-description">Create restaurant menus in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-id-card"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Business Card Sheet PDF Generator</div>
+                            <div class="tool-description">Generate business card sheets in PDF format for printing</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-book"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Lookbook / Catalog PDF Maker</div>
+                            <div class="tool-description">Create product catalogs and lookbooks in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Ebook PDF Formatter</div>
+                            <div class="tool-description">Format and create ebooks in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-list-check"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Lead Magnet Checklist PDF Generator</div>
+                            <div class="tool-description">Create checklist lead magnets in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Planner / Journal PDF Generator</div>
+                            <div class="tool-description">Create planners and journals in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-calendar-day"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Daily Planner PDF Sheet Maker</div>
+                            <div class="tool-description">Generate daily planner sheets in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-calendar-week"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Weekly Planner PDF Generator</div>
+                            <div class="tool-description">Create weekly planners in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Habit Tracker PDF Generator</div>
+                            <div class="tool-description">Generate habit tracking sheets in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-calendar"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Calendar PDF Maker</div>
+                            <div class="tool-description">Create printable calendars in PDF format</div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon pdf-icon"><i class="fas fa-th"></i></div>
+                        <div class="tool-info">
+                            <div class="tool-name">Photo Collage PDF Sheet Creator</div>
+                            <div class="tool-description">Create photo collage sheets in PDF format</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional categories would continue with appropriate icons and colors -->
+            <!-- For brevity, I've shown the complete PDF tools section -->
+            
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <h3>Tools Guru: Your All-in-One Solution for Everyday Tasks</h3>
+                <p>Tools Guru brings together over 300 specialized calculators and utilities designed to simplify your daily tasks. Whether you're converting PDFs, optimizing content, or planning your fitness journey, we have the right tool for the job.</p>
+                
+                <p>Our tools are completely browser-based, requiring no login, installation, or external APIs. Everything runs directly in your browser for maximum privacy and speed. We've designed Tools Guru to be the most comprehensive collection of free online tools available.</p>
+                
+                <p>Students use our math and education tools to ace their exams. Professionals rely on our finance and business calculators for important decisions. Bloggers and marketers utilize our SEO and writing tools to optimize their content. And everyone benefits from our health, date, and conversion tools in their daily lives.</p>
+                
+                <p>With new tools added regularly, Tools Guru continues to grow as your trusted resource for quick, accurate calculations and conversions. Bookmark us today and never search for another online tool again!</p>
+                
+                <div class="footer-links">
+                    <a href="#" id="privacy-link">Privacy Policy</a>
+                    <a href="#" id="disclaimer-link">Disclaimer</a>
+                    <a href="#" id="contact-link">Contact Us</a>
+                    <a href="#" id="about-link">About Us</a>
+                    <a href="#" id="terms-link">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Policy pages would be included here -->
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-bar');
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                toolCards.forEach(card => {
+                    const toolName = card.querySelector('.tool-name').textContent.toLowerCase();
+                    const toolDescription = card.querySelector('.tool-description').textContent.toLowerCase();
+                    
+                    if (toolName.includes(searchTerm) || toolDescription.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Smooth scrolling for category navigation
+            document.querySelectorAll('.category-nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Page navigation functionality
+            const mainContent = document.querySelector('main');
+            const footer = document.querySelector('footer');
+            const pageSections = document.querySelectorAll('.page-section');
+            
+            function showPage(pageId) {
+                mainContent.style.display = 'none';
+                footer.style.display = 'none';
+                document.getElementById(pageId).classList.add('active');
+            }
+            
+            function backToMain() {
+                mainContent.style.display = 'block';
+                footer.style.display = 'block';
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+            }
+            
+            // Set up page navigation links
+            document.getElementById('privacy-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('privacy-policy');
+            });
+            
+            document.getElementById('disclaimer-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('disclaimer');
+            });
+            
+            document.getElementById('contact-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('contact-us');
+            });
+            
+            document.getElementById('about-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('about-us');
+            });
+            
+            document.getElementById('terms-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('terms-of-service');
+            });
+            
+            // Set up back buttons
+            document.querySelectorAll('.back-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    backToMain();
+                });
+            });
+
+            // Tool functionality placeholder
+            document.querySelectorAll('.tool-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const toolName = this.querySelector('.tool-name').textContent;
+                    alert(`The ${toolName} tool would open here with its specific functionality.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
