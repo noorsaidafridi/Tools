@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Writing & Blogging Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .logo span {
+            color: #10b981;
+        }
+        
+        .categories {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .category {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category:hover, .category.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: 1px solid #e2e8f0;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-header h2 {
+            font-size: 22px;
+            color: #1e293b;
+        }
+        
+        .view-all {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #3b82f6;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .tool-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        .tool-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .tool-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+        
+        .tool-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: #94a3b8;
+            font-size: 14px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .view-all {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .view-all {
+                display: none;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .categories {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .tool-card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">SEO<span>Writing</span></div>
+            <div class="categories">
+                <div class="category active" data-category="all">All Tools</div>
+                <div class="category" data-category="seo">SEO Writing</div>
+                <div class="category" data-category="content">Content Assistants</div>
+                <div class="category" data-category="social">Social Media</div>
+                <div class="category" data-category="technical">Technical SEO</div>
+                <div class="category" data-category="analytics">Analytics</div>
+                <div class="category" data-category="monetization">Monetization</div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>SEO Optimize Writing</h1>
+            <p>Boost your content's search engine performance with our comprehensive suite of 70+ SEO writing tools</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for tools...">
+                <i class="fas fa-search"></i>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">70+</div>
+                    <div class="stat-label">Blogging Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Tools Section -->
+        <section class="tools-section">
+            <div class="section-header">
+                <h2>All Blogging Tools</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="tools-grid" id="tools-container">
+                <!-- SEO Writing Tools -->
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Keyword Research</h3>
+                    <p>Find high-traffic keywords for your content with search volume and competition data.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>SEO Analyzer</h3>
+                    <p>Get detailed SEO recommendations to optimize your content for search engines.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.9</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-heading"></i>
+                    </div>
+                    <h3>Headline Analyzer</h3>
+                    <p>Craft compelling headlines that drive clicks and improve search rankings.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Content Grader</h3>
+                    <p>Evaluate your content quality and get suggestions for improvement.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Internal Link Suggester</h3>
+                    <p>Find relevant internal linking opportunities within your website.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Readability Checker</h3>
+                    <p>Ensure your content is easy to read and understand for your audience.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Keyword Density Checker</h3>
+                    <p>Analyze keyword usage and maintain optimal density for SEO.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="seo">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Content Performance</h3>
+                    <p>Track how your content is performing in search results over time.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+
+                <!-- Content Writing Assistants -->
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>AI Content Writer</h3>
+                    <p>Generate SEO-optimized content quickly with AI assistance.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Content Reframer</h3>
+                    <p>Rephrase existing content to create unique versions for SEO.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <h3>Content Outliner</h3>
+                    <p>Create well-structured content outlines for better organization.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Content Expander</h3>
+                    <p>Add depth and detail to thin content for better SEO value.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>Plagiarism Checker</h3>
+                    <p>Ensure your content is original and free from duplicate content issues.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3>Grammar & Spell Check</h3>
+                    <p>Eliminate grammar and spelling errors in your writing.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.9</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Content Planner</h3>
+                    <p>Plan and schedule your blog content calendar.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <h3>Citation Generator</h3>
+                    <p>Create proper citations and references for your content.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <!-- Social Media Tools -->
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Scheduler</h3>
+                    <p>Automate social media sharing for your posts.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Social Analytics</h3>
+                    <p>Track engagement and performance across social platforms.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Hashtag Generator</h3>
+                    <p>Find trending and relevant hashtags for your content.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-retweet"></i>
+                    </div>
+                    <h3>Content Repurposer</h3>
+                    <p>Transform blog posts into social media content.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Social Image Creator</h3>
+                    <p>Design eye-catching images for social media posts.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Clip Maker</h3>
+                    <p>Create short video clips from your content for social media.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3>Comment Manager</h3>
+                    <p>Manage and respond to comments across platforms.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.2</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="social">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Audience Insights</h3>
+                    <p>Understand your social media audience demographics.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <!-- Technical SEO Tools -->
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Site Audit</h3>
+                    <p>Comprehensive technical SEO audit of your website.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Speed Test</h3>
+                    <p>Check your blog's loading speed and performance.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Checker</h3>
+                    <p>Test how your blog looks on mobile devices.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Schema Markup Generator</h3>
+                    <p>Create structured data markup for rich snippets.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3>Meta Tag Generator</h3>
+                    <p>Create optimized meta titles and descriptions.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-broken-link"></i>
+                    </div>
+                    <h3>Broken Link Checker</h3>
+                    <p>Find and fix broken links on your website.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <h3>Redirect Manager</h3>
+                    <p>Manage 301 redirects and fix crawl errors.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="technical">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Index Status Checker</h3>
+                    <p>Check which pages of your site are indexed by Google.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <!-- Analytics Tools -->
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Traffic Analyzer</h3>
+                    <p>Analyze website traffic sources and user behavior.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Rank Tracker</h3>
+                    <p>Monitor your keyword rankings in search results.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-user-chart"></i>
+                    </div>
+                    <h3>Audience Analytics</h3>
+                    <p>Understand your readers and their preferences.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Revenue Tracker</h3>
+                    <p>Track earnings from ads, affiliates, and other sources.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3>Conversion Tracker</h3>
+                    <p>Monitor goal completions and conversion rates.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Reports</h3>
+                    <p>Generate comprehensive performance reports.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Competitor Analysis</h3>
+                    <p>Analyze and monitor your blogging competitors.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="analytics">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-trending-up"></i>
+                    </div>
+                    <h3>Trend Spotter</h3>
+                    <p>Identify emerging trends in your niche.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <!-- Content Enhancement Tools -->
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Image Optimizer</h3>
+                    <p>Compress and optimize images for faster loading.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design Assistant</h3>
+                    <p>Create visually appealing graphics for your blog.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Interactive Content</h3>
+                    <p>Create quizzes, polls, and interactive elements.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Formatter</h3>
+                    <p>Properly format code snippets in technical posts.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Translation Tool</h3>
+                    <p>Translate your content for international audiences.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Audio Converter</h3>
+                    <p>Convert text content to audio for podcasts.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.2</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3>Table Generator</h3>
+                    <p>Create responsive tables for data presentation.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>FAQ Builder</h3>
+                    <p>Create comprehensive FAQ sections for your posts.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <!-- Monetization Tools -->
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Ad Revenue Optimizer</h3>
+                    <p>Maximize earnings from your blog advertisements.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Affiliate Manager</h3>
+                    <p>Track and optimize your affiliate marketing.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Product Recommender</h3>
+                    <p>Suggest relevant products to your audience.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Lead Magnet Creator</h3>
+                    <p>Design opt-in incentives for email list building.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Marketing</h3>
+                    <p>Create and send newsletters to your subscribers.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Pricing Calculator</h3>
+                    <p>Calculate rates for sponsored content and services.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Invoice Generator</h3>
+                    <p>Create professional invoices for your services.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="monetization">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Revenue Analytics</h3>
+                    <p>Analyze income streams and profitability.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <!-- Productivity Tools -->
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Automation Hub</h3>
+                    <p>Automate repetitive blogging tasks and workflows.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Plugin Manager</h3>
+                    <p>Manage and optimize your blog's plugins.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Backup Tool</h3>
+                    <p>Automatically backup your blog content and database.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.8</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>Time Tracker</h3>
+                    <p>Monitor time spent on different blogging tasks.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Manager</h3>
+                    <p>Organize and track your blogging projects.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h3>Note Organizer</h3>
+                    <p>Collect and organize ideas for future content.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f97316;">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Cloud Storage</h3>
+                    <p>Securely store and access your content from anywhere.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.6</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #84cc16;">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Editorial Calendar</h3>
+                    <p>Plan and visualize your content publishing schedule.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.7</span>
+                    </div>
+                </a>
+
+                <!-- Additional Tools -->
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #3b82f6;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Comment Moderator</h3>
+                    <p>Manage and moderate blog comments effectively.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #10b981;">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Press Release Generator</h3>
+                    <p>Create professional press releases for your blog.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #f59e0b;">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Guest Post Manager</h3>
+                    <p>Manage guest posting opportunities and submissions.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #ef4444;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>E-book Creator</h3>
+                    <p>Compile blog content into e-books for lead generation.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.5</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #8b5cf6;">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                    <h3>Podcast Converter</h3>
+                    <p>Convert blog posts into podcast episodes.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.3</span>
+                    </div>
+                </a>
+
+                <a href="#" class="tool-card" data-category="content">
+                    <div class="tool-icon" style="color: #06b6d4;">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Content Awards</h3>
+                    <p>Recognize and showcase your best-performing content.</p>
+                    <div class="tool-meta">
+                        <span><i class="far fa-star"></i> 4.4</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© <span id="current-year">2025</span> SEO Writing Tools. All rights reserved. | 70+ Tools for Bloggers</p>
+        </footer>
+    </div>
+
+    <script>
+        // Category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.category');
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    // Update active category
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const categoryFilter = this.getAttribute('data-category');
+                    
+                    // Filter tools
+                    toolCards.forEach(card => {
+                        if (categoryFilter === 'all') {
+                            card.style.display = 'flex';
+                        } else {
+                            if (card.getAttribute('data-category') === categoryFilter) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.search-box input');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                toolCards.forEach(card => {
+                    const toolName = card.querySelector('h3').textContent.toLowerCase();
+                    const toolDesc = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (toolName.includes(searchTerm) || toolDesc.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Auto-update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
