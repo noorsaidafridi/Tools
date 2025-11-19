@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tools Guru – 300+ Free Online Calculators &amp; Tools for Daily Use</title>
+<meta content="Tools Guru offers 300+ free online calculators and tools for PDF, blogging, AI, health, coding, students, and daily life. Fast, simple, and accurate." name="description"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #ff6b6b;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --text-color: #212529;
+            --card-radius: 12px;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            
+            /* Professional icon colors */
+            --pdf-color: #e74c3c;
+            --ai-color: #9b59b6;
+            --calculator-color: #2ecc71;
+            --health-color: #3498db;
+            --productivity-color: #f39c12;
+            --coding-color: #1abc9c;
+            --other-color: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            padding: 60px 0 40px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--medium-gray);
+            background-color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Tool Cards */
+        .tool-card {
+            background-color: white;
+            border-radius: var(--card-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+
+        /* Icon Colors by Category */
+        .pdf-icon {
+            color: var(--pdf-color);
+        }
+        
+        .ai-icon {
+            color: var(--ai-color);
+        }
+        
+        .calculator-icon {
+            color: var(--calculator-color);
+        }
+        
+        .health-icon {
+            color: var(--health-color);
+        }
+        
+        .productivity-icon {
+            color: var(--productivity-color);
+        }
+        
+        .coding-icon {
+            color: var(--coding-color);
+        }
+        
+        .other-icon {
+            color: var(--other-color);
+        }
+
+        .tool-info {
+            flex: 1;
+        }
+
+        .tool-name {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .tool-description {
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 60px 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        /* Footer Links */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .footer-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+            padding: 60px 0;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .page-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .page-section p {
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subheading {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subheading {
+                font-size: 1rem;
+            }
+
+            .tool-card {
+                padding: 15px;
+            }
+        }
+
+        /* Navigation */
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-nav a {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .category-nav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tool-counter {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-left: 10px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>300+ Smart Online Tools for Daily Use</h1>
+<p class="subheading">All productivity, writing, math, and utility tools in one place — fast, simple, and accurate. Tools Guru helps students, professionals, and creators get more done in less time.</p>
+<div class="search-container">
+<input class="search-bar" placeholder="Search tools (e.g., PDF merge, BMI, word counter…)" type="text"/>
+<i class="fas fa-search search-icon"></i>
+</div>
+<div class="category-nav">
+<a href="#pdf-tools">PDF Tools</a>
+<a href="#blogging-ai">Blogging &amp; AI</a>
+<a href="#calculators">Calculators</a>
+<a href="#health-wellness">Health &amp; Wellness</a>
+<a href="#productivity-life">Productivity</a>
+<a href="#coding-dev">Coding Tools</a>
+<a href="#other-tools">Other Tools</a>
+</div>
+</header>
+<main>
+<!-- PDF TOOLS SECTION -->
+<section class="category" id="pdf-tools">
+<h2>PDF Conversion Tools <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-export"></i></div>
+<div class="tool-info">
+<div class="tool-name">Word to PDF Converter</div>
+<div class="tool-description">Convert DOC/DOCX files into clean, print-ready PDF documents</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-import"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to Word Converter</div>
+<div class="tool-description">Turn any PDF into an editable Word file in seconds</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-excel"></i></div>
+<div class="tool-info">
+<div class="tool-name">Excel to PDF Converter</div>
+<div class="tool-description">Save spreadsheets as neat, shareable PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-table"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to Excel Converter</div>
+<div class="tool-description">Extract tables from PDF into editable Excel format</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-powerpoint"></i></div>
+<div class="tool-info">
+<div class="tool-name">PowerPoint to PDF Converter</div>
+<div class="tool-description">Export slides into a single PDF for easy sharing</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-project-diagram"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to PowerPoint Converter</div>
+<div class="tool-description">Transform PDF pages back into PPT slides</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-image"></i></div>
+<div class="tool-info">
+<div class="tool-name">Image to PDF Converter (JPG/PNG)</div>
+<div class="tool-description">Merge images into a single PDF document</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-images"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to Image Converter</div>
+<div class="tool-description">Convert PDF pages into high-quality JPG or PNG images</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">HTML to PDF Converter</div>
+<div class="tool-description">Save any web page or HTML code as a PDF file</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Text to PDF Converter</div>
+<div class="tool-description">Turn plain text into a nicely formatted PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-book"></i></div>
+<div class="tool-info">
+<div class="tool-name">EPUB to PDF Converter</div>
+<div class="tool-description">Convert ebooks into universal PDF format</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-book-open"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to EPUB Converter</div>
+<div class="tool-description">Convert PDF documents into ebook-friendly EPUB files</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-csv"></i></div>
+<div class="tool-info">
+<div class="tool-name">CSV to PDF Converter</div>
+<div class="tool-description">Export CSV data into a structured PDF table</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-csv"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to CSV Converter</div>
+<div class="tool-description">Extract table-like content from PDFs into CSV</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fab fa-markdown"></i></div>
+<div class="tool-info">
+<div class="tool-name">Markdown to PDF Converter</div>
+<div class="tool-description">Convert .md files into styled PDF documents</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-crop-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF to PNG Page Splitter</div>
+<div class="tool-description">Export each PDF page as an individual PNG image</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-sitemap"></i></div>
+<div class="tool-info">
+<div class="tool-name">Org Chart PDF Exporter</div>
+<div class="tool-description">Export simple org charts to a PDF layout</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">Code Snippet to PDF Converter</div>
+<div class="tool-description">Turn formatted code blocks into a PDF snippet sheet</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>PDF Editing &amp; Management <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-object-group"></i></div>
+<div class="tool-info">
+<div class="tool-name">Merge PDF Files Tool</div>
+<div class="tool-description">Combine multiple PDF files into one organized document</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-cut"></i></div>
+<div class="tool-info">
+<div class="tool-name">Split PDF Pages Tool</div>
+<div class="tool-description">Extract selected page ranges from a PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-sort"></i></div>
+<div class="tool-info">
+<div class="tool-name">Reorder PDF Pages Tool</div>
+<div class="tool-description">Drag and drop pages to reorder your PDF quickly</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-redo"></i></div>
+<div class="tool-info">
+<div class="tool-name">Rotate PDF Pages Tool</div>
+<div class="tool-description">Fix sideways pages by rotating them left or right</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-trash-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Delete PDF Pages Tool</div>
+<div class="tool-description">Remove unnecessary pages from any PDF file</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-external-link-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Extract PDF Pages Tool</div>
+<div class="tool-description">Save only the pages you need into a new PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-compress-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Compress PDF File Tool</div>
+<div class="tool-description">Reduce PDF file size while preserving quality</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-unlock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Unlock PDF Tool (for your own files)</div>
+<div class="tool-description">Remove password protection from PDFs you own</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-lock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Lock PDF with Password Tool</div>
+<div class="tool-description">Add password protection to sensitive PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-tint"></i></div>
+<div class="tool-info">
+<div class="tool-name">Add Watermark to PDF Tool</div>
+<div class="tool-description">Insert text or image watermarks into PDF pages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-eraser"></i></div>
+<div class="tool-info">
+<div class="tool-name">Remove Watermark from PDF Tool (where possible)</div>
+<div class="tool-description">Try to remove simple text watermarks from PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-sort-numeric-down"></i></div>
+<div class="tool-info">
+<div class="tool-name">Add Page Numbers to PDF Tool</div>
+<div class="tool-description">Add page numbering in header or footer</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-heading"></i></div>
+<div class="tool-info">
+<div class="tool-name">Add Header &amp; Footer to PDF Tool</div>
+<div class="tool-description">Insert titles, dates, or custom footer text</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-expand-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Page Size Resizer</div>
+<div class="tool-description">Change page size (A4, Letter, etc.) of an existing PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-crop-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Crop PDF Pages Tool</div>
+<div class="tool-description">Trim margins or unwanted white space from PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-sync-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Orientation Fixer</div>
+<div class="tool-description">Make all pages portrait or landscape in one go</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-fill-drip"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Background Color Tool</div>
+<div class="tool-description">Add subtle background tints for print or display</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-bookmark"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Bookmark Creator</div>
+<div class="tool-description">Build a clickable table of contents inside your PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-info-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Metadata Editor</div>
+<div class="tool-description">Edit title, author, subject and keywords of a PDF file</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-comment"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Comment &amp; Note Adder</div>
+<div class="tool-description">Add sticky notes or inline comments to PDF pages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-highlighter"></i></div>
+<div class="tool-info">
+<div class="tool-name">Highlight Text in PDF Tool</div>
+<div class="tool-description">Highlight important passages in a PDF online</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-eye-slash"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Redaction Tool</div>
+<div class="tool-description">Black out sensitive information permanently from PDFs</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>PDF Forms &amp; Signatures <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-edit"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Form Filler Tool</div>
+<div class="tool-description">Fill out PDF forms and export them fully filled</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-wpforms"></i></div>
+<div class="tool-info">
+<div class="tool-name">Create Fillable PDF Form Tool</div>
+<div class="tool-description">Build interactive PDF forms with text fields and checkboxes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-signature"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Signature Inserter</div>
+<div class="tool-description">Add your digital signature image to any PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-signature"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Multiple Signature Tool</div>
+<div class="tool-description">Allow multiple people to sign the same PDF document</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-stamp"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Initials &amp; Stamp Tool</div>
+<div class="tool-description">Add initials or "Approved" stamps on PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-database"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Form Field Extractor</div>
+<div class="tool-description">List all form fields and values from a PDF form</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Form to Flat PDF Tool</div>
+<div class="tool-description">Flatten filled forms into a non-editable PDF file</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>PDF OCR &amp; Text Tools <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-text-height"></i></div>
+<div class="tool-info">
+<div class="tool-name">Scanned PDF to Text Tool (OCR)</div>
+<div class="tool-description">Extract text from scanned PDF documents</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-font"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Text Extractor Tool</div>
+<div class="tool-description">Copy all text content from a PDF into an editable format</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-quote-right"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Page to Text Snippet Tool</div>
+<div class="tool-description">Select a page and convert it to plain text</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-search"></i></div>
+<div class="tool-info">
+<div class="tool-name">Highlight Search Term in PDF Tool</div>
+<div class="tool-description">Quickly find and highlight keywords in a PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-language"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Translation Helper</div>
+<div class="tool-description">Send extracted text to AI for translation and show back in PDF-like layout</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-contract"></i></div>
+<div class="tool-info">
+<div class="tool-name">Summarize PDF Content Tool</div>
+<div class="tool-description">Generate AI summaries of long PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-comment-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Explain PDF Paragraph Tool (AI)</div>
+<div class="tool-description">Let users click paragraphs and get explanations using an API</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-robot"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Chat With PDF Tool</div>
+<div class="tool-description">Upload a PDF and ask questions about its content</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>PDF for Education &amp; Office <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-graduation-cap"></i></div>
+<div class="tool-info">
+<div class="tool-name">Lecture Notes to PDF Tool</div>
+<div class="tool-description">Convert lecture notes or outlines into PDF handouts</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-users"></i></div>
+<div class="tool-info">
+<div class="tool-name">Meeting Minutes PDF Generator</div>
+<div class="tool-description">Create professional meeting minutes as a PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Invoice PDF Generator</div>
+<div class="tool-description">Generate simple invoices in PDF format</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-receipt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Receipt PDF Maker</div>
+<div class="tool-description">Create basic receipts for small businesses</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-award"></i></div>
+<div class="tool-info">
+<div class="tool-name">Certificate PDF Generator</div>
+<div class="tool-description">Design basic certificates and export them as PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-file-contract"></i></div>
+<div class="tool-info">
+<div class="tool-name">Resume PDF Builder</div>
+<div class="tool-description">Fill a form and generate a clean CV in PDF format</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-envelope-open-text"></i></div>
+<div class="tool-info">
+<div class="tool-name">Cover Letter PDF Maker</div>
+<div class="tool-description">Create matching cover letter PDFs for job applications</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-chart-bar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Report Template PDF Generator</div>
+<div class="tool-description">Use pre-designed layouts for reports</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-handshake"></i></div>
+<div class="tool-info">
+<div class="tool-name">Proposal PDF Builder</div>
+<div class="tool-description">Create structured proposals with sections and export to PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-briefcase"></i></div>
+<div class="tool-info">
+<div class="tool-name">Portfolio PDF Maker</div>
+<div class="tool-description">Combine images and descriptions into a portfolio PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+<div class="tool-info">
+<div class="tool-name">Worksheet PDF Generator for Teachers</div>
+<div class="tool-description">Turn questions into printable worksheets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-question-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">Quiz PDF Generator Tool</div>
+<div class="tool-description">Build printable multiple-choice quizzes in PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-layer-group"></i></div>
+<div class="tool-info">
+<div class="tool-name">Flashcard Print Sheet PDF Generator</div>
+<div class="tool-description">Layout flashcards for print as PDF</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>PDF for Creative &amp; Marketing <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-newspaper"></i></div>
+<div class="tool-info">
+<div class="tool-name">Brochure PDF Maker</div>
+<div class="tool-description">Design simple 2/3-column brochures and export to PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-bullhorn"></i></div>
+<div class="tool-info">
+<div class="tool-name">Flyer PDF Creator</div>
+<div class="tool-description">Build single-page flyers for events or businesses</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-utensils"></i></div>
+<div class="tool-info">
+<div class="tool-name">Menu PDF Maker</div>
+<div class="tool-description">Create restaurant or café menus in PDF form</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-id-card"></i></div>
+<div class="tool-info">
+<div class="tool-name">Business Card Sheet PDF Generator</div>
+<div class="tool-description">Layout multiple business cards per page</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-book"></i></div>
+<div class="tool-info">
+<div class="tool-name">Lookbook / Catalog PDF Maker</div>
+<div class="tool-description">Create basic catalogs with images and descriptions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-book-open"></i></div>
+<div class="tool-info">
+<div class="tool-name">Ebook PDF Formatter</div>
+<div class="tool-description">Turn long articles into an ebook-style PDF</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-list-check"></i></div>
+<div class="tool-info">
+<div class="tool-name">Lead Magnet Checklist PDF Generator</div>
+<div class="tool-description">Create checklists as free printable PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Planner / Journal PDF Generator</div>
+<div class="tool-description">Build printable planner and journal pages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-calendar-day"></i></div>
+<div class="tool-info">
+<div class="tool-name">Daily Planner PDF Sheet Maker</div>
+<div class="tool-description">Print-ready daily planner pages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-calendar-week"></i></div>
+<div class="tool-info">
+<div class="tool-name">Weekly Planner PDF Generator</div>
+<div class="tool-description">Layout weekly planner pages for print</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-chart-line"></i></div>
+<div class="tool-info">
+<div class="tool-name">Habit Tracker PDF Generator</div>
+<div class="tool-description">Create printable monthly habit tracker sheets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-calendar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Calendar PDF Maker</div>
+<div class="tool-description">Generate monthly or yearly calendars as PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-th"></i></div>
+<div class="tool-info">
+<div class="tool-name">Photo Collage PDF Sheet Creator</div>
+<div class="tool-description">Arrange multiple photos into a single PDF page</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>Misc PDF Utilities <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-arrow-down"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Version Downgrade Tool</div>
+<div class="tool-description">Save PDFs in older compatible versions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-universal-access"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Accessibility Checklist Tool</div>
+<div class="tool-description">Guide users to make PDFs more accessible</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-palette"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Color to Grayscale Converter</div>
+<div class="tool-description">Convert color PDFs to grayscale for cheaper printing</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-code-branch"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Compare Tool</div>
+<div class="tool-description">Highlight differences between two PDF documents (text-based)</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-tags"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Page Label Editor</div>
+<div class="tool-description">Rename and relabel pages (e.g., i, ii, iii, 1,2,3)</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-search"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Page Extraction by Keyword Tool</div>
+<div class="tool-description">Extract pages containing a given keyword</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-list-ol"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Index Page Generator</div>
+<div class="tool-description">Create an index page listing headlines and page numbers</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-sort-numeric-up"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Invoice Number Auto-Increment Tool</div>
+<div class="tool-description">Automatically increase invoice numbers in generated PDFs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon pdf-icon"><i class="fas fa-th-large"></i></div>
+<div class="tool-info">
+<div class="tool-name">PDF Template Library Browser</div>
+<div class="tool-description">Pre-made templates (invoices, contracts, planners) users can fill and export as PDF</div>
+</div>
+</a>
+</div>
+</section>
+<!-- BLOGGING & AI TOOLS SECTION -->
+<section class="category" id="blogging-ai">
+<h2>Core Blogging Tools (AI-powered) <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-robot"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Blog Post Generator</div>
+<div class="tool-description">Generate long-form SEO-optimized blog posts from a keyword or outline</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-sitemap"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Blog Outline Generator</div>
+<div class="tool-description">Use AI to create detailed H2/H3 structures for articles</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-paragraph"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Introduction Paragraph Generator</div>
+<div class="tool-description">Write engaging intros that hook readers quickly</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-flag-checkered"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Conclusion Paragraph Generator</div>
+<div class="tool-description">Generate strong, action-focused conclusions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-question-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI FAQ Generator for Articles</div>
+<div class="tool-description">Create relevant FAQs to capture rich snippets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-heading"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Meta Title Generator</div>
+<div class="tool-description">Generate click-worthy SEO titles under pixel limits</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-align-left"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Meta Description Generator</div>
+<div class="tool-description">Write meta descriptions designed for high CTR</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Featured Snippet Answer Writer</div>
+<div class="tool-description">Create concise snippet-friendly answers</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-sync-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Content Paraphraser Tool</div>
+<div class="tool-description">Rephrase content while preserving meaning and improving clarity</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-expand-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Content Expansion Tool</div>
+<div class="tool-description">Expand short paragraphs into detailed explanations</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-compress-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Content Shortener Tool</div>
+<div class="tool-description">Compress long content into shorter, sharper versions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-volume-up"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Tone Changer Tool</div>
+<div class="tool-description">Convert text into casual, professional or friendly tone</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-spell-check"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Grammar &amp; Clarity Improver</div>
+<div class="tool-description">Clean up grammar and make content easier to read</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-tags"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Keyword Variation Generator</div>
+<div class="tool-description">Generate synonyms and phrase variations for a target keyword</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI FAQ Schema Generator</div>
+<div class="tool-description">Produce FAQ schema JSON-LD based on Q&amp;As</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>Non-AI Blogging Utilities <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-lightbulb"></i></div>
+<div class="tool-info">
+<div class="tool-name">Blog Topic Idea Generator (rule-based)</div>
+<div class="tool-description">Suggest content ideas around a keyword</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-project-diagram"></i></div>
+<div class="tool-info">
+<div class="tool-name">Pillar &amp; Cluster Content Planner</div>
+<div class="tool-description">Map pillar posts and supporting articles for a niche</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-link"></i></div>
+<div class="tool-info">
+<div class="tool-name">URL Slug Generator</div>
+<div class="tool-description">Create SEO-friendly slugs from long titles</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-folder"></i></div>
+<div class="tool-info">
+<div class="tool-name">Blog Category Planner</div>
+<div class="tool-description">Plan a clean category structure for a new blog</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-network-wired"></i></div>
+<div class="tool-info">
+<div class="tool-name">Internal Link Mapping Tool</div>
+<div class="tool-description">Visualize and plan which articles should link to each other</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-graduation-cap"></i></div>
+<div class="tool-info">
+<div class="tool-name">Readability Score Checker (rule-based)</div>
+<div class="tool-description">Check sentence length and word complexity</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-font"></i></div>
+<div class="tool-info">
+<div class="tool-name">Word Count &amp; Heading Counter Tool</div>
+<div class="tool-description">Show total words and count H2/H3 sections</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-image"></i></div>
+<div class="tool-info">
+<div class="tool-name">Image Alt-Text Helper</div>
+<div class="tool-description">Suggest descriptive alt-text templates for images</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-sync"></i></div>
+<div class="tool-info">
+<div class="tool-name">Content Update Planner</div>
+<div class="tool-description">Decide which articles to refresh and what to improve</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-clipboard-list"></i></div>
+<div class="tool-info">
+<div class="tool-name">Content Brief Generator</div>
+<div class="tool-description">Create manual content briefs with headings and key points</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-unlink"></i></div>
+<div class="tool-info">
+<div class="tool-name">Broken Link Checklist Tool</div>
+<div class="tool-description">Guide users through checking and fixing broken links</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-robot"></i></div>
+<div class="tool-info">
+<div class="tool-name">Robots.txt Template Generator</div>
+<div class="tool-description">Build a simple robots.txt for a new site</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-sitemap"></i></div>
+<div class="tool-info">
+<div class="tool-name">Sitemap XML Template Builder</div>
+<div class="tool-description">Generate a starting sitemap structure</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-cube"></i></div>
+<div class="tool-info">
+<div class="tool-name">Linkable Assets Idea Generator</div>
+<div class="tool-description">Suggest content types likely to attract backlinks</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>Social &amp; Promotion Tools <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-share-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Social Caption Generator</div>
+<div class="tool-description">Generate captions for Instagram, TikTok, Facebook posts</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fab fa-twitter"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Twitter/X Thread Writer</div>
+<div class="tool-description">Expand a blog idea into a full Twitter thread</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Social Media Calendar Planner</div>
+<div class="tool-description">Plan posts by platform and day</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-hashtag"></i></div>
+<div class="tool-info">
+<div class="tool-name">Hashtag Idea Generator</div>
+<div class="tool-description">Suggest relevant hashtags for visibility</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-envelope"></i></div>
+<div class="tool-info">
+<div class="tool-name">Email Newsletter Idea Generator</div>
+<div class="tool-description">Generate ideas for weekly newsletter topics</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-list-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Newsletter Outline Planner</div>
+<div class="tool-description">Layout sections: story, resources, CTA</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-envelope-open-text"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Email Subject Line Generator</div>
+<div class="tool-description">Suggest compelling subject lines for campaigns</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-paper-plane"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Outreach Email Writer</div>
+<div class="tool-description">Draft outreach emails for guest posts or partnerships</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-user-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">Social Bio Generator (AI)</div>
+<div class="tool-description">Create catchy bios for different niches and platforms</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-retweet"></i></div>
+<div class="tool-info">
+<div class="tool-name">Content Repurposing Map Tool</div>
+<div class="tool-description">Show how to repurpose one blog post across platforms</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-link"></i></div>
+<div class="tool-info">
+<div class="tool-name">UTM Link Builder</div>
+<div class="tool-description">Create campaign URLs with UTM parameters for tracking</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-hand-holding-usd"></i></div>
+<div class="tool-info">
+<div class="tool-name">Affiliate Link Naming Helper</div>
+<div class="tool-description">Suggest clean naming conventions for affiliate links</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-newspaper"></i></div>
+<div class="tool-info">
+<div class="tool-name">Press Release Template Builder</div>
+<div class="tool-description">Provide basic structures for press releases</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category">
+<h2>AI Chat &amp; Assistant Tools for Bloggers <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-comments"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI SEO Assistant Chat</div>
+<div class="tool-description">Ask AI questions about SEO, content ideas and optimization</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-search-minus"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Content Gap Finder</div>
+<div class="tool-description">Paste competitor topics and get content gap ideas</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-balance-scale"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Title A/B Tester</div>
+<div class="tool-description">Compare 2-3 titles and get AI feedback on which may perform better</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-user-tie"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Persona-Based Writer</div>
+<div class="tool-description">Ask AI to write content tailored for specific audience personas</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-star"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Content Quality Rater</div>
+<div class="tool-description">Get AI feedback on readability, clarity and structure</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-reply"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Comment Reply Assistant</div>
+<div class="tool-description">Generate replies to blog comments or social comments</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon ai-icon"><i class="fas fa-expand"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Snippet Expander for Short Notes</div>
+<div class="tool-description">Turn bullet points into fully written sections</div>
+</div>
+</a>
+</div>
+</section>
+<!-- CALCULATORS SECTION -->
+<section class="category" id="calculators">
+<h2>Calculators <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-weight"></i></div>
+<div class="tool-info">
+<div class="tool-name">BMI Calculator</div>
+<div class="tool-description">Quickly calculate Body Mass Index to estimate weight category</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-fire"></i></div>
+<div class="tool-info">
+<div class="tool-name">BMR Calculator</div>
+<div class="tool-description">Estimate daily calorie needs based on age, height, weight, and gender</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-utensils"></i></div>
+<div class="tool-info">
+<div class="tool-name">Daily Calorie Needs Calculator</div>
+<div class="tool-description">Find approximate calories needed to maintain or lose weight</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-apple-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Macro Calculator</div>
+<div class="tool-description">Estimate daily carb, protein and fat targets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-baby"></i></div>
+<div class="tool-info">
+<div class="tool-name">Pregnancy Due Date Calculator</div>
+<div class="tool-description">Estimate approximate due date based on last period</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-birthday-cake"></i></div>
+<div class="tool-info">
+<div class="tool-name">Age Calculator</div>
+<div class="tool-description">Calculate exact age in years, months, and days</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Date Difference Calculator</div>
+<div class="tool-description">Find days between two dates</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-money-check-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Loan EMI Calculator</div>
+<div class="tool-description">Estimate monthly payments for personal or home loans</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-chart-line"></i></div>
+<div class="tool-info">
+<div class="tool-name">Sip Return Calculator</div>
+<div class="tool-description">Estimate investment returns from monthly SIP</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-percentage"></i></div>
+<div class="tool-info">
+<div class="tool-name">Discount Calculator</div>
+<div class="tool-description">Calculate final price after percentage discount</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-utensils"></i></div>
+<div class="tool-info">
+<div class="tool-name">Tip Calculator</div>
+<div class="tool-description">Quickly split restaurant tips between friends</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-receipt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Tax (Sales Tax) Calculator</div>
+<div class="tool-description">Add or remove sales tax from a price</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-ruler-combined"></i></div>
+<div class="tool-info">
+<div class="tool-name">Unit Converter (Length, Weight)</div>
+<div class="tool-description">Convert between units like cm/inch, kg/lb</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-globe-americas"></i></div>
+<div class="tool-info">
+<div class="tool-name">Time Zone Difference Calculator</div>
+<div class="tool-description">Find time difference between two cities manually (no live API needed)</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-gas-pump"></i></div>
+<div class="tool-info">
+<div class="tool-name">Fuel Cost Calculator</div>
+<div class="tool-description">Estimate fuel cost for a trip based on mileage and fuel price</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-user-clock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Retirement Age Calculator</div>
+<div class="tool-description">See how many years until retirement target</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-piggy-bank"></i></div>
+<div class="tool-info">
+<div class="tool-name">Savings Goal Calculator</div>
+<div class="tool-description">Calculate how long it will take to save a specific amount</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-chart-bar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Compound Interest Calculator</div>
+<div class="tool-description">Estimate growth of savings over time</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-money-bill-wave"></i></div>
+<div class="tool-info">
+<div class="tool-name">Loan Payoff Calculator</div>
+<div class="tool-description">Estimate how long it will take to pay off debt</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon calculator-icon"><i class="fas fa-calculator"></i></div>
+<div class="tool-info">
+<div class="tool-name">Simple Percentage Calculator</div>
+<div class="tool-description">Quickly find percent increase/decrease</div>
+</div>
+</a>
+</div>
+</section>
+<section class="category" id="health-wellness">
+<h2>Health &amp; Wellness Tools (Non-medical, general use) <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-tint"></i></div>
+<div class="tool-info">
+<div class="tool-name">Water Intake Tracker</div>
+<div class="tool-description">Log daily water consumption and progress to your goal</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-walking"></i></div>
+<div class="tool-info">
+<div class="tool-name">Steps Goal Planner</div>
+<div class="tool-description">Set and track daily step goals manually</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-bed"></i></div>
+<div class="tool-info">
+<div class="tool-name">Sleep Tracker Log (manual)</div>
+<div class="tool-description">Record sleep and wake times to spot patterns</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-smile"></i></div>
+<div class="tool-info">
+<div class="tool-name">Mood Tracker</div>
+<div class="tool-description">Log daily mood levels with tags like happy, stressed, tired</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-brain"></i></div>
+<div class="tool-info">
+<div class="tool-name">Stress Level Self-Check Questionnaire</div>
+<div class="tool-description">Quick self-assessment of perceived stress</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-heart"></i></div>
+<div class="tool-info">
+<div class="tool-name">Gratitude Journal</div>
+<div class="tool-description">Write 3 things you're grateful for each day</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-check-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">Habit Tracker</div>
+<div class="tool-description">Track positive habits like reading, exercise or meditation</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-wind"></i></div>
+<div class="tool-info">
+<div class="tool-name">Breathing Exercise Timer</div>
+<div class="tool-description">Guide inhale-hold-exhale cycles to calm the mind</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-spa"></i></div>
+<div class="tool-info">
+<div class="tool-name">Meditation Session Timer</div>
+<div class="tool-description">Simple timer for mindful meditation sessions</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-running"></i></div>
+<div class="tool-info">
+<div class="tool-name">Stretching Routine Planner</div>
+<div class="tool-description">Plan daily or weekly stretching routines</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-dumbbell"></i></div>
+<div class="tool-info">
+<div class="tool-name">Workout Routine Planner</div>
+<div class="tool-description">Build workout splits (full-body, push/pull/legs)</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-home"></i></div>
+<div class="tool-info">
+<div class="tool-name">Home Workout Idea Generator</div>
+<div class="tool-description">Suggest equipment-free exercise ideas</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-hiking"></i></div>
+<div class="tool-info">
+<div class="tool-name">Walking Plan Tool</div>
+<div class="tool-description">Build a weekly walking schedule for beginners</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-utensils"></i></div>
+<div class="tool-info">
+<div class="tool-name">Meal Planner (non-prescriptive)</div>
+<div class="tool-description">Plan breakfast, lunch, and dinner for the week</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-apple-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Healthy Snack Ideas Generator</div>
+<div class="tool-description">Suggest simple snack ideas for energy</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-moon"></i></div>
+<div class="tool-info">
+<div class="tool-name">Sleep Hygiene Checklist</div>
+<div class="tool-description">Checklist to improve sleep quality habits</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-mobile-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Screen Time Reduction Planner</div>
+<div class="tool-description">Plan daily screen-free blocks and alternatives</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-coffee"></i></div>
+<div class="tool-info">
+<div class="tool-name">Caffeine Tracker Tool</div>
+<div class="tool-description">Log coffee, tea or energy drink intake</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-candy-cane"></i></div>
+<div class="tool-info">
+<div class="tool-name">Sugar Intake Awareness Tracker</div>
+<div class="tool-description">Log sugary snacks or drinks across the day</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-stethoscope"></i></div>
+<div class="tool-info">
+<div class="tool-name">Symptom Diary Template</div>
+<div class="tool-description">Record symptoms to discuss with a doctor later</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-pills"></i></div>
+<div class="tool-info">
+<div class="tool-name">Medication Reminder Log</div>
+<div class="tool-description">Log medications, doses and times (no notifications)</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-book-open"></i></div>
+<div class="tool-info">
+<div class="tool-name">Mental Wellness Journal Prompts</div>
+<div class="tool-description">Provide daily reflection prompts for mental health</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-hands-helping"></i></div>
+<div class="tool-info">
+<div class="tool-name">Self-Care Checklist Tool</div>
+<div class="tool-description">Track weekly self-care tasks like sleep, movement and social time</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-power-off"></i></div>
+<div class="tool-info">
+<div class="tool-name">Digital Detox Planner</div>
+<div class="tool-description">Create a plan to disconnect from devices daily</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-peace"></i></div>
+<div class="tool-info">
+<div class="tool-name">Yoga Pose Sequence Planner</div>
+<div class="tool-description">Plan sequences of basic yoga poses</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-tree"></i></div>
+<div class="tool-info">
+<div class="tool-name">Outdoor Activity Idea Generator</div>
+<div class="tool-description">Suggest simple outdoor activities for health</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-user"></i></div>
+<div class="tool-info">
+<div class="tool-name">Posture Reminder Helper</div>
+<div class="tool-description">Simple timers and reminders for posture checks</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-chart-line"></i></div>
+<div class="tool-info">
+<div class="tool-name">Goal vs Progress Health Tracker</div>
+<div class="tool-description">Set health-related goals and log progress manually</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-utensil-spoon"></i></div>
+<div class="tool-info">
+<div class="tool-name">Food Diary Template Tool</div>
+<div class="tool-description">Record meals and snacks for awareness</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-tint"></i></div>
+<div class="tool-info">
+<div class="tool-name">Hydration Reminder Planner</div>
+<div class="tool-description">Plan times to drink water during the day</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon health-icon"><i class="fas fa-heartbeat"></i></div>
+<div class="tool-info">
+<div class="tool-name">Stress Relief Ideas Generator</div>
+<div class="tool-description">Suggest relaxation activities like journaling, walking or music</div>
+<div class="disclaimer">Not medical advice, informational only</div>
+</div>
+</a>
+</div>
+</section><section class="category" id="productivity-life">
+<h2>Daily-Use Productivity &amp; Life Tools <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-tasks"></i></div>
+<div class="tool-info">
+<div class="tool-name">To-Do List Manager</div>
+<div class="tool-description">Organize tasks into Today, This Week and Later</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-columns"></i></div>
+<div class="tool-info">
+<div class="tool-name">Kanban Board Tool</div>
+<div class="tool-description">Move tasks between To Do, Doing and Done</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-calendar-day"></i></div>
+<div class="tool-info">
+<div class="tool-name">Daily Planner Tool</div>
+<div class="tool-description">Plan today by time blocks and priorities</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-calendar-week"></i></div>
+<div class="tool-info">
+<div class="tool-name">Weekly Planner Tool</div>
+<div class="tool-description">See weekly tasks and goals in a single view</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-calendar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Monthly Planner Tool</div>
+<div class="tool-description">Track high-level goals and key dates each month</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-bullseye"></i></div>
+<div class="tool-info">
+<div class="tool-name">Goal Planner (SMART)</div>
+<div class="tool-description">Turn vague goals into specific action plans</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-clock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Time Blocking Scheduler</div>
+<div class="tool-description">Block out hours for deep work, meetings, and breaks</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-sticky-note"></i></div>
+<div class="tool-info">
+<div class="tool-name">Note-Taking Pad</div>
+<div class="tool-description">Simple in-browser notepad with auto-save (local storage)</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-clipboard"></i></div>
+<div class="tool-info">
+<div class="tool-name">Clipboard Cleaner Tool</div>
+<div class="tool-description">Remove formatting and keep clean plain text</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-text-height"></i></div>
+<div class="tool-info">
+<div class="tool-name">Text Case Converter</div>
+<div class="tool-description">Switch text between lower, UPPER, Title and Sentence case</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-font"></i></div>
+<div class="tool-info">
+<div class="tool-name">Character &amp; Word Counter</div>
+<div class="tool-description">Count words and characters for posts or essays</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-list-check"></i></div>
+<div class="tool-info">
+<div class="tool-name">Checklist Maker</div>
+<div class="tool-description">Create reusable checklists for recurring tasks</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-clipboard-list"></i></div>
+<div class="tool-info">
+<div class="tool-name">Meeting Agenda Planner</div>
+<div class="tool-description">Plan agenda topics and expected timings</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-file-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Meeting Minutes Template</div>
+<div class="tool-description">Capture notes, decisions and action items</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-calendar-check"></i></div>
+<div class="tool-info">
+<div class="tool-name">Event Checklist Tool</div>
+<div class="tool-description">Plan tasks for birthday parties, weddings or corporate events</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-suitcase"></i></div>
+<div class="tool-info">
+<div class="tool-name">Packing List Generator</div>
+<div class="tool-description">Build packing lists tailored to trip length and type</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-broom"></i></div>
+<div class="tool-info">
+<div class="tool-name">Chore Chart Planner</div>
+<div class="tool-description">Assign tasks and track completion for household chores</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-shopping-cart"></i></div>
+<div class="tool-info">
+<div class="tool-name">Shopping List Maker</div>
+<div class="tool-description">Create and categorize shopping lists by store or aisle</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-gift"></i></div>
+<div class="tool-info">
+<div class="tool-name">Gift Idea Planner Tool</div>
+<div class="tool-description">List recipients, gift ideas and budgets per person</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+<div class="tool-info">
+<div class="tool-name">Bill Tracker Tool</div>
+<div class="tool-description">Track bills, due dates and payment status</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-chart-pie"></i></div>
+<div class="tool-info">
+<div class="tool-name">Simple Budget Tracker</div>
+<div class="tool-description">Log income and expenses manually by category</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Subscription Tracker</div>
+<div class="tool-description">Track digital subscriptions, costs and renewal dates</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-birthday-cake"></i></div>
+<div class="tool-info">
+<div class="tool-name">Birthday &amp; Anniversary Reminder List</div>
+<div class="tool-description">Register important dates and notes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-project-diagram"></i></div>
+<div class="tool-info">
+<div class="tool-name">Project Task Splitter Tool</div>
+<div class="tool-description">Break big projects into smaller, trackable tasks</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-tasks"></i></div>
+<div class="tool-info">
+<div class="tool-name">Life Admin Day Planner</div>
+<div class="tool-description">Batch admin tasks (bank, bills, forms) into one day</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-book"></i></div>
+<div class="tool-info">
+<div class="tool-name">Journal / Diary Tool</div>
+<div class="tool-description">Write daily entries to capture thoughts and memories</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-images"></i></div>
+<div class="tool-info">
+<div class="tool-name">Vision Board Text Planner</div>
+<div class="tool-description">List goals, quotes and ideas for your physical vision board</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-list-ol"></i></div>
+<div class="tool-info">
+<div class="tool-name">Bucket List Manager</div>
+<div class="tool-description">Plan life experiences and track what you've completed</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-hourglass-half"></i></div>
+<div class="tool-info">
+<div class="tool-name">Focus Timer / Pomodoro</div>
+<div class="tool-description">Use short sprints and breaks to stay productive</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-stopwatch"></i></div>
+<div class="tool-info">
+<div class="tool-name">Countdown Timer Tool</div>
+<div class="tool-description">Countdown to specific deadlines or events</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-bell"></i></div>
+<div class="tool-info">
+<div class="tool-name">Simple Reminder Notes Tool</div>
+<div class="tool-description">Write "don't forget" notes with highlighting</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-car"></i></div>
+<div class="tool-info">
+<div class="tool-name">Car Maintenance Log</div>
+<div class="tool-description">Track services, repairs, and mileage history</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-home"></i></div>
+<div class="tool-info">
+<div class="tool-name">Home Inventory Tracker</div>
+<div class="tool-description">List valuable items at home for insurance or records</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-truck-moving"></i></div>
+<div class="tool-info">
+<div class="tool-name">Move House Checklist Tool</div>
+<div class="tool-description">Checklist for moving home step-by-step</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-plane"></i></div>
+<div class="tool-info">
+<div class="tool-name">Travel Itinerary Planner</div>
+<div class="tool-description">Plan multi-day trips with activities and notes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-paw"></i></div>
+<div class="tool-info">
+<div class="tool-name">Pet Care Planner</div>
+<div class="tool-description">Track feeding, vet visits, and grooming tasks</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-seedling"></i></div>
+<div class="tool-info">
+<div class="tool-name">Garden Planner Tool</div>
+<div class="tool-description">Plan plant types, watering schedules and fertilizer dates</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-graduation-cap"></i></div>
+<div class="tool-info">
+<div class="tool-name">Study Planner (for general users)</div>
+<div class="tool-description">Plan study sessions for any skill or course</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-book-open"></i></div>
+<div class="tool-info">
+<div class="tool-name">Reading List Tracker</div>
+<div class="tool-description">Track books you want to read, are reading, and finished</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-lightbulb"></i></div>
+<div class="tool-info">
+<div class="tool-name">Digital Product Idea Planner</div>
+<div class="tool-description">Plan eBooks, courses or templates to launch</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-address-book"></i></div>
+<div class="tool-info">
+<div class="tool-name">Simple CRM Mini-Tool</div>
+<div class="tool-description">Track clients, leads and last contact dates</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-laptop-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">Freelance Project Tracker</div>
+<div class="tool-description">Track projects, deadlines and payments from clients</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-hashtag"></i></div>
+<div class="tool-info">
+<div class="tool-name">Invoice Number Tracker</div>
+<div class="tool-description">Manage invoice numbers across clients</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-newspaper"></i></div>
+<div class="tool-info">
+<div class="tool-name">To-Read Articles Queue Tool</div>
+<div class="tool-description">Save links of articles you plan to read later</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-database"></i></div>
+<div class="tool-info">
+<div class="tool-name">Personal Knowledge Base Tool</div>
+<div class="tool-description">Save snippets, ideas and references</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-question-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">Daily Reflection Questions Tool</div>
+<div class="tool-description">Reflect on what went well and what to improve</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-clock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Work Log / Timesheet</div>
+<div class="tool-description">Record hours worked on different projects each day</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-random"></i></div>
+<div class="tool-info">
+<div class="tool-name">Random Decision Maker</div>
+<div class="tool-description">Pick random choices when you can't decide</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-sort-amount-down"></i></div>
+<div class="tool-info">
+<div class="tool-name">Idea Ranker Tool</div>
+<div class="tool-description">Rank ideas using custom criteria such as impact and effort</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon productivity-icon"><i class="fas fa-balance-scale"></i></div>
+<div class="tool-info">
+<div class="tool-name">Pros &amp; Cons Decision Helper</div>
+<div class="tool-description">List pros and cons and see which side is stronger</div>
+</div>
+</a>
+</div>
+</section><section class="category" id="coding-dev">
+<h2>Coding &amp; Developer Tools <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">Code Snippet Formatter</div>
+<div class="tool-description">Beautify and format code snippets in popular languages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-file-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">JSON Formatter &amp; Validator</div>
+<div class="tool-description">Format and validate JSON for APIs and configs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-exchange-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">YAML to JSON Converter</div>
+<div class="tool-description">Convert YAML files into JSON and vice versa</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-html5"></i></div>
+<div class="tool-info">
+<div class="tool-name">HTML Beautifier Tool</div>
+<div class="tool-description">Clean and format messy HTML code</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-css3-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">CSS Minifier Tool</div>
+<div class="tool-description">Compress CSS files to reduce size</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-js-square"></i></div>
+<div class="tool-info">
+<div class="tool-name">JS Minifier Tool</div>
+<div class="tool-description">Minify JavaScript source code for faster loading</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">Regex Tester Tool</div>
+<div class="tool-description">Test regular expressions against sample text</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-key"></i></div>
+<div class="tool-info">
+<div class="tool-name">Base64 Encode/Decode Tool</div>
+<div class="tool-description">Encode or decode Base64 strings</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-link"></i></div>
+<div class="tool-info">
+<div class="tool-name">URL Encoder/Decoder Tool</div>
+<div class="tool-description">Convert URLs to encoded or decoded formats</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-lock"></i></div>
+<div class="tool-info">
+<div class="tool-name">JWT Decoder (no secret)</div>
+<div class="tool-description">Decode JSON Web Tokens to view header and payload</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-code-branch"></i></div>
+<div class="tool-info">
+<div class="tool-name">Diff Checker Tool</div>
+<div class="tool-description">Compare two code snippets and highlight changes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-fingerprint"></i></div>
+<div class="tool-info">
+<div class="tool-name">UUID Generator Tool</div>
+<div class="tool-description">Generate random UUIDs for testing or IDs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-link"></i></div>
+<div class="tool-info">
+<div class="tool-name">Slug Generator for URLs</div>
+<div class="tool-description">Turn text into URL-safe slugs</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-clock"></i></div>
+<div class="tool-info">
+<div class="tool-name">Cron Expression Helper</div>
+<div class="tool-description">Build and explain cron expressions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-git"></i></div>
+<div class="tool-info">
+<div class="tool-name">Git Commit Message Template Helper</div>
+<div class="tool-description">Suggest structured commit message formats</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-server"></i></div>
+<div class="tool-info">
+<div class="tool-name">API Request Template Builder</div>
+<div class="tool-description">Generate sample cURL, fetch, and Axios requests</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-list-ol"></i></div>
+<div class="tool-info">
+<div class="tool-name">Status Code Reference Tool</div>
+<div class="tool-description">Quick lookup of HTTP status codes and meanings</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-palette"></i></div>
+<div class="tool-info">
+<div class="tool-name">Color Code Converter (HEX, RGB, HSL)</div>
+<div class="tool-description">Convert color codes between formats</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-mobile-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Responsive Breakpoint Helper</div>
+<div class="tool-description">Suggest breakpoints and CSS snippets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-desktop"></i></div>
+<div class="tool-info">
+<div class="tool-name">Viewport &amp; Device Size Cheat Sheet Tool</div>
+<div class="tool-description">List common device resolutions</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-robot"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Code Assistant</div>
+<div class="tool-description">Ask AI questions and get code suggestions in various languages</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-comment"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Code Comment Generator</div>
+<div class="tool-description">Add explanatory comments to selected code blocks</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-book-open"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Code Explanation Tool</div>
+<div class="tool-description">Paste code and get human-friendly explanations of what it does</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-bug"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Bug Hint Helper</div>
+<div class="tool-description">Paste error messages and code to get suggestions for potential fixes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-sync-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Refactor Suggestions Tool</div>
+<div class="tool-description">Get suggestions to simplify or optimize code</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-vial"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Unit Test Ideas Tool</div>
+<div class="tool-description">Generate test case ideas for a given function</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-git"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Commit Message Generator</div>
+<div class="tool-description">Generate descriptive commit messages based on a diff or summary</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-file-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Docstring Generator Tool</div>
+<div class="tool-description">Generate docstrings for functions or classes</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-project-diagram"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI API Schema Sketch Tool</div>
+<div class="tool-description">Ask AI to draft API endpoints and sample requests/responses</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-database"></i></div>
+<div class="tool-info">
+<div class="tool-name">AI Database Schema Idea Generator</div>
+<div class="tool-description">Get suggestions for basic database table structures</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-code"></i></div>
+<div class="tool-info">
+<div class="tool-name">Snippet Library Manager</div>
+<div class="tool-description">Save frequently used code snippets by language</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-keyboard"></i></div>
+<div class="tool-info">
+<div class="tool-name">Keyboard Shortcuts Cheat Sheet Builder</div>
+<div class="tool-description">Create cheat sheets for IDEs or editors</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-brain"></i></div>
+<div class="tool-info">
+<div class="tool-name">Algorithm Practice Tracker</div>
+<div class="tool-description">Track which algorithms and data structure problems you solved</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-user-tie"></i></div>
+<div class="tool-info">
+<div class="tool-name">Tech Interview Prep Planner</div>
+<div class="tool-description">Plan interview prep schedule by topics</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fab fa-git-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Git Commands Cheat Sheet Tool</div>
+<div class="tool-description">Show commonly used Git commands organized by task</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon coding-icon"><i class="fas fa-heading"></i></div>
+<div class="tool-info">
+<div class="tool-name">HTTP Header Viewer Tool</div>
+<div class="tool-description">Simulate and view typical HTTP headers (static examples)</div>
+</div>
+</a>
+</div>
+</section><section class="category" id="other-tools">
+<h2>Other Super-Useful Tools (Random / Fun / Niche) <span class="tool-counter"></span></h2>
+<div class="tools-grid">
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-user"></i></div>
+<div class="tool-info">
+<div class="tool-name">Username Generator Tool</div>
+<div class="tool-description">Generate unique usernames for social, gaming or forums</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-signature"></i></div>
+<div class="tool-info">
+<div class="tool-name">Nickname Generator Tool</div>
+<div class="tool-description">Create fun nicknames from names or hobbies</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-users"></i></div>
+<div class="tool-info">
+<div class="tool-name">Team Name Generator</div>
+<div class="tool-description">Generate team names for sports, gaming or school projects</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-wifi"></i></div>
+<div class="tool-info">
+<div class="tool-name">Wi-Fi Name &amp; Password Idea Generator</div>
+<div class="tool-description">Suggest creative Wi-Fi SSID ideas</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-quote-left"></i></div>
+<div class="tool-info">
+<div class="tool-name">Random Quote Generator</div>
+<div class="tool-description">Show inspirational quotes at the click of a button</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-pencil-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Writing Prompt Generator</div>
+<div class="tool-description">Provide prompts for fiction or journaling</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-book"></i></div>
+<div class="tool-info">
+<div class="tool-name">Story Idea Generator</div>
+<div class="tool-description">Suggest plots based on genre and setting</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-baby"></i></div>
+<div class="tool-info">
+<div class="tool-name">Baby Name Idea Generator</div>
+<div class="tool-description">Suggest baby names by style, origin or length</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-paw"></i></div>
+<div class="tool-info">
+<div class="tool-name">Pet Name Generator</div>
+<div class="tool-description">Generate cute names for dogs, cats and other pets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-gamepad"></i></div>
+<div class="tool-info">
+<div class="tool-name">Party Game Ideas Tool</div>
+<div class="tool-description">Suggest simple game ideas for kids and adults</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-users"></i></div>
+<div class="tool-info">
+<div class="tool-name">Icebreaker Question Generator</div>
+<div class="tool-description">Provide conversation starters for meetings and events</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-balance-scale"></i></div>
+<div class="tool-info">
+<div class="tool-name">Would You Rather Question Generator</div>
+<div class="tool-description">Fun questions for friends or socials</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-question-circle"></i></div>
+<div class="tool-info">
+<div class="tool-name">Trivia Question Organizer</div>
+<div class="tool-description">Allow users to create and manage their own trivia sets</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-eye"></i></div>
+<div class="tool-info">
+<div class="tool-name">Vision Statement Generator</div>
+<div class="tool-description">Help businesses write a clear vision statement</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-bullseye"></i></div>
+<div class="tool-info">
+<div class="tool-name">Mission Statement Generator</div>
+<div class="tool-description">Help brands define their mission quickly</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="tool-info">
+<div class="tool-name">Event Name Generator</div>
+<div class="tool-description">Suggest creative names for events, conferences or meetups</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-podcast"></i></div>
+<div class="tool-info">
+<div class="tool-name">Podcast Name Generator</div>
+<div class="tool-description">Generate catchy podcast name ideas</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-music"></i></div>
+<div class="tool-info">
+<div class="tool-name">Playlist / Album Name Generator</div>
+<div class="tool-description">Create creative titles for playlists or albums</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-gift"></i></div>
+<div class="tool-info">
+<div class="tool-name">Goal Reward Planner</div>
+<div class="tool-description">Attach small rewards to achieving personal goals</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-broom"></i></div>
+<div class="tool-info">
+<div class="tool-name">Minimalist Declutter Checklist</div>
+<div class="tool-description">Step-by-step clutter removal checklist by room</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-road"></i></div>
+<div class="tool-info">
+<div class="tool-name">New Skill Roadmap Planner</div>
+<div class="tool-description">Plan steps to learn skills like coding, design or language</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-calendar-check"></i></div>
+<div class="tool-info">
+<div class="tool-name">Year in Review Reflection Tool</div>
+<div class="tool-description">Review your year's highlights, lessons and goals</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-bullseye"></i></div>
+<div class="tool-info">
+<div class="tool-name">Life Goals Category Planner</div>
+<div class="tool-description">Organize goals into health, wealth, relationships and growth</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-heart"></i></div>
+<div class="tool-info">
+<div class="tool-name">Relationship Check-in Questionnaire</div>
+<div class="tool-description">Simple non-therapy questions to review relationships</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-star"></i></div>
+<div class="tool-info">
+<div class="tool-name">Personal Values Discovery Tool</div>
+<div class="tool-description">Help users identify their core personal values</div>
+</div>
+</a>
+<a href="#" class="tool-card">
+<div class="tool-icon other-icon"><i class="fas fa-random"></i></div>
+<div class="tool-info">
+<div class="tool-name">Bucket List Randomizer</div>
+<div class="tool-description">Randomly pick one bucket list item to focus on next</div>
+</div>
+</a>
+</div>
+</section></main>
+<footer>
+<div class="footer-content">
+<h3>Tools Guru: Your All-in-One Solution for Everyday Tasks</h3>
+<p>Tools Guru brings together over 300+ specialized calculators and utilities designed to simplify your daily tasks. Whether you're converting PDFs, optimizing content, or planning your fitness journey, we have the right tool for the job.</p>
+<p>Our tools are completely browser-based, requiring no login, installation, or external APIs. Everything runs directly in your browser for maximum privacy and speed. We've designed Tools Guru to be the most comprehensive collection of free online tools available.</p>
+<p>Students use our math and education tools to ace their exams. Professionals rely on our finance and business calculators for important decisions. Bloggers and marketers utilize our SEO and writing tools to optimize their content. And everyone benefits from our health, date, and conversion tools in their daily lives.</p>
+<p>With new tools added regularly, Tools Guru continues to grow as your trusted resource for quick, accurate calculations and conversions. Bookmark us today and never search for another online tool again!</p>
+<div class="footer-links">
+<a href="#" id="privacy-link">Privacy Policy</a>
+<a href="#" id="disclaimer-link">Disclaimer</a>
+<a href="#" id="contact-link">Contact Us</a>
+<a href="#" id="about-link">About Us</a>
+<a href="#" id="terms-link">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-bar');
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                toolCards.forEach(card => {
+                    const toolName = card.querySelector('.tool-name').textContent.toLowerCase();
+                    const toolDescription = card.querySelector('.tool-description').textContent.toLowerCase();
+                    
+                    if (toolName.includes(searchTerm) || toolDescription.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Add smooth scrolling for category navigation
+            document.querySelectorAll('.category-nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
