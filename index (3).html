@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaWell - Your Journey to Better Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --secondary: #1565c0;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary-light);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section - Reduced Height */
+        .hero {
+            position: relative;
+            height: 45vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        /* Latest Posts Section - More Compact */
+        .latest-posts {
+            padding: 40px 0;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .post-card {
+            height: 100%;
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .post-card-content {
+            padding: 18px;
+        }
+
+        .post-category {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+        }
+
+        .post-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .post-excerpt {
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .read-more {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary);
+        }
+
+        /* Category Sections with Horizontal Scrolling */
+        .category-sections {
+            padding: 40px 0;
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .category-title-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .category-icon {
+            background-color: var(--primary-light);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .scroll-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .scroll-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .scroll-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .posts-horizontal {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 5px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .posts-horizontal::-webkit-scrollbar {
+            display: none;
+        }
+
+        .horizontal-post-card {
+            min-width: 250px;
+            flex-shrink: 0;
+        }
+
+        .horizontal-post-card img {
+            height: 140px;
+        }
+
+        .horizontal-post-content {
+            padding: 15px;
+        }
+
+        .horizontal-post-title {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .horizontal-post-excerpt {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        /* Health Calculators Section - Functional */
+        .calculators {
+            padding: 40px 0;
+        }
+
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .calculator-container {
+            margin-bottom: 15px;
+        }
+
+        .calculator-card {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .calculator-card:hover {
+            background-color: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .calculator-card:hover .calculator-icon {
+            background-color: white;
+            color: var(--primary-light);
+        }
+
+        .calculator-card:hover .calculator-title {
+            color: white;
+        }
+
+        .calculator-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .calculator-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .calculator-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+            transition: var(--transition);
+        }
+
+        .calculator-desc {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .calculator-card:hover .calculator-desc {
+            opacity: 0.9;
+        }
+
+        .calculator-form {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid #e0e0e0;
+        }
+
+        .calculator-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .calculator-result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: var(--primary-light);
+            color: white;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .calculator-result.active {
+            display: block;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 50px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-light);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .calculators-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: var(--border-radius);
+                margin-bottom: 10px;
+            }
+
+            .newsletter-btn {
+                border-radius: var(--border-radius);
+                padding: 12px;
+            }
+
+            .scroll-controls {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculators-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .horizontal-post-card {
+                min-width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                VitaWell
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Weight Loss</a></li>
+                <li><a href="#">Home Remedies</a></li>
+                <li><a href="#">Mental Health</a></li>
+                <li><a href="#">Women's Health</a></li>
+                <li><a href="#">Sleep & Stress</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Journey to Better Health Starts Here</h1>
+            <p>Expert advice, natural remedies, weight loss tips, and mental wellness strategies to transform your life.</p>
+            <a href="#" class="btn">Start Your Wellness Journey</a>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section - 10 Posts -->
+    <section class="latest-posts">
+        <div class="container">
+            <h2 class="section-title">Latest Health Articles</h2>
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Healthy food">
+                    <div class="post-card-content">
+                        <span class="post-category">Weight Loss</span>
+                        <h3 class="post-title">10 Superfoods That Boost Metabolism Naturally</h3>
+                        <p class="post-excerpt">Discover how these nutrient-rich foods can help rev up your metabolism and support your weight loss goals.</p>
+                        <div class="post-meta">
+                            <span>May 15, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Meditation">
+                    <div class="post-card-content">
+                        <span class="post-category">Mental Health</span>
+                        <h3 class="post-title">5 Mindfulness Techniques to Reduce Anxiety</h3>
+                        <p class="post-excerpt">Simple practices you can incorporate into your daily routine to calm your mind and reduce stress levels.</p>
+                        <div class="post-meta">
+                            <span>May 12, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sleep">
+                    <div class="post-card-content">
+                        <span class="post-category">Sleep & Stress</span>
+                        <h3 class="post-title">The Science of Sleep: How to Improve Your Sleep Quality</h3>
+                        <p class="post-excerpt">Understand the sleep cycles and learn evidence-based strategies to enhance your sleep quality and duration.</p>
+                        <div class="post-meta">
+                            <span>May 10, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Exercise">
+                    <div class="post-card-content">
+                        <span class="post-category">Weight Loss</span>
+                        <h3 class="post-title">The Best Home Workouts for Busy People</h3>
+                        <p class="post-excerpt">Effective exercise routines you can do at home with minimal equipment, perfect for those with tight schedules.</p>
+                        <div class="post-meta">
+                            <span>May 8, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Herbs">
+                    <div class="post-card-content">
+                        <span class="post-category">Home Remedies</span>
+                        <h3 class="post-title">Natural Remedies for Common Digestive Issues</h3>
+                        <p class="post-excerpt">Learn about gentle, natural approaches to alleviate bloating, indigestion, and other common stomach problems.</p>
+                        <div class="post-meta">
+                            <span>May 5, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Women's health">
+                    <div class="post-card-content">
+                        <span class="post-category">Women's Health</span>
+                        <h3 class="post-title">Understanding Hormonal Changes Throughout Life</h3>
+                        <p class="post-excerpt">A comprehensive guide to the hormonal shifts women experience and how to manage symptoms naturally.</p>
+                        <div class="post-meta">
+                            <span>May 3, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 7 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Yoga">
+                    <div class="post-card-content">
+                        <span class="post-category">Mental Health</span>
+                        <h3 class="post-title">Yoga for Stress Relief: Poses to Calm Your Nervous System</h3>
+                        <p class="post-excerpt">Specific yoga postures and breathing techniques that can help reduce cortisol levels and promote relaxation.</p>
+                        <div class="post-meta">
+                            <span>April 30, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 8 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Smoothie">
+                    <div class="post-card-content">
+                        <span class="post-category">Home Remedies</span>
+                        <h3 class="post-title">Immunity-Boosting Smoothie Recipes for Cold Season</h3>
+                        <p class="post-excerpt">Delicious and nutritious smoothie combinations packed with vitamins and antioxidants to strengthen your immune system.</p>
+                        <div class="post-meta">
+                            <span>April 28, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 9 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Running">
+                    <div class="post-card-content">
+                        <span class="post-category">Weight Loss</span>
+                        <h3 class="post-title">The Truth About Cardio for Weight Loss</h3>
+                        <p class="post-excerpt">Debunking common myths and revealing the most effective cardio approaches for sustainable weight management.</p>
+                        <div class="post-meta">
+                            <span>April 25, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 10 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sleep routine">
+                    <div class="post-card-content">
+                        <span class="post-category">Sleep & Stress</span>
+                        <h3 class="post-title">Creating the Perfect Bedtime Routine for Better Sleep</h3>
+                        <p class="post-excerpt">Step-by-step guide to establishing habits that signal your body it's time to wind down and prepare for restful sleep.</p>
+                        <div class="post-meta">
+                            <span>April 22, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Sections with Horizontal Scrolling -->
+    <section class="category-sections">
+        <div class="container">
+            <!-- Weight Loss & Fitness -->
+            <div class="category-section">
+                <div class="category-header">
+                    <div class="category-title-container">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h2 class="category-title">Weight Loss & Fitness</h2>
+                    </div>
+                    <div class="scroll-controls">
+                        <button class="scroll-btn left-scroll" data-category="weight-loss">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="scroll-btn right-scroll" data-category="weight-loss">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="posts-horizontal" id="weight-loss">
+                    <!-- Post 1 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="HIIT workout">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">HIIT Workouts: Maximum Results in Minimum Time</h3>
+                            <p class="horizontal-post-excerpt">High-intensity interval training explained for busy individuals.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Meal prep">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Meal Prep Strategies for Weight Loss Success</h3>
+                            <p class="horizontal-post-excerpt">Save time and stay on track with these practical tips.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strength training">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Why Strength Training is Essential for Weight Loss</h3>
+                            <p class="horizontal-post-excerpt">Building muscle to boost metabolism and burn more calories.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Healthy eating">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">The Psychology of Eating: Mindful Approaches</h3>
+                            <p class="horizontal-post-excerpt">How your mindset affects your eating habits and weight.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Running">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Running for Beginners: A 4-Week Plan</h3>
+                            <p class="horizontal-post-excerpt">Gradual approach to building endurance and burning fat.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Exercise for women">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">The Best Exercises for Women at Every Age</h3>
+                            <p class="horizontal-post-excerpt">Tailored fitness approaches for different life stages.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Home Remedies & Natural Health -->
+            <div class="category-section">
+                <div class="category-header">
+                    <div class="category-title-container">
+                        <div class="category-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h2 class="category-title">Home Remedies & Natural Health</h2>
+                    </div>
+                    <div class="scroll-controls">
+                        <button class="scroll-btn left-scroll" data-category="home-remedies">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="scroll-btn right-scroll" data-category="home-remedies">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="posts-horizontal" id="home-remedies">
+                    <!-- Post 1 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Herbal tea">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">5 Herbal Teas for Better Digestion</h3>
+                            <p class="horizontal-post-excerpt">Natural remedies for common stomach issues.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1547592188-8358c393e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Essential oils">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Essential Oils for Headache Relief</h3>
+                            <p class="horizontal-post-excerpt">Natural alternatives to over-the-counter pain relievers.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Turmeric">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">The Healing Power of Turmeric</h3>
+                            <p class="horizontal-post-excerpt">Anti-inflammatory benefits and how to use it effectively.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Honey">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Honey: Nature's Medicine Cabinet</h3>
+                            <p class="horizontal-post-excerpt">Multiple health benefits of raw, unprocessed honey.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ginger">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Ginger Remedies for Nausea and Inflammation</h3>
+                            <p class="horizontal-post-excerpt">Simple preparations for common ailments.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bone health">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Bone Health for Women Over 40</h3>
+                            <p class="horizontal-post-excerpt">Nutrition and exercise strategies to prevent osteoporosis.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Mental Health & Stress Management -->
+            <div class="category-section">
+                <div class="category-header">
+                    <div class="category-title-container">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h2 class="category-title">Mental Health & Stress Management</h2>
+                    </div>
+                    <div class="scroll-controls">
+                        <button class="scroll-btn left-scroll" data-category="mental-health">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="scroll-btn right-scroll" data-category="mental-health">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="posts-horizontal" id="mental-health">
+                    <!-- Post 1 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Meditation">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Meditation for Beginners: A Simple Guide</h3>
+                            <p class="horizontal-post-excerpt">Step-by-step instructions to start a meditation practice.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Breathing exercises">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Breathing Techniques to Calm Anxiety</h3>
+                            <p class="horizontal-post-excerpt">Simple exercises you can do anywhere, anytime.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nature">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">The Mental Health Benefits of Nature</h3>
+                            <p class="horizontal-post-excerpt">How spending time outdoors reduces stress and improves mood.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Journaling">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Therapeutic Journaling for Emotional Wellness</h3>
+                            <p class="horizontal-post-excerpt">Writing techniques to process emotions and reduce anxiety.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sleep">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">The Connection Between Sleep and Mental Health</h3>
+                            <p class="horizontal-post-excerpt">How quality sleep impacts your emotional wellbeing.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="card horizontal-post-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Stress management for women">
+                        <div class="horizontal-post-content">
+                            <h3 class="horizontal-post-title">Stress Management Strategies for Busy Women</h3>
+                            <p class="horizontal-post-excerpt">Practical tips for balancing multiple responsibilities.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Calculators Section - All 15 Functional Calculators -->
+    <section class="calculators">
+        <div class="container">
+            <h2 class="section-title">Health Calculators & Tools</h2>
+            <div class="calculators-grid">
+                <!-- BMI Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="bmi">
+                        <div class="calculator-icon">
+                            <i class="fas fa-weight"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">BMI Calculator</h3>
+                            <p class="calculator-desc">Calculate your Body Mass Index</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="bmi-form">
+                        <div class="form-group">
+                            <label for="bmi-height">Height (cm)</label>
+                            <input type="number" id="bmi-height" class="form-control" placeholder="Enter height in cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="bmi-weight">Weight (kg)</label>
+                            <input type="number" id="bmi-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="bmi">Calculate BMI</button>
+                        <div class="calculator-result" id="bmi-result"></div>
+                    </div>
+                </div>
+
+                <!-- Calorie Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="calorie">
+                        <div class="calculator-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Calorie Calculator</h3>
+                            <p class="calculator-desc">Estimate daily calorie needs</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="calorie-form">
+                        <div class="form-group">
+                            <label for="calorie-age">Age</label>
+                            <input type="number" id="calorie-age" class="form-control" placeholder="Enter your age">
+                        </div>
+                        <div class="form-group">
+                            <label for="calorie-gender">Gender</label>
+                            <select id="calorie-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calorie-weight">Weight (kg)</label>
+                            <input type="number" id="calorie-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="calorie-height">Height (cm)</label>
+                            <input type="number" id="calorie-height" class="form-control" placeholder="Enter height in cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="calorie-activity">Activity Level</label>
+                            <select id="calorie-activity" class="form-control">
+                                <option value="1.2">Sedentary (little or no exercise)</option>
+                                <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                                <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="calorie">Calculate Calories</button>
+                        <div class="calculator-result" id="calorie-result"></div>
+                    </div>
+                </div>
+
+                <!-- Body Fat Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="body-fat">
+                        <div class="calculator-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Body Fat Calculator</h3>
+                            <p class="calculator-desc">Estimate body fat percentage</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="body-fat-form">
+                        <div class="form-group">
+                            <label for="body-fat-gender">Gender</label>
+                            <select id="body-fat-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="body-fat-weight">Weight (kg)</label>
+                            <input type="number" id="body-fat-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="body-fat-waist">Waist Circumference (cm)</label>
+                            <input type="number" id="body-fat-waist" class="form-control" placeholder="Enter waist measurement">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="body-fat">Calculate Body Fat</button>
+                        <div class="calculator-result" id="body-fat-result"></div>
+                    </div>
+                </div>
+
+                <!-- Heart Rate Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="heart-rate">
+                        <div class="calculator-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Heart Rate Calculator</h3>
+                            <p class="calculator-desc">Find your target heart rate zones</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="heart-rate-form">
+                        <div class="form-group">
+                            <label for="heart-rate-age">Age</label>
+                            <input type="number" id="heart-rate-age" class="form-control" placeholder="Enter your age">
+                        </div>
+                        <div class="form-group">
+                            <label for="heart-rate-resting">Resting Heart Rate (optional)</label>
+                            <input type="number" id="heart-rate-resting" class="form-control" placeholder="Enter resting heart rate">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="heart-rate">Calculate Heart Rate Zones</button>
+                        <div class="calculator-result" id="heart-rate-result"></div>
+                    </div>
+                </div>
+
+                <!-- Sleep Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="sleep">
+                        <div class="calculator-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Sleep Calculator</h3>
+                            <p class="calculator-desc">Optimize your sleep schedule</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="sleep-form">
+                        <div class="form-group">
+                            <label for="sleep-wakeup">What time do you need to wake up?</label>
+                            <input type="time" id="sleep-wakeup" class="form-control">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="sleep">Calculate Bedtimes</button>
+                        <div class="calculator-result" id="sleep-result"></div>
+                    </div>
+                </div>
+
+                <!-- Ideal Weight Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="ideal-weight">
+                        <div class="calculator-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Ideal Weight Calculator</h3>
+                            <p class="calculator-desc">Determine your healthy weight range</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="ideal-weight-form">
+                        <div class="form-group">
+                            <label for="ideal-weight-height">Height (cm)</label>
+                            <input type="number" id="ideal-weight-height" class="form-control" placeholder="Enter height in cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="ideal-weight-gender">Gender</label>
+                            <select id="ideal-weight-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="ideal-weight">Calculate Ideal Weight</button>
+                        <div class="calculator-result" id="ideal-weight-result"></div>
+                    </div>
+                </div>
+
+                <!-- Water Intake Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="water">
+                        <div class="calculator-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Water Intake Calculator</h3>
+                            <p class="calculator-desc">Calculate daily water needs</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="water-form">
+                        <div class="form-group">
+                            <label for="water-weight">Weight (kg)</label>
+                            <input type="number" id="water-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="water-activity">Activity Level</label>
+                            <select id="water-activity" class="form-control">
+                                <option value="30">Sedentary (little exercise)</option>
+                                <option value="35">Moderately active</option>
+                                <option value="40">Very active</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="water">Calculate Water Needs</button>
+                        <div class="calculator-result" id="water-result"></div>
+                    </div>
+                </div>
+
+                <!-- Pregnancy Due Date Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="pregnancy">
+                        <div class="calculator-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Pregnancy Due Date</h3>
+                            <p class="calculator-desc">Estimate your due date</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="pregnancy-form">
+                        <div class="form-group">
+                            <label for="pregnancy-lmp">First day of last menstrual period</label>
+                            <input type="date" id="pregnancy-lmp" class="form-control">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="pregnancy">Calculate Due Date</button>
+                        <div class="calculator-result" id="pregnancy-result"></div>
+                    </div>
+                </div>
+
+                <!-- BMR Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="bmr">
+                        <div class="calculator-icon">
+                            <i class="fas fa-burn"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">BMR Calculator</h3>
+                            <p class="calculator-desc">Basal Metabolic Rate calculator</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="bmr-form">
+                        <div class="form-group">
+                            <label for="bmr-age">Age</label>
+                            <input type="number" id="bmr-age" class="form-control" placeholder="Enter your age">
+                        </div>
+                        <div class="form-group">
+                            <label for="bmr-gender">Gender</label>
+                            <select id="bmr-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bmr-weight">Weight (kg)</label>
+                            <input type="number" id="bmr-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="bmr-height">Height (cm)</label>
+                            <input type="number" id="bmr-height" class="form-control" placeholder="Enter height in cm">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="bmr">Calculate BMR</button>
+                        <div class="calculator-result" id="bmr-result"></div>
+                    </div>
+                </div>
+
+                <!-- Waist-to-Hip Ratio Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="waist-hip">
+                        <div class="calculator-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Waist-to-Hip Ratio</h3>
+                            <p class="calculator-desc">Calculate your waist-to-hip ratio</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="waist-hip-form">
+                        <div class="form-group">
+                            <label for="waist-hip-waist">Waist Circumference (cm)</label>
+                            <input type="number" id="waist-hip-waist" class="form-control" placeholder="Enter waist measurement">
+                        </div>
+                        <div class="form-group">
+                            <label for="waist-hip-hip">Hip Circumference (cm)</label>
+                            <input type="number" id="waist-hip-hip" class="form-control" placeholder="Enter hip measurement">
+                        </div>
+                        <div class="form-group">
+                            <label for="waist-hip-gender">Gender</label>
+                            <select id="waist-hip-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="waist-hip">Calculate Ratio</button>
+                        <div class="calculator-result" id="waist-hip-result"></div>
+                    </div>
+                </div>
+
+                <!-- Macro Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="macro">
+                        <div class="calculator-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Macro Calculator</h3>
+                            <p class="calculator-desc">Calculate macronutrient needs</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="macro-form">
+                        <div class="form-group">
+                            <label for="macro-calories">Daily Calorie Intake</label>
+                            <input type="number" id="macro-calories" class="form-control" placeholder="Enter daily calories">
+                        </div>
+                        <div class="form-group">
+                            <label for="macro-goal">Goal</label>
+                            <select id="macro-goal" class="form-control">
+                                <option value="maintain">Maintain Weight</option>
+                                <option value="lose">Lose Weight</option>
+                                <option value="gain">Gain Weight</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="macro">Calculate Macros</button>
+                        <div class="calculator-result" id="macro-result"></div>
+                    </div>
+                </div>
+
+                <!-- Step Counter Estimator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="step-counter">
+                        <div class="calculator-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Step Counter Estimator</h3>
+                            <p class="calculator-desc">Estimate calories burned from steps</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="step-counter-form">
+                        <div class="form-group">
+                            <label for="step-counter-steps">Number of Steps</label>
+                            <input type="number" id="step-counter-steps" class="form-control" placeholder="Enter number of steps">
+                        </div>
+                        <div class="form-group">
+                            <label for="step-counter-weight">Weight (kg)</label>
+                            <input type="number" id="step-counter-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="step-counter">Calculate Calories Burned</button>
+                        <div class="calculator-result" id="step-counter-result"></div>
+                    </div>
+                </div>
+
+                <!-- Cholesterol Risk Estimator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="cholesterol">
+                        <div class="calculator-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Cholesterol Risk</h3>
+                            <p class="calculator-desc">Estimate cholesterol risk factors</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="cholesterol-form">
+                        <div class="form-group">
+                            <label for="cholesterol-total">Total Cholesterol (mg/dL)</label>
+                            <input type="number" id="cholesterol-total" class="form-control" placeholder="Enter total cholesterol">
+                        </div>
+                        <div class="form-group">
+                            <label for="cholesterol-hdl">HDL Cholesterol (mg/dL)</label>
+                            <input type="number" id="cholesterol-hdl" class="form-control" placeholder="Enter HDL cholesterol">
+                        </div>
+                        <div class="form-group">
+                            <label for="cholesterol-age">Age</label>
+                            <input type="number" id="cholesterol-age" class="form-control" placeholder="Enter your age">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="cholesterol">Assess Risk</button>
+                        <div class="calculator-result" id="cholesterol-result"></div>
+                    </div>
+                </div>
+
+                <!-- TDEE Calculator -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="tdee">
+                        <div class="calculator-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">TDEE Calculator</h3>
+                            <p class="calculator-desc">Total Daily Energy Expenditure</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="tdee-form">
+                        <div class="form-group">
+                            <label for="tdee-age">Age</label>
+                            <input type="number" id="tdee-age" class="form-control" placeholder="Enter your age">
+                        </div>
+                        <div class="form-group">
+                            <label for="tdee-gender">Gender</label>
+                            <select id="tdee-gender" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tdee-weight">Weight (kg)</label>
+                            <input type="number" id="tdee-weight" class="form-control" placeholder="Enter weight in kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="tdee-height">Height (cm)</label>
+                            <input type="number" id="tdee-height" class="form-control" placeholder="Enter height in cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="tdee-activity">Activity Level</label>
+                            <select id="tdee-activity" class="form-control">
+                                <option value="1.2">Sedentary (little or no exercise)</option>
+                                <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                                <option value="1.55">Moderately active (moderate exercise 3-5 days/week)</option>
+                                <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                                <option value="1.9">Extra active (very hard exercise & physical job)</option>
+                            </select>
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="tdee">Calculate TDEE</button>
+                        <div class="calculator-result" id="tdee-result"></div>
+                    </div>
+                </div>
+
+                <!-- Sleep Quality Score -->
+                <div class="calculator-container">
+                    <div class="card calculator-card" data-calculator="sleep-quality">
+                        <div class="calculator-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="calculator-content">
+                            <h3 class="calculator-title">Sleep Quality Score</h3>
+                            <p class="calculator-desc">Assess your sleep quality</p>
+                        </div>
+                    </div>
+                    <div class="calculator-form" id="sleep-quality-form">
+                        <div class="form-group">
+                            <label for="sleep-quality-hours">Sleep Duration (hours)</label>
+                            <input type="number" id="sleep-quality-hours" class="form-control" placeholder="Enter hours slept" min="0" max="12" step="0.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleep-quality-wakeups">Times Woke Up</label>
+                            <input type="number" id="sleep-quality-wakeups" class="form-control" placeholder="Enter number of times">
+                        </div>
+                        <div class="form-group">
+                            <label for="sleep-quality-feeling">How rested do you feel? (1-10)</label>
+                            <input type="number" id="sleep-quality-feeling" class="form-control" placeholder="Enter 1-10" min="1" max="10">
+                        </div>
+                        <button class="btn calculate-btn" data-calculate="sleep-quality">Calculate Sleep Score</button>
+                        <div class="calculator-result" id="sleep-quality-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Health Newsletter</h2>
+            <p>Get the latest health tips, expert advice, and exclusive content delivered directly to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About VitaWell</h3>
+                    <div class="footer-about">
+                        <p>VitaWell is your trusted source for evidence-based health information, natural remedies, and wellness strategies to help you live your healthiest life.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Health Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Weight Loss</a></li>
+                        <li><a href="#">Fitness</a></li>
+                        <li><a href="#">Home Remedies</a></li>
+                        <li><a href="#">Mental Health</a></li>
+                        <li><a href="#">Women's Health</a></li>
+                        <li><a href="#">Sleep & Stress</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> infovitawell@example.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Health City, HC 12345</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 VitaWell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.nav-menu');
+            const button = document.querySelector('.mobile-menu-btn');
+            
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Horizontal scrolling for category sections
+        document.querySelectorAll('.scroll-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const direction = this.classList.contains('left-scroll') ? -1 : 1;
+                const categoryId = this.getAttribute('data-category');
+                const container = document.getElementById(categoryId);
+                const scrollAmount = 300;
+                
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Calculator functionality
+        document.querySelectorAll('.calculator-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const calculatorType = this.getAttribute('data-calculator');
+                const form = document.getElementById(`${calculatorType}-form`);
+                
+                // Close all other calculator forms
+                document.querySelectorAll('.calculator-form').forEach(f => {
+                    if (f !== form) f.classList.remove('active');
+                });
+                
+                // Toggle current calculator form
+                form.classList.toggle('active');
+            });
+        });
+
+        // Calculate BMI
+        document.querySelector('[data-calculate="bmi"]').addEventListener('click', function() {
+            const height = parseFloat(document.getElementById('bmi-height').value) / 100; // Convert to meters
+            const weight = parseFloat(document.getElementById('bmi-weight').value);
+            
+            if (height && weight) {
+                const bmi = (weight / (height * height)).toFixed(1);
+                let category = '';
+                
+                if (bmi < 18.5) category = 'Underweight';
+                else if (bmi < 25) category = 'Normal weight';
+                else if (bmi < 30) category = 'Overweight';
+                else category = 'Obese';
+                
+                document.getElementById('bmi-result').textContent = `Your BMI is ${bmi} (${category})`;
+                document.getElementById('bmi-result').classList.add('active');
+            } else {
+                alert('Please enter both height and weight');
+            }
+        });
+
+        // Calculate Calories
+        document.querySelector('[data-calculate="calorie"]').addEventListener('click', function() {
+            const age = parseFloat(document.getElementById('calorie-age').value);
+            const gender = document.getElementById('calorie-gender').value;
+            const weight = parseFloat(document.getElementById('calorie-weight').value);
+            const height = parseFloat(document.getElementById('calorie-height').value);
+            const activity = parseFloat(document.getElementById('calorie-activity').value);
+            
+            if (age && weight && height) {
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+                } else {
+                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+                }
+                
+                const tdee = Math.round(bmr * activity);
+                document.getElementById('calorie-result').textContent = `Your daily calorie needs: ${tdee} calories`;
+                document.getElementById('calorie-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Calculate Body Fat
+        document.querySelector('[data-calculate="body-fat"]').addEventListener('click', function() {
+            const gender = document.getElementById('body-fat-gender').value;
+            const weight = parseFloat(document.getElementById('body-fat-weight').value);
+            const waist = parseFloat(document.getElementById('body-fat-waist').value);
+            
+            if (weight && waist) {
+                let bodyFat;
+                if (gender === 'male') {
+                    bodyFat = (86.010 * Math.log10(waist - 70) - 70.041 * Math.log10(weight) + 36.76).toFixed(1);
+                } else {
+                    bodyFat = (163.205 * Math.log10(waist + 70) - 97.684 * Math.log10(weight) - 78.387).toFixed(1);
+                }
+                
+                document.getElementById('body-fat-result').textContent = `Estimated body fat: ${bodyFat}%`;
+                document.getElementById('body-fat-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Calculate Heart Rate
+        document.querySelector('[data-calculate="heart-rate"]').addEventListener('click', function() {
+            const age = parseFloat(document.getElementById('heart-rate-age').value);
+            const resting = parseFloat(document.getElementById('heart-rate-resting').value) || 70;
+            
+            if (age) {
+                const maxHR = 220 - age;
+                const reserve = maxHR - resting;
+                const lowZone = Math.round(resting + reserve * 0.5);
+                const highZone = Math.round(resting + reserve * 0.85);
+                
+                document.getElementById('heart-rate-result').textContent = `Target heart rate zone: ${lowZone} - ${highZone} bpm`;
+                document.getElementById('heart-rate-result').classList.add('active');
+            } else {
+                alert('Please enter your age');
+            }
+        });
+
+        // Calculate Sleep Times
+        document.querySelector('[data-calculate="sleep"]').addEventListener('click', function() {
+            const wakeupTime = document.getElementById('sleep-wakeup').value;
+            
+            if (wakeupTime) {
+                const [hours, minutes] = wakeupTime.split(':').map(Number);
+                let wakeupDate = new Date();
+                wakeupDate.setHours(hours, minutes, 0, 0);
+                
+                // Calculate bedtimes for 5-6 sleep cycles (each 90 minutes)
+                const cycleTimes = [];
+                for (let cycles = 5; cycles <= 6; cycles++) {
+                    const bedtime = new Date(wakeupDate.getTime() - cycles * 90 * 60 * 1000);
+                    cycleTimes.push(bedtime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}));
+                }
+                
+                document.getElementById('sleep-result').textContent = `Ideal bedtimes: ${cycleTimes.join(' or ')}`;
+                document.getElementById('sleep-result').classList.add('active');
+            } else {
+                alert('Please select a wake-up time');
+            }
+        });
+
+        // Calculate Ideal Weight
+        document.querySelector('[data-calculate="ideal-weight"]').addEventListener('click', function() {
+            const height = parseFloat(document.getElementById('ideal-weight-height').value);
+            const gender = document.getElementById('ideal-weight-gender').value;
+            
+            if (height) {
+                let idealWeight;
+                if (gender === 'male') {
+                    idealWeight = (50 + 0.9 * (height - 152)).toFixed(1);
+                } else {
+                    idealWeight = (45.5 + 0.9 * (height - 152)).toFixed(1);
+                }
+                
+                document.getElementById('ideal-weight-result').textContent = `Your ideal weight is approximately ${idealWeight} kg`;
+                document.getElementById('ideal-weight-result').classList.add('active');
+            } else {
+                alert('Please enter your height');
+            }
+        });
+
+        // Calculate Water Needs
+        document.querySelector('[data-calculate="water"]').addEventListener('click', function() {
+            const weight = parseFloat(document.getElementById('water-weight').value);
+            const activity = parseFloat(document.getElementById('water-activity').value);
+            
+            if (weight) {
+                const water = Math.round(weight * activity);
+                document.getElementById('water-result').textContent = `Daily water intake: ${water} ml (approx. ${Math.round(water/250)} glasses)`;
+                document.getElementById('water-result').classList.add('active');
+            } else {
+                alert('Please enter your weight');
+            }
+        });
+
+        // Calculate Pregnancy Due Date
+        document.querySelector('[data-calculate="pregnancy"]').addEventListener('click', function() {
+            const lmp = document.getElementById('pregnancy-lmp').value;
+            
+            if (lmp) {
+                const lmpDate = new Date(lmp);
+                const dueDate = new Date(lmpDate.getTime() + 280 * 24 * 60 * 60 * 1000);
+                
+                document.getElementById('pregnancy-result').textContent = `Estimated due date: ${dueDate.toLocaleDateString()}`;
+                document.getElementById('pregnancy-result').classList.add('active');
+            } else {
+                alert('Please select the first day of your last menstrual period');
+            }
+        });
+
+        // Calculate BMR
+        document.querySelector('[data-calculate="bmr"]').addEventListener('click', function() {
+            const age = parseFloat(document.getElementById('bmr-age').value);
+            const gender = document.getElementById('bmr-gender').value;
+            const weight = parseFloat(document.getElementById('bmr-weight').value);
+            const height = parseFloat(document.getElementById('bmr-height').value);
+            
+            if (age && weight && height) {
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+                } else {
+                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+                }
+                
+                document.getElementById('bmr-result').textContent = `Your Basal Metabolic Rate is ${Math.round(bmr)} calories/day`;
+                document.getElementById('bmr-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Calculate Waist-to-Hip Ratio
+        document.querySelector('[data-calculate="waist-hip"]').addEventListener('click', function() {
+            const waist = parseFloat(document.getElementById('waist-hip-waist').value);
+            const hip = parseFloat(document.getElementById('waist-hip-hip').value);
+            const gender = document.getElementById('waist-hip-gender').value;
+            
+            if (waist && hip) {
+                const ratio = (waist / hip).toFixed(2);
+                let risk;
+                
+                if (gender === 'male') {
+                    risk = ratio > 0.9 ? 'increased health risk' : 'low health risk';
+                } else {
+                    risk = ratio > 0.85 ? 'increased health risk' : 'low health risk';
+                }
+                
+                document.getElementById('waist-hip-result').textContent = `Your waist-to-hip ratio is ${ratio} (${risk})`;
+                document.getElementById('waist-hip-result').classList.add('active');
+            } else {
+                alert('Please enter both waist and hip measurements');
+            }
+        });
+
+        // Calculate Macros
+        document.querySelector('[data-calculate="macro"]').addEventListener('click', function() {
+            const calories = parseFloat(document.getElementById('macro-calories').value);
+            const goal = document.getElementById('macro-goal').value;
+            
+            if (calories) {
+                let proteinRatio, fatRatio, carbRatio;
+                
+                if (goal === 'lose') {
+                    proteinRatio = 0.3;
+                    fatRatio = 0.3;
+                    carbRatio = 0.4;
+                } else if (goal === 'gain') {
+                    proteinRatio = 0.25;
+                    fatRatio = 0.25;
+                    carbRatio = 0.5;
+                } else {
+                    proteinRatio = 0.25;
+                    fatRatio = 0.30;
+                    carbRatio = 0.45;
+                }
+                
+                const protein = Math.round((calories * proteinRatio) / 4);
+                const fat = Math.round((calories * fatRatio) / 9);
+                const carbs = Math.round((calories * carbRatio) / 4);
+                
+                document.getElementById('macro-result').textContent = `Daily macros: Protein ${protein}g, Fat ${fat}g, Carbs ${carbs}g`;
+                document.getElementById('macro-result').classList.add('active');
+            } else {
+                alert('Please enter your daily calorie intake');
+            }
+        });
+
+        // Calculate Step Counter
+        document.querySelector('[data-calculate="step-counter"]').addEventListener('click', function() {
+            const steps = parseFloat(document.getElementById('step-counter-steps').value);
+            const weight = parseFloat(document.getElementById('step-counter-weight').value);
+            
+            if (steps && weight) {
+                const calories = Math.round(steps * 0.04 * weight);
+                document.getElementById('step-counter-result').textContent = `Estimated calories burned: ${calories} calories`;
+                document.getElementById('step-counter-result').classList.add('active');
+            } else {
+                alert('Please enter both steps and weight');
+            }
+        });
+
+        // Calculate Cholesterol Risk
+        document.querySelector('[data-calculate="cholesterol"]').addEventListener('click', function() {
+            const total = parseFloat(document.getElementById('cholesterol-total').value);
+            const hdl = parseFloat(document.getElementById('cholesterol-hdl').value);
+            const age = parseFloat(document.getElementById('cholesterol-age').value);
+            
+            if (total && hdl && age) {
+                const ratio = (total / hdl).toFixed(1);
+                let risk;
+                
+                if (ratio < 3.5) risk = 'low risk';
+                else if (ratio < 5) risk = 'moderate risk';
+                else risk = 'high risk';
+                
+                document.getElementById('cholesterol-result').textContent = `Cholesterol ratio: ${ratio} (${risk})`;
+                document.getElementById('cholesterol-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Calculate TDEE
+        document.querySelector('[data-calculate="tdee"]').addEventListener('click', function() {
+            const age = parseFloat(document.getElementById('tdee-age').value);
+            const gender = document.getElementById('tdee-gender').value;
+            const weight = parseFloat(document.getElementById('tdee-weight').value);
+            const height = parseFloat(document.getElementById('tdee-height').value);
+            const activity = parseFloat(document.getElementById('tdee-activity').value);
+            
+            if (age && weight && height) {
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+                } else {
+                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+                }
+                
+                const tdee = Math.round(bmr * activity);
+                document.getElementById('tdee-result').textContent = `Your Total Daily Energy Expenditure is ${tdee} calories/day`;
+                document.getElementById('tdee-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+
+        // Calculate Sleep Quality Score
+        document.querySelector('[data-calculate="sleep-quality"]').addEventListener('click', function() {
+            const hours = parseFloat(document.getElementById('sleep-quality-hours').value);
+            const wakeups = parseFloat(document.getElementById('sleep-quality-wakeups').value);
+            const feeling = parseFloat(document.getElementById('sleep-quality-feeling').value);
+            
+            if (hours && wakeups !== null && feeling) {
+                let score = 0;
+                
+                // Score based on sleep duration (ideal 7-9 hours)
+                if (hours >= 7 && hours <= 9) score += 40;
+                else if (hours >= 6 && hours < 7) score += 30;
+                else if (hours > 9 && hours <= 10) score += 25;
+                else score += 15;
+                
+                // Score based on wakeups
+                if (wakeups === 0) score += 30;
+                else if (wakeups <= 2) score += 20;
+                else score += 10;
+                
+                // Score based on feeling
+                score += feeling * 3;
+                
+                document.getElementById('sleep-quality-result').textContent = `Your sleep quality score is ${Math.min(score, 100)}/100`;
+                document.getElementById('sleep-quality-result').classList.add('active');
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>
