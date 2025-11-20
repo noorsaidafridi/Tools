@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitaWell - Your Journey to Better Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --secondary: #1565c0;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary-light);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            margin-bottom: 50px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Latest Posts Section */
+        .latest-posts {
+            padding: 50px 0;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .post-card {
+            height: 100%;
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card-content {
+            padding: 20px;
+        }
+
+        .post-category {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .post-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .post-excerpt {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .read-more {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary);
+        }
+
+        /* Ad Block */
+        .ad-block {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: var(--border-radius);
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Health Calculators Section - Compact Design */
+        .calculators {
+            padding: 50px 0;
+        }
+
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .calculator-card {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            height: 60px;
+        }
+
+        .calculator-card:hover {
+            background-color: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .calculator-card:hover .calculator-icon {
+            background-color: white;
+            color: var(--primary-light);
+        }
+
+        .calculator-card:hover .calculator-title {
+            color: white;
+        }
+
+        .calculator-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .calculator-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .calculator-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+            transition: var(--transition);
+        }
+
+        .calculator-desc {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .calculator-card:hover .calculator-desc {
+            opacity: 0.9;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--secondary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-light);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-light);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .calculators-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: var(--border-radius);
+                margin-bottom: 10px;
+            }
+
+            .newsletter-btn {
+                border-radius: var(--border-radius);
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculators-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-heartbeat"></i>
+                VitaWell
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Weight Loss</a></li>
+                <li><a href="#">Home Remedies</a></li>
+                <li><a href="#">Mental Health</a></li>
+                <li><a href="#">Women's Health</a></li>
+                <li><a href="#">Sleep & Stress</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Journey to Better Health Starts Here</h1>
+            <p>Expert advice, natural remedies, weight loss tips, and mental wellness strategies to transform your life.</p>
+            <a href="#" class="btn">Start Your Wellness Journey</a>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section -->
+    <section class="latest-posts">
+        <div class="container">
+            <h2 class="section-title">Latest Health Articles</h2>
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Healthy food">
+                    <div class="post-card-content">
+                        <span class="post-category">Weight Loss</span>
+                        <h3 class="post-title">10 Superfoods That Boost Metabolism Naturally</h3>
+                        <p class="post-excerpt">Discover how these nutrient-rich foods can help rev up your metabolism and support your weight loss goals.</p>
+                        <div class="post-meta">
+                            <span>May 15, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Meditation">
+                    <div class="post-card-content">
+                        <span class="post-category">Mental Health</span>
+                        <h3 class="post-title">5 Mindfulness Techniques to Reduce Anxiety</h3>
+                        <p class="post-excerpt">Simple practices you can incorporate into your daily routine to calm your mind and reduce stress levels.</p>
+                        <div class="post-meta">
+                            <span>May 12, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sleep">
+                    <div class="post-card-content">
+                        <span class="post-category">Sleep & Stress</span>
+                        <h3 class="post-title">The Science of Sleep: How to Improve Your Sleep Quality</h3>
+                        <p class="post-excerpt">Understand the sleep cycles and learn evidence-based strategies to enhance your sleep quality and duration.</p>
+                        <div class="post-meta">
+                            <span>May 10, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ad Block -->
+                <div class="ad-block">
+                    Advertisement: Your Ad Here
+                </div>
+
+                <!-- Post 4 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Exercise">
+                    <div class="post-card-content">
+                        <span class="post-category">Weight Loss</span>
+                        <h3 class="post-title">The Best Home Workouts for Busy People</h3>
+                        <p class="post-excerpt">Effective exercise routines you can do at home with minimal equipment, perfect for those with tight schedules.</p>
+                        <div class="post-meta">
+                            <span>May 8, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="card post-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Herbs">
+                    <div class="post-card-content">
+                        <span class="post-category">Home Remedies</span>
+                        <h3 class="post-title">Natural Remedies for Common Digestive Issues</h3>
+                        <p class="post-excerpt">Learn about gentle, natural approaches to alleviate bloating, indigestion, and other common stomach problems.</p>
+                        <div class="post-meta">
+                            <span>May 5, 2023</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Calculators Section -->
+    <section class="calculators">
+        <div class="container">
+            <h2 class="section-title">Health Calculators & Tools</h2>
+            <div class="calculators-grid">
+                <!-- Calculator 1 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">BMI Calculator</h3>
+                        <p class="calculator-desc">Calculate your Body Mass Index</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 2 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Calorie Calculator</h3>
+                        <p class="calculator-desc">Estimate daily calorie needs</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 3 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Body Fat Calculator</h3>
+                        <p class="calculator-desc">Estimate body fat percentage</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 4 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Heart Rate Calculator</h3>
+                        <p class="calculator-desc">Find your target heart rate zones</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 5 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Sleep Calculator</h3>
+                        <p class="calculator-desc">Optimize your sleep schedule</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 6 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Ideal Weight Calculator</h3>
+                        <p class="calculator-desc">Determine your healthy weight range</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 7 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Water Intake Calculator</h3>
+                        <p class="calculator-desc">Calculate daily water needs</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 8 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Pregnancy Due Date</h3>
+                        <p class="calculator-desc">Estimate your due date</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 9 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-burn"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">BMR Calculator</h3>
+                        <p class="calculator-desc">Basal Metabolic Rate calculator</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 10 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Waist-to-Hip Ratio</h3>
+                        <p class="calculator-desc">Calculate your waist-to-hip ratio</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 11 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Macro Calculator</h3>
+                        <p class="calculator-desc">Calculate macronutrient needs</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 12 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Step Counter Estimator</h3>
+                        <p class="calculator-desc">Estimate calories burned from steps</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 13 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Cholesterol Risk</h3>
+                        <p class="calculator-desc">Estimate cholesterol risk factors</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 14 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">TDEE Calculator</h3>
+                        <p class="calculator-desc">Total Daily Energy Expenditure</p>
+                    </div>
+                </div>
+
+                <!-- Calculator 15 -->
+                <div class="card calculator-card">
+                    <div class="calculator-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Sleep Quality Score</h3>
+                        <p class="calculator-desc">Assess your sleep quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Health Newsletter</h2>
+            <p>Get the latest health tips, expert advice, and exclusive content delivered directly to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About VitaWell</h3>
+                    <div class="footer-about">
+                        <p>VitaWell is your trusted source for evidence-based health information, natural remedies, and wellness strategies to help you live your healthiest life.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Health Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Weight Loss</a></li>
+                        <li><a href="#">Fitness</a></li>
+                        <li><a href="#">Home Remedies</a></li>
+                        <li><a href="#">Mental Health</a></li>
+                        <li><a href="#">Women's Health</a></li>
+                        <li><a href="#">Sleep & Stress</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> infovitawell@example.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Street, Health City, HC 12345</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 VitaWell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.nav-menu');
+            const button = document.querySelector('.mobile-menu-btn');
+            
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
