@@ -1,121 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Tools - Marketplace</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-bg { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
-        .bundle-bg { background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%); }
-        .hidden { display: none; }
-    </style>
-</head>
-<body class="bg-slate-50 font-sans text-slate-800">
+<style>
+/* ===== BMI CALCULATOR STYLE ===== */
+.bmi-calc-wrapper {
+  max-width: 600px;
+  margin: auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
-    <header class="bg-white px-4 py-3 flex justify-between items-center shadow-sm sticky top-0 z-50">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
-            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">Y</div>
-            <span class="font-bold text-lg">Your Tools</span>
-        </div>
-        <button class="bg-orange-400 text-white px-4 py-2 rounded-lg text-xs font-bold">Get Bundle Deal</button>
-    </header>
+.bmi-tabs button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: #c96a07;
+  color: #fff;
+  font-size: 18px;
+}
 
-    <div id="home-page">
-        <section class="hero-bg text-white py-12 px-6 text-center">
-            <h1 class="text-3xl font-bold mb-2">100+ Ready-to-Use Calculators & Tools</h1>
-            <p class="text-sm mb-6 opacity-90">For Bloggers, Developers & SEO Professionals</p>
-            <button class="bg-green-500 px-6 py-2 rounded-md font-bold">Browse All Tools</button>
-        </section>
+.bmi-box {
+  background: #f2f2f2;
+  border-radius: 22px;
+  padding: 20px;
+  margin-top: 15px;
+}
 
-        <div class="p-4">
-            <h2 class="font-bold mb-4">Featured Tools</h2>
-            <div class="grid grid-cols-1 gap-4">
-                <div class="bg-white p-4 rounded-xl border shadow-sm">
-                    <div class="bg-blue-50 h-32 rounded-lg mb-3 flex items-center justify-center">
-                        <i class="fa-solid fa-calculator text-4xl text-blue-500"></i>
-                    </div>
-                    <h3 class="font-bold">BMI Calculator</h3>
-                    <p class="text-xs text-gray-400 mb-4">Calculate Body Mass Index</p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-xl">$7</span>
-                        <button onclick="showPage('product')" class="bg-green-500 text-white px-6 py-2 rounded-lg font-bold">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+.bmi-segment {
+  display: flex;
+  background: #e5e5e5;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bmi-segment button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bmi-segment button.active {
+  background: #c96a07;
+  color: #fff;
+}
+
+.bmi-row {
+  margin-bottom: 15px;
+}
+
+.bmi-row label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.bmi-input-group {
+  display: flex;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.bmi-input-group input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+}
+
+.bmi-input-group span {
+  padding: 12px;
+  background: #f7f7f7;
+  min-width: 50px;
+  text-align: center;
+}
+
+.bmi-btn {
+  width: 100%;
+  padding: 14px;
+  background: #3cb371;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bmi-result {
+  margin-top: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+</style>
+
+<div class="bmi-calc-wrapper">
+
+  <div class="bmi-tabs">
+    <button>BMI Calculator</button>
+  </div>
+
+  <div class="bmi-box">
+
+    <!-- Unit Selector -->
+    <div class="bmi-segment">
+      <button class="active" onclick="bmiSetUnit(this, 'metric')">Metric</button>
+      <button onclick="bmiSetUnit(this, 'imperial')">Imperial</button>
     </div>
 
-    <div id="product-page" class="hidden">
-        <div class="hero-bg text-white p-6">
-            <nav class="text-xs opacity-70 mb-2">Home > Finance Tools > BMI Calculator</nav>
-            <h1 class="text-2xl font-bold">BMI Calculator - HTML/JS Tool</h1>
-            <p class="text-sm">Calculate Body Mass Indexes Quickly</p>
-        </div>
-
-        <div class="p-4 flex flex-col gap-6">
-            <div class="bg-white border rounded-xl p-6 shadow-md">
-                <div class="bg-blue-600 text-white p-2 rounded-t-lg text-sm font-bold">BMI Calculator</div>
-                <div class="border p-4 rounded-b-lg">
-                    <div class="mb-4">
-                        <label class="block text-xs font-bold mb-1">Weight (kg):</label>
-                        <input type="number" placeholder="70" class="w-full border p-2 rounded">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-xs font-bold mb-1">Height (cm):</label>
-                        <input type="number" placeholder="175" class="w-full border p-2 rounded">
-                    </div>
-                    <button class="w-full bg-green-600 text-white py-2 rounded font-bold">Calculate BMI</button>
-                </div>
-            </div>
-
-            <div class="bg-white border rounded-xl p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-bold">BMI Calculator</h3>
-                    <span class="text-2xl font-bold">$7</span>
-                </div>
-                <button class="w-full bg-green-500 text-white py-3 rounded-xl font-bold mb-4">Buy Now</button>
-                <div class="space-y-2 text-sm text-gray-600">
-                    <p><i class="fa-solid fa-check text-green-500 mr-2"></i> HTML, CSS, JavaScript</p>
-                    <p><i class="fa-solid fa-check text-green-500 mr-2"></i> Fully Responsive</p>
-                    <p><i class="fa-solid fa-check text-green-500 mr-2"></i> Instant Download</p>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="font-bold border-b pb-2 mb-3">Features</h3>
-                <ul class="text-sm space-y-2 text-gray-600">
-                    <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> HTML/JS BMI Calculator</li>
-                    <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Responsive design works on all devices</li>
-                    <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Easy to customize and integrate</li>
-                </ul>
-            </div>
-        </div>
+    <!-- Weight -->
+    <div class="bmi-row">
+      <label>Weight</label>
+      <div class="bmi-input-group">
+        <input type="number" id="bmi-weight" placeholder="Enter weight">
+        <span id="bmi-weight-unit">kg</span>
+      </div>
     </div>
 
-    <footer class="border-t mt-10 py-10 text-center text-xs text-gray-400">
-        <div class="flex justify-center gap-4 mb-4">
-            <span onclick="showPage('home')" class="cursor-pointer">About</span>
-            <span>FAQ</span>
-            <span>Privacy Policy</span>
-        </div>
-        <p>© 2026 Your Tools</p>
-    </footer>
+    <!-- Height -->
+    <div class="bmi-row">
+      <label>Height</label>
+      <div class="bmi-input-group">
+        <input type="number" id="bmi-height" placeholder="Enter height">
+        <span id="bmi-height-unit">cm</span>
+      </div>
+    </div>
 
-    <script>
-        function showPage(pageId) {
-            // Hide both pages
-            document.getElementById('home-page').classList.add('hidden');
-            document.getElementById('product-page').classList.add('hidden');
-            
-            // Show the selected page
-            document.getElementById(pageId + '-page').classList.remove('hidden');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    </script>
-</body>
-</html>
+    <!-- Button -->
+    <button class="bmi-btn" onclick="bmiCalculate()">Calculate BMI</button>
 
+    <!-- Result -->
+    <div class="bmi-result" id="bmi-result">
+      Enter values to calculate BMI
+    </div>
+
+  </div>
+</div>
+
+<script>
+let bmiUnit = "metric";
+
+function bmiSetUnit(btn, unit) {
+  bmiUnit = unit;
+  btn.parentElement.querySelectorAll("button")
+    .forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  document.getElementById("bmi-weight-unit").innerText = unit === "metric" ? "kg" : "lb";
+  document.getElementById("bmi-height-unit").innerText = unit === "metric" ? "cm" : "in";
+}
+
+function bmiCalculate() {
+  const weight = parseFloat(document.getElementById("bmi-weight").value);
+  const height = parseFloat(document.getElementById("bmi-height").value);
+
+  if (!weight || !height) {
+    document.getElementById("bmi-result").innerText = "Please enter valid values";
+    return;
+  }
+
+  let bmi;
+  if (bmiUnit === "metric") {
+    bmi = weight / Math.pow(height / 100, 2);
+  } else {
+    bmi = (weight / Math.pow(height, 2)) * 703;
+  }
+
+  let status =
+    bmi < 18.5 ? "Underweight" :
+    bmi < 25 ? "Normal weight" :
+    bmi < 30 ? "Overweight" :
+    "Obese";
+
+  document.getElementById("bmi-result").innerText =
+    "BMI: " + bmi.toFixed(1) + " (" + status + ")";
+}
+                          </script>
